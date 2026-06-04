@@ -1,0 +1,6 @@
+{
+  "name": "Digital Nepal Conclave 2026",
+  "description": "Official website of the Digital Nepal Conclave 2026, the biggest digital initiative and conference in Nepal targeting Governance, Data, and the Digital Economy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

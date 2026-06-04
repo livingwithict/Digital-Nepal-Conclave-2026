@@ -1,0 +1,179 @@
+import React, { useState, useEffect } from "react";
+import { ArrowRight, Sparkles, Pin } from "lucide-react";
+import { PageId } from "./Header";
+
+const PARALLAX_IMAGES = [
+  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1600&h=900",
+  "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&q=80&w=1600&h=900",
+  "https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1600&h=900",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1600&h=900"
+];
+
+interface HeroProps {
+  onNavigate: (page: PageId) => void;
+  onRegisterClick: () => void;
+}
+
+export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
+  const [currentBg, setCurrentBg] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  // Handle crossfade slideshow
+  useEffect(() => {
+    const slideTimer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % PARALLAX_IMAGES.length);
+    }, 6000);
+    return () => clearInterval(slideTimer);
+  }, []);
+
+  // Listen to mouse wheel / window scroll coordinates
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Countdown timer to July 3rd, 2026 (Nepal Time coordinate Zone GST+5:45)
+  useEffect(() => {
+    const targetDate = new Date("2026-07-03T09:00:00+05:45").getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        clearInterval(interval);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((difference % (1000 * 60)) / 1000);
+        setTimeLeft({ days: d, hours: h, minutes: m, seconds: s });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Soft depth calculations for parallax layers
+  const backgroundYTranslate = scrollY * 0.45;
+  const contentYTranslate = scrollY * 0.18;
+  const overlayOpacity = Math.min(0.85, 0.4 + scrollY / 1200);
+
+  return (
+    <section 
+      id="hero-parallax-section"
+      className="relative w-full h-[85vh] sm:h-[90vh] md:h-[95vh] overflow-hidden bg-[#0d0f2b] flex items-center justify-center select-none"
+    >
+      {/* BACKGROUND LAYER: Parallax scrolling carousel */}
+      <div 
+        className="absolute inset-0 w-full h-[120%] -top-[10%] z-0 will-change-transform"
+        style={{
+          transform: `translate3d(0, ${backgroundYTranslate}px, 0)`
+        }}
+      >
+        {PARALLAX_IMAGES.map((img, idx) => (
+          <div
+            key={idx}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentBg ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={img}
+              alt={`Himalayan Summit backdrop ${idx + 1}`}
+              className="w-full h-full object-cover filter brightness-[0.7] saturate-[0.85]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        ))}
+        {/* Futuristic Grid Map overlay on top of mountains */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(46,41,146,0.3)_0%,transparent_100%)] opacity-35" />
+      </div>
+
+      {/* MIDGROUND LAYER: Linear Gradient Falloffs to assure flawless text readability */}
+      <div 
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: `linear-gradient(to bottom, rgba(13,15,43,0.55) 0%, rgba(13,15,43,${overlayOpacity}) 60%, #0d0f2b 100%)`
+        }}
+      />
+
+      {/* FOREGROUND CONTENT LAYER: Translates slower than background, creating amazing 3D depth */}
+      <div 
+        className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full will-change-transform"
+        style={{
+          transform: `translate3d(0, ${contentYTranslate}px, 0)`
+        }}
+      >
+        {/* Elegant top micro pill */}
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 backdrop-blur-md text-slate-100 rounded-full text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest mb-6 border border-white/10 animate-fade-in shadow-lg">
+          <Sparkles className="w-3.5 h-3.5 text-dnc-orange animate-spin" style={{ animationDuration: "3s" }} />
+          Nepal&apos;s Grand Elite ICT Plenary Arena
+        </div>
+
+        {/* Highlighted Digital Nepal Conclave Title only */}
+        <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-none drop-shadow-2xl">
+          Digital Nepal <br className="hidden sm:inline" />
+          Conclave <span className="text-[#eb0000]">2026</span>
+        </h1>
+
+        {/* Primary Call to Action Controls in Centered Layout */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+          <button
+            onClick={onRegisterClick}
+            className="w-full sm:w-auto px-8 py-3.5 bg-[#eb0000] hover:bg-[#c20000] text-white font-bold rounded-2xl shadow-lg shadow-red-950/20 uppercase tracking-widest text-[11px] transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
+          >
+            Register Delegate Pass
+          </button>
+          
+          <button
+            onClick={() => onNavigate("agenda")}
+            className="w-full sm:w-auto px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/20 font-bold rounded-2xl uppercase tracking-widest text-[11px] transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99] cursor-pointer backdrop-blur-md"
+          >
+            Explore Schedule
+            <ArrowRight className="w-4 h-4 text-dnc-orange-light" />
+          </button>
+        </div>
+
+        {/* Dynamic Countdown Block */}
+        <div className="mt-14 w-full max-w-lg bg-white/[0.04] backdrop-blur-md rounded-3xl p-5.5 sm:p-6 border border-white/10 shadow-2xl">
+          <p className="text-center text-[10px] uppercase tracking-widest text-slate-300 font-mono mb-4 font-bold tracking-widest flex items-center justify-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-[#eb0000] rounded-full animate-ping" />
+            CONCLAVE COUNTDOWN CLOCK
+          </p>
+          
+          <div className="grid grid-cols-4 gap-3.5 text-center">
+            <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
+              <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.days).padStart(2, '0')}</p>
+              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Days</p>
+            </div>
+            
+            <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
+              <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.hours).padStart(2, '0')}</p>
+              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Hours</p>
+            </div>
+            
+            <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
+              <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.minutes).padStart(2, '0')}</p>
+              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Mins</p>
+            </div>
+            
+            <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
+              <p className="font-display font-black text-2xl sm:text-3xl text-dnc-orange">{String(timeLeft.seconds).padStart(2, '0')}</p>
+              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Secs</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Bottom Scenic mountain outline path for smooth transition to layout body */}
+      <div className="absolute bottom-0 inset-x-0 h-16 w-full bg-gradient-to-t from-[#0d0f2b] to-transparent pointer-events-none z-10" />
+    </section>
+  );
+}
