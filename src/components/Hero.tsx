@@ -65,12 +65,12 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
   const overlayOpacity = Math.min(0.85, 0.4 + scrollY / 1200);
 
   return (
-    <section 
+    <section
       id="hero-parallax-section"
       className="relative w-full h-[85vh] sm:h-[90vh] md:h-[95vh] overflow-hidden bg-[#0d0f2b] flex items-center justify-center select-none"
     >
       {/* BACKGROUND LAYER: Parallax scrolling carousel */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-[120%] -top-[10%] z-0 will-change-transform"
         style={{
           transform: `translate3d(0, ${backgroundYTranslate}px, 0)`
@@ -79,9 +79,8 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
         {PARALLAX_IMAGES.map((img, idx) => (
           <div
             key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentBg ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentBg ? "opacity-100" : "opacity-0"
+              }`}
           >
             <img
               src={img}
@@ -96,7 +95,7 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
       </div>
 
       {/* MIDGROUND LAYER: Linear Gradient Falloffs to assure flawless text readability */}
-      <div 
+      <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: `linear-gradient(to bottom, rgba(13,15,43,0.55) 0%, rgba(13,15,43,${overlayOpacity}) 60%, #0d0f2b 100%)`
@@ -104,7 +103,7 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
       />
 
       {/* FOREGROUND CONTENT LAYER: Translates slower than background, creating amazing 3D depth */}
-      <div 
+      <div
         className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full will-change-transform"
         style={{
           transform: `translate3d(0, ${contentYTranslate}px, 0)`
@@ -130,7 +129,7 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
           >
             Register Delegate Pass
           </button>
-          
+
           <button
             onClick={() => onNavigate("agenda")}
             className="w-full sm:w-auto px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/20 font-bold rounded-2xl uppercase tracking-widest text-[11px] transition-all duration-300 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-[0.99] cursor-pointer backdrop-blur-md"
@@ -146,23 +145,23 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
             <span className="w-1.5 h-1.5 bg-[#eb0000] rounded-full animate-ping" />
             CONCLAVE COUNTDOWN CLOCK
           </p>
-          
+
           <div className="grid grid-cols-4 gap-3.5 text-center">
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.days).padStart(2, '0')}</p>
               <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Days</p>
             </div>
-            
+
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.hours).padStart(2, '0')}</p>
               <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Hours</p>
             </div>
-            
+
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.minutes).padStart(2, '0')}</p>
               <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Mins</p>
             </div>
-            
+
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-dnc-orange">{String(timeLeft.seconds).padStart(2, '0')}</p>
               <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Secs</p>

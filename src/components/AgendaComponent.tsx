@@ -35,7 +35,7 @@ export default function AgendaComponent() {
   return (
     <section id="agenda-section" className="bg-white py-12 animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header Summary */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-50 text-dnc-orange text-xs font-mono font-bold rounded-lg uppercase tracking-wider mb-4 border border-orange-100 shadow-sm">
@@ -59,53 +59,47 @@ export default function AgendaComponent() {
                 Filter by Stream / Track:
               </span>
             </div>
-            
+
             <div className="flex flex-wrap items-center justify-center gap-2">
               <button
                 onClick={() => setActiveFilter("All")}
-                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${
-                  activeFilter === "All" ? "bg-dnc-black text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${activeFilter === "All" ? "bg-dnc-black text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
               >
                 All Programs ({AGENDA_DATA.length})
               </button>
               <button
                 onClick={() => setActiveFilter("Inaugural")}
-                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${
-                  activeFilter === "Inaugural" ? "bg-slate-900 text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${activeFilter === "Inaugural" ? "bg-slate-900 text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
               >
                 Inaugural & Keynotes
               </button>
               <button
                 onClick={() => setActiveFilter("Governance")}
-                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${
-                  activeFilter === "Governance" ? "bg-dnc-blue text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${activeFilter === "Governance" ? "bg-dnc-blue text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
               >
                 Governance & DPI
               </button>
               <button
                 onClick={() => setActiveFilter("Data")}
-                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${
-                  activeFilter === "Data" ? "bg-dnc-orange text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${activeFilter === "Data" ? "bg-dnc-orange text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
               >
                 Data & AI
               </button>
               <button
                 onClick={() => setActiveFilter("Economy")}
-                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${
-                  activeFilter === "Economy" ? "bg-dnc-red text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${activeFilter === "Economy" ? "bg-dnc-red text-white shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
               >
                 Digital Economy
               </button>
               <button
                 onClick={() => setActiveFilter("Break")}
-                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${
-                  activeFilter === "Break" ? "bg-slate-200 text-slate-800 shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                className={`px-3 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition cursor-pointer ${activeFilter === "Break" ? "bg-slate-200 text-slate-800 shadow-sm" : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                  }`}
               >
                 Networking / Breaks
               </button>
@@ -115,26 +109,24 @@ export default function AgendaComponent() {
 
         {/* Timetable timeline flow */}
         <div className="max-w-4xl mx-auto space-y-8 relative before:absolute before:top-2 before:bottom-2 before:left-4 sm:before:left-1/2 before:w-0.5 before:bg-slate-150">
-          
+
           {filteredAgenda.map((item, index) => {
             const isRightSide = index % 2 === 1;
             const categoryTheme = getCategoryThemeColors(item.category);
 
             return (
-              <div 
-                key={index} 
-                className={`relative flex flex-col sm:flex-row items-stretch sm:justify-between gap-4 sm:gap-0 ${
-                  isRightSide ? "sm:flex-row-reverse" : ""
-                }`}
+              <div
+                key={index}
+                className={`relative flex flex-col sm:flex-row items-stretch sm:justify-between gap-4 sm:gap-0 ${isRightSide ? "sm:flex-row-reverse" : ""
+                  }`}
               >
                 {/* Timeline ball identifier */}
                 <div className="absolute left-4 sm:left-1/2 -translate-x-1.5 sm:-translate-x-2.5 top-5 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white border-2 border-slate-300 shadow-sm z-10 flex items-center justify-center">
-                  <span className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${
-                    item.category === "Governance" ? "bg-dnc-blue animate-pulse" :
-                    item.category === "Data" ? "bg-dnc-orange" :
-                    item.category === "Economy" ? "bg-dnc-red" :
-                    item.category === "Inaugural" ? "bg-slate-900" : "bg-slate-400"
-                  }`} />
+                  <span className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${item.category === "Governance" ? "bg-dnc-blue animate-pulse" :
+                      item.category === "Data" ? "bg-dnc-orange" :
+                        item.category === "Economy" ? "bg-dnc-red" :
+                          item.category === "Inaugural" ? "bg-slate-900" : "bg-slate-400"
+                    }`} />
                 </div>
 
                 {/* Left/Right side placeholder for desktop alignment */}
@@ -150,19 +142,17 @@ export default function AgendaComponent() {
 
                 {/* Center actual card block */}
                 <div className="w-full sm:w-[45%] pl-10 sm:pl-0">
-                  <div className={`p-6 bg-white border border-slate-200 rounded-3xl transition-all duration-300 hover:shadow-lg relative overflow-hidden group ${
-                    item.category === "Inaugural" ? "hover:border-slate-800" :
-                    item.category === "Governance" ? "hover:border-dnc-blue" :
-                    item.category === "Data" ? "hover:border-dnc-orange" :
-                    item.category === "Economy" ? "hover:border-dnc-red" : "hover:border-slate-300"
-                  }`}>
+                  <div className={`p-6 bg-white border border-slate-200 rounded-3xl transition-all duration-300 hover:shadow-lg relative overflow-hidden group ${item.category === "Inaugural" ? "hover:border-slate-800" :
+                      item.category === "Governance" ? "hover:border-dnc-blue" :
+                        item.category === "Data" ? "hover:border-dnc-orange" :
+                          item.category === "Economy" ? "hover:border-dnc-red" : "hover:border-slate-300"
+                    }`}>
                     {/* Visual spectrum left bar matching track */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${
-                      item.category === "Governance" ? "bg-dnc-blue" :
-                      item.category === "Data" ? "bg-dnc-orange" :
-                      item.category === "Economy" ? "bg-dnc-red" :
-                      item.category === "Inaugural" ? "bg-slate-900" : "bg-slate-300"
-                    }`} />
+                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${item.category === "Governance" ? "bg-dnc-blue" :
+                        item.category === "Data" ? "bg-dnc-orange" :
+                          item.category === "Economy" ? "bg-dnc-red" :
+                            item.category === "Inaugural" ? "bg-slate-900" : "bg-slate-300"
+                      }`} />
 
                     {/* Time for mobile & right side desktop */}
                     <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -216,7 +206,7 @@ export default function AgendaComponent() {
                         </p>
                         <div className="flex flex-col gap-1.5">
                           {item.speakerNames.map((spk, sIdx) => (
-                            <span 
+                            <span
                               key={sIdx}
                               className="inline-flex items-center gap-1.5 text-xs text-slate-800 font-bold bg-slate-50 border border-slate-100 px-2.5 py-1.5 rounded-xl hover:bg-slate-100 transition-all"
                             >
@@ -256,7 +246,7 @@ export default function AgendaComponent() {
               Delegates will receive high-resolution print booklets and Digital Pass credentials containing personalized calendars upon registration completion.
             </p>
           </div>
-          <button 
+          <button
             onClick={() => window.print()}
             className="px-6 py-3 bg-dnc-black hover:bg-dnc-blue text-white font-bold text-xs rounded-full uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer inline-flex items-center gap-2 shrink-0 shadow-sm"
           >

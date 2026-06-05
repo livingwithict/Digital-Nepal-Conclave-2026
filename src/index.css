@@ -4,7 +4,7 @@
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Inter", system-ui, sans-serif;
-  
+
   --color-dnc-blue: #2e3192;
   --color-dnc-blue-light: #3d409b;
   --color-dnc-orange: #f97316;
@@ -25,13 +25,16 @@
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
@@ -42,4 +45,3 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-

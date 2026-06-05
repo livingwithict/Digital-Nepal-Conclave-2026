@@ -11,10 +11,10 @@ export default function SpeakersComponent() {
   const allTags = ["All", "Keynotes", "Fintech", "Policy", "Governance", "Big Tech"];
 
   const filteredSpeakers = SPEAKERS_LIST.filter((spk) => {
-    const matchesSearch = spk.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          (spk.company && spk.company.toLowerCase().includes(searchQuery.toLowerCase())) ||
-                          spk.title.toLowerCase().includes(searchQuery.toLowerCase());
-    
+    const matchesSearch = spk.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (spk.company && spk.company.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      spk.title.toLowerCase().includes(searchQuery.toLowerCase());
+
     if (activeTag === "All") return matchesSearch;
     if (activeTag === "Keynotes") return matchesSearch && spk.isKeynote;
     return matchesSearch && spk.tags?.includes(activeTag);
@@ -23,7 +23,7 @@ export default function SpeakersComponent() {
   return (
     <section id="speakers-page" className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header Block */}
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-dnc-blue text-xs font-mono font-bold rounded-lg uppercase tracking-wider mb-3 border border-blue-100">
@@ -40,7 +40,7 @@ export default function SpeakersComponent() {
 
         {/* Search and Filters bar */}
         <div className="bg-slate-50 border border-slate-200/65 rounded-3xl p-6 mb-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          
+
           {/* Search box */}
           <div className="relative w-full md:w-80">
             <input
@@ -59,11 +59,10 @@ export default function SpeakersComponent() {
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold tracking-wide transition uppercase cursor-pointer ${
-                  activeTag === tag
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold tracking-wide transition uppercase cursor-pointer ${activeTag === tag
                     ? "bg-dnc-blue text-white shadow-2xs"
                     : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                  }`}
               >
                 {tag}
               </button>
@@ -82,7 +81,7 @@ export default function SpeakersComponent() {
             >
               {/* Spectrum Accent on top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dnc-blue via-dnc-orange to-dnc-red opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               <div>
                 {/* Image layout container */}
                 <div className="aspect-square w-full rounded-2xl overflow-hidden bg-slate-100 mb-4 relative">
@@ -97,11 +96,11 @@ export default function SpeakersComponent() {
                       Keynote Speaker
                     </span>
                   )}
-                  
+
                   {/* Social media quick overlay container */}
                   <div className="absolute bottom-3 right-3 flex gap-1.5 bg-white/95 backdrop-blur-xs px-2 py-1.5 rounded-xl shadow-xs opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
                     {spk.linkedinUrl && (
-                      <a 
+                      <a
                         href={spk.linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -113,7 +112,7 @@ export default function SpeakersComponent() {
                       </a>
                     )}
                     {spk.twitterUrl && (
-                      <a 
+                      <a
                         href={spk.twitterUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -146,7 +145,7 @@ export default function SpeakersComponent() {
                 <span className="text-[10px] text-dnc-blue font-bold hover:underline">
                   Read Bio & Detail →
                 </span>
-                
+
                 <div className="flex gap-1">
                   {spk.tags?.slice(0, 1).map((tag, tIdx) => (
                     <span
@@ -190,7 +189,7 @@ export default function SpeakersComponent() {
         {/* DETAIL BIOGRAPHY MODAL TRIGGER */}
         {selectedSpeaker && (
           <div id="speaker-detail-modal" className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4" onClick={() => setSelectedSpeaker(null)}>
-            <div 
+            <div
               className="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl border border-slate-200 animate-fade-in relative transition-all"
               onClick={(e) => e.stopPropagation()}
             >
@@ -203,7 +202,7 @@ export default function SpeakersComponent() {
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-12">
-                
+
                 {/* Left block profile image */}
                 <div className="md:col-span-5 bg-slate-50 aspect-square md:aspect-auto h-full min-h-[250px] relative">
                   <img
@@ -226,11 +225,11 @@ export default function SpeakersComponent() {
                     <h3 className="font-display font-extrabold text-xl text-slate-950 tracking-tight leading-tight mb-1">
                       {selectedSpeaker.name}
                     </h3>
-                    
+
                     <p className="text-xs font-mono text-dnc-orange font-bold leading-tight mb-2">
                       {selectedSpeaker.title}
                     </p>
-                    
+
                     {selectedSpeaker.company && (
                       <p className="text-xs text-slate-500 font-sans tracking-wide pb-4 border-b border-slate-100 mb-4">
                         {selectedSpeaker.company}
@@ -247,7 +246,7 @@ export default function SpeakersComponent() {
                     <div className="mb-6 flex flex-wrap gap-2 items-center">
                       <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wider mr-1">Social Links:</span>
                       {selectedSpeaker.linkedinUrl && (
-                        <a 
+                        <a
                           href={selectedSpeaker.linkedinUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -258,7 +257,7 @@ export default function SpeakersComponent() {
                         </a>
                       )}
                       {selectedSpeaker.twitterUrl && (
-                        <a 
+                        <a
                           href={selectedSpeaker.twitterUrl}
                           target="_blank"
                           rel="noopener noreferrer"

@@ -22,12 +22,12 @@ export default function ThemeDateVenue() {
     <section className="bg-white py-20 relative overflow-hidden">
       {/* Decorative Top Accent */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-      
+
       <div className="absolute top-1/2 -left-32 w-96 h-96 bg-dnc-blue/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-dnc-orange/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
+
         {/* Creative Top Headline Grid */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-dnc-orange tracking-widest bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-100 mb-3">
@@ -44,22 +44,22 @@ export default function ThemeDateVenue() {
 
         {/* The Creative Bento Architecture Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* THE BENCHMARK THEME: 7 Columns */}
           <div className="lg:col-span-7 bg-slate-50 rounded-3xl border border-slate-100 p-8 sm:p-10 flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
             {/* Visual Grid Art */}
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-dnc-blue/10 to-transparent rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-500" />
-            
+
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-dnc-blue/10 text-dnc-blue rounded-xl text-xs font-bold font-mono tracking-wide uppercase mb-6 border border-dnc-blue/10">
                 <Lightbulb className="w-4 h-4 text-dnc-orange animate-pulse" />
                 Strategic Plenary Theme
               </div>
-              
+
               <h3 className="font-display font-black text-2xl sm:text-3.5xl md:text-3xl text-slate-900 leading-tight tracking-tight max-w-xl">
                 Reimagining <span className="text-dnc-blue">Governance</span>, <span className="text-dnc-orange">Data</span> & the <span className="text-dnc-red">Digital Economy</span>
               </h3>
-              
+
               <p className="mt-5 text-sm text-slate-600 leading-relaxed font-sans text-justify max-w-2xl">
                 This theme underpins our central effort to accelerate public infrastructure digitization in Nepal. We explore secure cloud architecture, open API access parameters for developer networks, and cross-border digital financial systems to empower localized economic ecosystems.
               </p>
@@ -84,7 +84,7 @@ export default function ThemeDateVenue() {
 
           {/* CHRONO SCHEDULE: 5 Columns */}
           <div className="lg:col-span-5 grid grid-cols-1 gap-8">
-            
+
             {/* THE CREATIVE CALENDAR CARD */}
             <div className="bg-slate-50 rounded-3xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-md transition-all duration-300 relative overflow-hidden group">
               {/* Corner Calendar Leaf graphic */}
@@ -116,7 +116,7 @@ export default function ThemeDateVenue() {
                 </div>
 
                 <div className="mt-4">
-                  <button 
+                  <button
                     onClick={handleAddToCalendar}
                     className="inline-flex items-center gap-1.5 px-4 py-2 bg-dnc-blue hover:bg-[#eb0000] text-white text-[10px] font-bold font-mono uppercase tracking-wider rounded-xl transition duration-200 shadow-3xs cursor-pointer"
                   >
@@ -154,7 +154,7 @@ export default function ThemeDateVenue() {
                 </div>
 
                 <div className="mt-4">
-                  <button 
+                  <button
                     onClick={handleOpenMap}
                     className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-bold font-mono uppercase tracking-wider rounded-xl transition duration-200 shadow-3xs cursor-pointer"
                   >

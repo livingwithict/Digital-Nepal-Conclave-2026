@@ -35,45 +35,35 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
 
   const navItemClass = (pageIds: PageId[]) => {
     const isSelected = pageIds.includes(activePage);
-    return `relative px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 cursor-pointer ${
-      isSelected
+    return `relative px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 cursor-pointer ${isSelected
         ? "text-dnc-blue font-extrabold"
         : "text-slate-600 hover:text-dnc-blue"
-    }`;
+      }`;
   };
 
   return (
     <header id="app-header" className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          
-          {/* Logo Section */}
-          <div 
-            id="header-logo" 
+
+          <div
+            id="header-logo"
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => handlePageSelect("home")}
           >
-            <div className="relative w-10 h-10 flex items-center justify-center bg-white border border-slate-100 rounded-lg shadow-xs overflow-hidden group">
-              {/* Custom digital Nepal spectrum cubes */}
-              <div className="absolute top-1 left-1 w-3 h-3 bg-dnc-blue rounded-xs group-hover:scale-110 transition-transform"></div>
-              <div className="absolute top-1 right-1 w-3 h-3 bg-dnc-orange rounded-xs group-hover:scale-110 transition-transform"></div>
-              <div className="absolute bottom-1 left-1 w-3 h-3 bg-dnc-red rounded-xs group-hover:scale-110 transition-transform"></div>
-              <div className="absolute bottom-1 right-1 w-3 h-3 bg-dnc-black rounded-xs group-hover:scale-110 transition-transform"></div>
-            </div>
-            <div>
-              <div className="flex items-baseline leading-none">
-                <span className="font-display font-bold text-xl text-dnc-black tracking-tight">Digital Nepal</span>
-                <span className="font-display font-medium text-xs text-dnc-orange ml-1 font-mono">2026</span>
-              </div>
-              <span className="text-[10px] uppercase tracking-widest text-slate-400 font-mono block mt-0.5">CONCLAVE</span>
-            </div>
+            {/* Added Image Tag */}
+            <img
+              src="/images/DNC-Logo.png"
+              alt="Digital Nepal Logo"
+              className="w-25 h-25 object-contain"
+            />
           </div>
-
+          
           {/* Desktop Navigation */}
           <nav id="desktop-nav" className="hidden lg:flex items-center space-x-1">
-            <button 
-              id="nav-home" 
-              onClick={() => handlePageSelect("home")} 
+            <button
+              id="nav-home"
+              onClick={() => handlePageSelect("home")}
               className={navItemClass(["home"])}
             >
               Home
@@ -83,13 +73,13 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
             </button>
 
             {/* About Dropdown */}
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => setActiveDropdown("about")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button 
-                id="nav-about-dropdown" 
+              <button
+                id="nav-about-dropdown"
                 className={navItemClass(["about-event", "about-organizer", "about-team"])}
               >
                 <span className="flex items-center gap-1">
@@ -126,9 +116,9 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
               </div>
             </div>
 
-            <button 
-              id="nav-agenda" 
-              onClick={() => handlePageSelect("agenda")} 
+            <button
+              id="nav-agenda"
+              onClick={() => handlePageSelect("agenda")}
               className={navItemClass(["agenda"])}
             >
               Agenda
@@ -137,9 +127,9 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
               )}
             </button>
 
-            <button 
-              id="nav-speakers" 
-              onClick={() => handlePageSelect("speakers")} 
+            <button
+              id="nav-speakers"
+              onClick={() => handlePageSelect("speakers")}
               className={navItemClass(["speakers"])}
             >
               Speakers
@@ -149,13 +139,13 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
             </button>
 
             {/* Past Events Dropdown */}
-            <div 
+            <div
               className="relative group"
               onMouseEnter={() => setActiveDropdown("past")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button 
-                id="nav-past-dropdown" 
+              <button
+                id="nav-past-dropdown"
                 className={navItemClass(["past-2025", "past-2024", "past-2023", "past-2022"])}
               >
                 <span className="flex items-center gap-1">
@@ -199,9 +189,9 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
               </div>
             </div>
 
-            <button 
-              id="nav-publications" 
-              onClick={() => handlePageSelect("publications")} 
+            <button
+              id="nav-publications"
+              onClick={() => handlePageSelect("publications")}
               className={navItemClass(["publications"])}
             >
               Publications
@@ -210,9 +200,9 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
               )}
             </button>
 
-            <button 
-              id="nav-media" 
-              onClick={() => handlePageSelect("media")} 
+            <button
+              id="nav-media"
+              onClick={() => handlePageSelect("media")}
               className={navItemClass(["media"])}
             >
               News & Media
@@ -221,9 +211,9 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
               )}
             </button>
 
-            <button 
-              id="nav-contact" 
-              onClick={() => handlePageSelect("contact")} 
+            <button
+              id="nav-contact"
+              onClick={() => handlePageSelect("contact")}
               className={navItemClass(["contact"])}
             >
               Contact

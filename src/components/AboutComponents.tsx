@@ -8,10 +8,10 @@ interface AboutProps {
 }
 
 export default function AboutComponents({ currentSubSection, onSubSectionChange }: AboutProps) {
-  
+
   const renderEvent = () => (
     <div id="about-event-view" className="space-y-12">
-      
+
       {/* Introduction Card */}
       <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs">
         <div className="max-w-3xl">
@@ -222,7 +222,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
 
   const renderTeam = () => (
     <div id="about-team-view" className="space-y-16 animate-infinite-slide">
-      
+
       {/* Board & Specialist */}
       <div>
         <div className="text-center mb-10 max-w-lg mx-auto">
@@ -239,7 +239,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {TEAM_MEMBERS.map((member, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white rounded-2xl p-5 border border-slate-100 shadow-xs flex items-center gap-4 hover:shadow-md hover:border-slate-200 transition"
             >
@@ -275,7 +275,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
         <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-2xs">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {PATRONS.map((patron, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-5 bg-slate-50/50 rounded-2xl border border-slate-50/80 hover:bg-slate-50 transition"
               >
@@ -302,36 +302,33 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
   return (
     <div id="about-group-page" className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center mb-12">
           <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-dnc-black">
             Who we are
           </h1>
-          
+
           {/* Sub Navigation Pills */}
           <div className="mt-6 inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200/50">
             <button
               onClick={() => onSubSectionChange("event")}
-              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
-                currentSubSection === "event" ? "bg-white text-dnc-blue shadow-xs" : "text-slate-600 hover:text-slate-900"
-              }`}
+              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${currentSubSection === "event" ? "bg-white text-dnc-blue shadow-xs" : "text-slate-600 hover:text-slate-900"
+                }`}
             >
               About the Event
             </button>
             <button
               onClick={() => onSubSectionChange("organizer")}
-              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
-                currentSubSection === "organizer" ? "bg-white text-dnc-orange shadow-xs" : "text-slate-600 hover:text-slate-900"
-              }`}
+              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${currentSubSection === "organizer" ? "bg-white text-dnc-orange shadow-xs" : "text-slate-600 hover:text-slate-900"
+                }`}
             >
               The Organizer (IFN)
             </button>
             <button
               onClick={() => onSubSectionChange("team")}
-              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${
-                currentSubSection === "team" ? "bg-white text-dnc-black shadow-xs" : "text-slate-600 hover:text-slate-900"
-              }`}
+              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${currentSubSection === "team" ? "bg-white text-dnc-black shadow-xs" : "text-slate-600 hover:text-slate-900"
+                }`}
             >
               Team & Guests
             </button>

@@ -96,7 +96,7 @@ export default function DigitalNepalMap() {
             d="M0,300 L220,240 L410,260 L580,210 L780,290 L980,230 L1210,280 L1440,230 L1440,320 L0,320 Z"
             fill="url(#mountainGradNear)"
           />
-          
+
           <defs>
             <linearGradient id="mountainGradDistant" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#eb0000" stopOpacity="0.12" />
@@ -118,7 +118,7 @@ export default function DigitalNepalMap() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(46,49,146,0.15),transparent_70%)] z-0 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        
+
         {/* Title Details explaining the cartographic intent */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-dnc-orange-light mb-3">
@@ -135,45 +135,45 @@ export default function DigitalNepalMap() {
 
         {/* Map Blueprint Grid and Detail Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
+
           {/* Interactive Dotted Map Container */}
           <div className="lg:col-span-7 bg-white/[0.02] backdrop-blur-md rounded-3xl p-6 border border-white/5 shadow-2xl relative aspect-[1.8/1] flex items-center justify-center overflow-hidden min-h-[280px] sm:min-h-[380px]">
-            
+
             {/* The Cartographic Grid (Stylized dotted Nepal grid map) */}
             <div className="absolute inset-4 opacity-15 pointer-events-none select-none">
               <svg className="w-full h-full" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Generates a grid representing Nepal coordinates bounds */}
-                {Array.from({ length: 41 }).map((_, rIdx) => 
+                {Array.from({ length: 41 }).map((_, rIdx) =>
                   Array.from({ length: 21 }).map((_, cIdx) => {
                     const x = 20 * rIdx;
                     const y = 20 * cIdx;
                     // Filter map boundary representation mathematically to resemble a sleek polygon boundary of Nepal
                     // Nepal's tilted rectangular footprint
-                    const isInNepalBounds = 
+                    const isInNepalBounds =
                       (y > 80 && y < 320) && // general vertical height
                       (x > 50 && x < 750) && // general horizontal span
                       (y > (350 - x * 0.4)) && // bottom-left crop
                       (y < (300 + (800 - x) * 0.15)) && // northern border crop
                       (y < (450 - (800 - x) * 0.4)); // Eastern tapering boundary
-                    
+
                     if (!isInNepalBounds) return null;
                     return (
-                      <circle 
-                        key={`${rIdx}-${cIdx}`} 
-                        cx={x} 
-                        cy={y} 
-                        r={1.8} 
-                        fill="#ffffff" 
+                      <circle
+                        key={`${rIdx}-${cIdx}`}
+                        cx={x}
+                        cy={y}
+                        r={1.8}
+                        fill="#ffffff"
                         opacity={0.35}
                       />
                     );
                   })
                 )}
                 {/* Subtle boundary guide path for Nepal */}
-                <path 
-                  d="M60,180 L180,120 L320,140 L450,165 L600,190 L750,220 L720,290 L610,280 L480,260 L320,245 L180,255 L60,210 Z" 
-                  stroke="rgba(255,255,255,0.08)" 
-                  strokeWidth="1.5" 
+                <path
+                  d="M60,180 L180,120 L320,140 L450,165 L600,190 L750,220 L720,290 L610,280 L480,260 L320,245 L180,255 L60,210 Z"
+                  stroke="rgba(255,255,255,0.08)"
+                  strokeWidth="1.5"
                   strokeDasharray="6 6"
                 />
               </svg>
@@ -201,27 +201,23 @@ export default function DigitalNepalMap() {
                     aria-label={`Inspect ${hub.city}`}
                   >
                     {/* Ring Pulse Animations */}
-                    <span className={`absolute inline-flex h-8 w-8 rounded-full bg-dnc-orange/30 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-transform duration-300 ${
-                      isSelected ? "scale-150 opacity-100" : isHovered ? "scale-125 opacity-70" : "scale-0 opacity-0"
-                    }`} />
-                    
-                    <span className={`absolute inline-flex h-12 w-12 rounded-full border border-dnc-blue/40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 animate-ping ${
-                      isSelected ? "duration-1000 opacity-60" : "opacity-0"
-                    }`} />
+                    <span className={`absolute inline-flex h-8 w-8 rounded-full bg-dnc-orange/30 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 transition-transform duration-300 ${isSelected ? "scale-150 opacity-100" : isHovered ? "scale-125 opacity-70" : "scale-0 opacity-0"
+                      }`} />
+
+                    <span className={`absolute inline-flex h-12 w-12 rounded-full border border-dnc-blue/40 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 animate-ping ${isSelected ? "duration-1000 opacity-60" : "opacity-0"
+                      }`} />
 
                     {/* Central Glowing Core Core */}
-                    <div className={`w-5 h-5 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
-                      isSelected 
-                        ? "bg-dnc-orange text-white scale-110 border-2 border-white" 
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${isSelected
+                        ? "bg-dnc-orange text-white scale-110 border-2 border-white"
                         : "bg-dnc-blue text-white border-2 border-slate-700/80 hover:bg-dnc-red hover:border-white"
-                    }`}>
+                      }`}>
                       <CircleDot className="w-2.5 h-2.5 shrink-0" />
                     </div>
 
                     {/* Highly descriptive tooltip badge on layout hover */}
-                    <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-slate-900/95 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-lg text-[10px] font-bold font-mono text-white tracking-wide shadow-xl pointer-events-none transition-all duration-200 whitespace-nowrap z-30 ${
-                      isHovered || isSelected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
-                    }`}>
+                    <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-slate-900/95 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-lg text-[10px] font-bold font-mono text-white tracking-wide shadow-xl pointer-events-none transition-all duration-200 whitespace-nowrap z-30 ${isHovered || isSelected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
+                      }`}>
                       <div className="flex items-center gap-1">
                         <MapPin className="w-2.5 h-2.5 text-dnc-orange-light" />
                         <span>{hub.city}</span>
@@ -245,7 +241,7 @@ export default function DigitalNepalMap() {
 
           {/* Feature details card on the right */}
           <div className="lg:col-span-5 space-y-6">
-            
+
             <div className="bg-white/[0.03] backdrop-blur-md rounded-3xl border border-white/5 p-6 sm:p-8 shadow-xl relative overflow-hidden">
               {/* Corner accent */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-dnc-orange/5 through-transparent to-transparent pointer-events-none" />

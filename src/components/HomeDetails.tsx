@@ -54,7 +54,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
             >
               {/* Highlight bar with theme colors */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dnc-blue via-dnc-orange to-dnc-red opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              
+
               <div>
                 <p className="font-display font-black text-3xl sm:text-4xl text-dnc-black mb-1">
                   {stat.count}
@@ -118,15 +118,15 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                       </span>
                     )}
                   </div>
-                  
+
                   <span className="font-display font-bold text-xs sm:text-sm text-slate-850 group-hover:text-dnc-blue transition-colors line-clamp-1 block whitespace-normal break-all">
                     {spk.name}
                   </span>
-                  
+
                   <span className="text-[10px] text-dnc-orange font-mono font-bold mt-1 line-clamp-1 block whitespace-normal">
                     {spk.title}
                   </span>
-                  
+
                   {spk.company && (
                     <span className="text-[9.5px] text-slate-500 font-sans mt-0.5 line-clamp-1 block whitespace-normal">
                       {spk.company}
@@ -146,7 +146,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
         {/* PAST EVENTS QUICK REDIRECT BOXES */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-stretch">
-          
+
           <div className="lg:col-span-4 bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-8 flex flex-col justify-between shadow-xl border border-slate-800">
             <div>
               <span className="text-[10px] uppercase font-bold text-dnc-orange font-mono tracking-widest block mb-2">Heritage</span>
@@ -231,7 +231,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               <span className="text-xs text-slate-400 font-mono">
                 Organized by ICT Foundation Nepal in association with TingTing.
               </span>
-              <button 
+              <button
                 onClick={() => onNavigate("past-2025")}
                 className="inline-flex items-center gap-1 px-4 py-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-dnc-blue hover:text-white rounded-lg transition-all"
               >
@@ -259,15 +259,15 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {NEWS_MEDIA_DATA.map((item) => (
-              <div 
+              <div
                 key={item.id}
                 onClick={() => setActiveNews(item)}
                 className="bg-white rounded-3xl border border-slate-100 p-5 shadow-2xs hover:shadow-xs transition-all duration-300 cursor-pointer flex flex-col justify-between group"
               >
                 <div>
                   <div className="aspect-video w-full rounded-2xl overflow-hidden bg-slate-100 mb-4 relative shadow-2xs">
-                    <img 
-                      src={item.imageUrl} 
+                    <img
+                      src={item.imageUrl}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
@@ -280,11 +280,11 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                   <span className="text-[10px] font-bold text-dnc-orange font-mono uppercase tracking-wider block mb-1">
                     {item.date}
                   </span>
-                  
+
                   <h4 className="font-display font-bold text-slate-900 group-hover:text-dnc-blue transition-colors text-sm sm:text-base leading-snug">
                     {item.title}
                   </h4>
-                  
+
                   <p className="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">
                     {item.summary}
                   </p>
@@ -340,13 +340,13 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                 url: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=600&h=400"
               }
             ].map((photo, pIdx) => (
-              <div 
+              <div
                 key={pIdx}
                 onClick={() => setActivePhoto(photo.url)}
                 className="group relative aspect-square rounded-2xl overflow-hidden border border-slate-100 shadow-2xs cursor-pointer bg-slate-50 animate-fade-in"
               >
-                <img 
-                  src={photo.url} 
+                <img
+                  src={photo.url}
                   alt={photo.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   referrerPolicy="no-referrer"
@@ -376,18 +376,18 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div 
+            <div
               onClick={() => setActiveVideo({
                 title: "Digital Synergy Plenary Address - DNC 2025 Highlights",
                 url: "https://www.youtube.com/playlist?list=PL65nmC8zjA6qB5knF0c0N8c3_ZVNRxPfv",
-                embedId: "dv-CsOcIojQ" 
+                embedId: "dv-CsOcIojQ"
               })}
               className="bg-white rounded-3xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-5 hover:shadow-xs cursor-pointer group transition-all duration-300"
             >
               <div className="aspect-video sm:w-44 bg-slate-100 rounded-2xl overflow-hidden relative shrink-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=400&h=250" 
-                  alt="DNC 2025" 
+                <img
+                  src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=400&h=250"
+                  alt="DNC 2025"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -415,7 +415,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               </div>
             </div>
 
-            <div 
+            <div
               onClick={() => setActiveVideo({
                 title: "Google South Asia Strategy Spotlight - Geo-Tech Implementation",
                 url: "https://www.youtube.com/playlist?list=PL65nmC8zjA6pg4kXbXIU6UDGxKq0uGGAC",
@@ -424,9 +424,9 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               className="bg-white rounded-3xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-5 hover:shadow-xs cursor-pointer group transition-all duration-300"
             >
               <div className="aspect-video sm:w-44 bg-slate-100 rounded-2xl overflow-hidden relative shrink-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400&h=250" 
-                  alt="Google South Asia Session" 
+                <img
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=400&h=250"
+                  alt="Google South Asia Session"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -482,20 +482,20 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
       {/* PHOTO LIGHTBOX MODAL */}
       {activePhoto && (
-        <div 
+        <div
           className="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 flex items-center justify-center p-4"
           onClick={() => setActivePhoto(null)}
         >
           <div className="relative bg-white p-2 rounded-3xl max-w-4xl max-h-[85vh] overflow-hidden shadow-2xl animate-fade-in" onClick={(e) => e.stopPropagation()}>
-            <button 
+            <button
               className="absolute top-4 right-4 bg-white/90 hover:bg-slate-100 p-2.5 rounded-full text-slate-700 shadow-md font-bold transition-transform hover:scale-105 w-10 h-10 flex items-center justify-center"
               onClick={() => setActivePhoto(null)}
             >
               ✕
             </button>
-            <img 
-              src={activePhoto} 
-              alt="Conclave Gallery Highlight" 
+            <img
+              src={activePhoto}
+              alt="Conclave Gallery Highlight"
               className="max-w-full max-h-[75vh] object-contain rounded-2xl"
               referrerPolicy="no-referrer"
             />
@@ -510,12 +510,12 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
       {/* VIDEO DIALOGUE MODAL */}
       {activeVideo && (
-        <div 
+        <div
           className="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4"
           onClick={() => setActiveVideo(null)}
         >
-          <div 
-            className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-150 animate-fade-in" 
+          <div
+            className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-150 animate-fade-in"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 border-b border-slate-100 flex items-center justify-between">
@@ -525,7 +525,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                   {activeVideo.title}
                 </h3>
               </div>
-              <button 
+              <button
                 className="p-2 bg-slate-50 hover:bg-slate-100 text-slate-400 hover:text-slate-700 rounded-full transition-colors w-8 h-8 flex items-center justify-center"
                 onClick={() => setActiveVideo(null)}
               >
@@ -561,9 +561,9 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               </div>
 
               <div className="flex items-center justify-between pt-4 border-t border-slate-200">
-                <a 
-                  href={activeVideo.url} 
-                  target="_blank" 
+                <a
+                  href={activeVideo.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2.5 bg-dnc-blue hover:bg-dnc-orange text-white text-xs font-bold font-mono uppercase tracking-wider rounded-xl transition duration-200 inline-flex items-center gap-1.5 shadow-sm"
                 >
@@ -579,16 +579,16 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
       {/* NEWS ARTICLE READER MODAL */}
       {activeNews && (
-        <div 
+        <div
           className="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setActiveNews(null)}
         >
-          <div 
+          <div
             className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-slate-150 relative"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Trigger */}
-            <button 
+            <button
               className="absolute top-4 right-4 bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-950 p-2 rounded-full transition z-10 w-8 h-8 flex items-center justify-center"
               onClick={() => setActiveNews(null)}
             >
@@ -597,9 +597,9 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
             {/* Cover Image */}
             <div className="aspect-video w-full relative bg-slate-100">
-              <img 
-                src={activeNews.imageUrl} 
-                alt={activeNews.title} 
+              <img
+                src={activeNews.imageUrl}
+                alt={activeNews.title}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -637,7 +637,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               </div>
 
               <div className="pt-6 border-t border-slate-150 flex flex-wrap gap-4 items-center justify-between">
-                <a 
+                <a
                   href={activeNews.url}
                   target="_blank"
                   rel="noopener noreferrer"
