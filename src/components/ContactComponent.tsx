@@ -57,7 +57,7 @@ export default function ContactComponent() {
         
         {/* Header Block */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-orange/5 text-dnc-orange text-xs font-mono font-bold rounded-full uppercase tracking-wider mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-orange/5 text-dnc-orange text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
             <MessageSquare className="w-4 h-4 text-dnc-orange animate-pulse" />
             24/7 Conclave Support Desk
           </span>
@@ -76,25 +76,22 @@ export default function ContactComponent() {
           <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
             
             {/* Address Card */}
-            <div className="bg-slate-50 border border-slate-100 rounded-3xl p-6.5 text-left relative overflow-hidden flex flex-col justify-between h-full">
+            <div className="bg-white border border-slate-50 shadow-sm rounded-3xl p-6.5 text-left space-y-4">
               <div>
-                <span className="text-[10px] font-mono font-bold text-dnc-blue uppercase tracking-widest block mb-2">HEADQUARTERS</span>
+                {/* <span className="text-[10px] font-sans font-bold text-dnc-blue uppercase tracking-widest block mb-2">HEADQUARTERS</span> */}
                 <h3 className="font-display font-bold text-base text-slate-900 flex items-center gap-2 mb-4">
                   <MapPin className="w-5 h-5 text-dnc-orange" />
                   ICT Foundation Nepal (IFN)
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-sans">
+                <p className="text-sm text-slate-600 leading-relaxed font-sans">
                   Sankhamul, Kathmandu-31, Nepal
-                </p>
-                <p className="text-[10px] text-slate-400 font-sans mt-2">
-                  * Coordinates positioned close to major governmental central planning units and departments.
                 </p>
               </div>
             </div>
 
             {/* Support Hotline Numbers */}
-            <div className="bg-white border border-slate-150 rounded-3xl p-6.5 text-left space-y-4">
-              <span className="text-[10px] font-mono font-bold text-dnc-orange uppercase tracking-widest block">TELEPHONE SUPPORT</span>
+            <div className="bg-white border border-slate-50 shadow-sm rounded-3xl p-6.5 text-left space-y-4">
+              <span className="text-[14px] font-sans font-bold text-dnc-orange uppercase tracking-widest block">TELEPHONE SUPPORT</span>
               
               <div className="space-y-3.5">
                 <div className="flex items-start gap-3">
@@ -102,8 +99,8 @@ export default function ContactComponent() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-900 select-all">+977 9851141348</p>
-                    <p className="text-[10px] text-slate-500 font-mono">Mobile - Razan Lamsal</p>
+                    <p className="text-sm font-semibold text-slate-900 select-all">+977 9851141348</p>
+                    <p className="text-[10px] text-slate-500 font-sans">Mobile - Razan Lamsal</p>
                   </div>
                 </div>
 
@@ -112,8 +109,8 @@ export default function ContactComponent() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-900 select-all">+977 9801263604</p>
-                    <p className="text-[10px] text-slate-500 font-mono">Mobile - Support Desk</p>
+                    <p className="text-sm font-semibold text-slate-900 select-all">+977 9801263604</p>
+                    <p className="text-[10px] text-slate-500 font-sans">Mobile - Support Desk</p>
                   </div>
                 </div>
 
@@ -122,29 +119,29 @@ export default function ContactComponent() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-900 select-all">01-5314322</p>
-                    <p className="text-[10px] text-slate-500 font-mono">Landline Office Hotline</p>
+                    <p className="text-sm font-semibold text-slate-900 select-all">01-5314322</p>
+                    <p className="text-[10px] text-slate-500 font-sans">Landline Office Hotline</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Email boxes */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6.5 text-left space-y-4">
-              <span className="text-[10px] font-mono font-bold text-dnc-orange-light uppercase tracking-widest block">SEND DIRECT EMAIL</span>
+            <div className="bg-slate-150 text-white rounded-3xl p-6.5 text-left space-y-4 border border-slate-50 shadow-sm">
+              <span className="text-[14px] font-sans font-bold text-dnc-orange uppercase tracking-widest block">SEND DIRECT EMAIL</span>
               
-              <div className="space-y-3 font-mono text-[11px] sm:text-xs">
+              <div className="space-y-3 font-sans text-[11px] sm:text-sm">
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-dnc-blue-light" />
-                  <a href="mailto:conclave@ictfoundation.org.np" className="hover:underline select-all text-slate-200">conclave@ictfoundation.org.np</a>
+                  <a href="mailto:conclave@ictfoundation.org.np" className="hover:underline select-all text-slate-900">conclave@ictfoundation.org.np</a>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-dnc-blue-light" />
-                  <a href="mailto:admin@ictfoundation.org.np" className="hover:underline select-all text-slate-200">admin@ictfoundation.org.np</a>
+                  <a href="mailto:admin@ictfoundation.org.np" className="hover:underline select-all text-slate-900">admin@ictfoundation.org.np</a>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-dnc-blue-light" />
-                  <a href="mailto:razan@ictfoundation.org.np" className="hover:underline select-all text-slate-200">razan@ictfoundation.org.np</a>
+                  <a href="mailto:razan@ictfoundation.org.np" className="hover:underline select-all text-slate-900">razan@ictfoundation.org.np</a>
                 </div>
               </div>
             </div>
@@ -152,68 +149,68 @@ export default function ContactComponent() {
           </div>
 
           {/* Right form column */}
-          <div className="lg:col-span-7 bg-white border border-slate-150 rounded-3xl p-6.5 sm:p-8 flex flex-col justify-between shadow-2xs relative">
-            <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-4">INQUIRY FORM</span>
+          <div className="lg:col-span-7 bg-white border border-slate-50 rounded-3xl p-6.5 sm:p-8 flex flex-col justify-between shadow-sm relative">
+            <span className="text-[10px] font-sans font-bold text-slate-400 uppercase tracking-widest block mb-4">INQUIRY FORM</span>
             
             <form onSubmit={handleFormSubmit} className="space-y-4">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Full Name *</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Full Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Enter your name"
-                    className="w-full px-3 py-2.5 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-50 rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Primary Email *</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Primary Email *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="name@organization.com"
-                    className="w-full px-3 py-2.5 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-50 rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Phone Number</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Phone Number</label>
                   <input
                     type="text"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="E.g., +977 98..."
-                    className="w-full px-3 py-2.5 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-50 rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Organization / Enterprise</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Organization / Enterprise</label>
                   <input
                     type="text"
                     name="organization"
                     value={formData.organization}
                     onChange={handleInputChange}
                     placeholder="Company name"
-                    className="w-full px-3 py-2.5 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-50 rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1">Message Subject / Topic</label>
+                <label className="block text-sm font-bold text-slate-600 mb-1">Message Subject / Topic</label>
                 <select
                   name="topic"
                   value={formData.topic}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2.5 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                  className="w-full px-3 py-2.5 bg-slate-50 border border-slate-50 rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                 >
                   <option value="general">General Support / Questions</option>
                   <option value="sponsorship">Strategic Sponsorship Proposals</option>
@@ -224,27 +221,27 @@ export default function ContactComponent() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-600 mb-1">Your message or inquiry *</label>
+                <label className="block text-sm font-bold text-slate-600 mb-1">Your message or inquiry *</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
                   placeholder="Tell us what you would like to discuss..."
-                  className="w-full px-3 py-2.5 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                  className="w-full px-3 py-2.5 bg-slate-50 border border-slate-50 rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                 ></textarea>
               </div>
 
               {/* Error Validation Card placeholder */}
               {validationError && (
-                <div className="p-3 bg-red-50 text-red-650 text-xs font-sans rounded-xl border border-red-200/50">
+                <div className="p-3 bg-red-50 text-red-650 text-sm font-sans rounded-xl border border-red-200/50">
                   ⚠️ {validationError}
                 </div>
               )}
 
               {/* Status messaging logic */}
               {formState === "success" && (
-                <div className="p-4 bg-emerald-50 text-emerald-800 text-xs font-sans rounded-xl border border-emerald-200 flex items-center gap-2">
+                <div className="p-4 bg-emerald-50 text-emerald-800 text-sm font-sans rounded-xl border border-emerald-200 flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-emerald-600 animate-bounce" />
                   <div>
                     <p className="font-bold">Message Submitted successfully!</p>
@@ -256,7 +253,7 @@ export default function ContactComponent() {
               <button
                 type="submit"
                 disabled={formState === "sending"}
-                className="w-full py-3.5 bg-dnc-blue hover:bg-dnc-blue-light transition text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]"
+                className="w-full py-3.5 bg-dnc-blue hover:bg-dnc-blue-light transition text-white font-bold text-sm rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]"
               >
                 <Send className="w-3.5 h-3.5 text-dnc-orange" />
                 {formState === "sending" ? "Dispatching Message..." : "Send Secure Message"}
@@ -264,7 +261,7 @@ export default function ContactComponent() {
 
             </form>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-[10px] text-slate-400 font-mono">
+            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-[10px] text-slate-400 font-sans">
               <ShieldCheck className="w-4 h-4 text-slate-300" />
               Your standard data parameters are secure under Nepal privacy acts.
             </div>

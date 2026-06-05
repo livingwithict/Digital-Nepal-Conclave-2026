@@ -32,13 +32,15 @@ export default function App() {
     } else if (pageId === "about-team") {
       setAboutSubSection("team");
     }
+    window.scrollTo(0, 0);
   };
 
+  
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-dnc-orange selection:text-white">
       
       {/* Dynamic alert bar for actual physical site details */}
-      <div className="bg-slate-100 text-slate-700 border-b border-slate-200 text-center py-2 text-xs font-medium px-4 flex items-center justify-center gap-3">
+      <div className="bg-slate-100 text-slate-700 border-b border-slate-200 text-center py-2 text-sm font-medium px-4 flex items-center justify-center gap-3">
         <span className="w-2 h-2 bg-dnc-blue rounded-full"></span>
         <span className="font-semibold text-slate-800">CONFERENCE 2026 OFFICIAL ANNOUNCEMENT</span>
         <span className="hidden md:inline-block text-slate-300">|</span>
@@ -63,7 +65,7 @@ export default function App() {
               onRegisterClick={() => setIsRegisterOpen(true)} 
             />
             <ThemeDateVenue />
-            <DigitalNepalMap />
+            {/* <DigitalNepalMap /> */}
             <HomeDetails 
               onNavigate={handlePageChange} 
             />

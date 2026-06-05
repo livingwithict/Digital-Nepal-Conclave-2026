@@ -14,8 +14,8 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
 
       {/* Introduction Card */}
       <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs">
-        <div className="max-w-3xl">
-          <span className="text-xs font-bold font-mono text-dnc-blue tracking-widest uppercase block mb-2">5th Anniversary Edition</span>
+        <div className="max-w-4xl mx-auto space-y-6">
+          <span className="text-sm font-bold font-sans text-dnc-blue tracking-widest uppercase block mb-2">5th Anniversary Edition</span>
           <h2 className="font-display font-extrabold text-3xl text-dnc-black mb-6 leading-tight">
             The Ultimate Catalyst for Nepal&apos;s High-Level Tech Policy
           </h2>
@@ -57,7 +57,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
                 "Strategic policy innovation and regulatory landscape modernization",
                 "Evidence-based decision making through data-centric governance"
               ].map((item, i) => (
-                <li key={i} className="flex gap-2 text-xs text-slate-600 line-height-relaxed">
+                <li key={i} className="flex gap-2 text-sm text-slate-600 line-height-relaxed">
                   <span className="text-dnc-blue font-bold">•</span>
                   <span>{item}</span>
                 </li>
@@ -79,7 +79,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
                 "Responsible technology adoption and ethical AI standards",
                 "Cross-sectoral data interoperability and digital architecture"
               ].map((item, i) => (
-                <li key={i} className="flex gap-2 text-xs text-slate-600 line-height-relaxed">
+                <li key={i} className="flex gap-2 text-sm text-slate-600 line-height-relaxed">
                   <span className="text-dnc-orange font-bold">•</span>
                   <span>{item}</span>
                 </li>
@@ -101,7 +101,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
                 "Investment prospects within the burgeoning innovation economy",
                 "Cultivating a future-ready digital workforce and talent pool"
               ].map((item, i) => (
-                <li key={i} className="flex gap-2 text-xs text-slate-600 line-height-relaxed">
+                <li key={i} className="flex gap-2 text-sm text-slate-600 line-height-relaxed">
                   <span className="text-dnc-red font-bold">•</span>
                   <span>{item}</span>
                 </li>
@@ -112,11 +112,11 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
       </div>
 
       {/* Theme Insight Card */}
-      <div className="bg-slate-900 text-white rounded-3xl p-8 shadow-xl border border-slate-800">
-        <h4 className="font-display font-extrabold text-lg sm:text-xl text-dnc-orange-light mb-3">
+      <div className="bg-white text-white rounded-3xl p-8 shadow-xs border border-slate-100">
+        <h4 className="font-display font-extrabold text-lg sm:text-xl text-dnc-blue mb-3">
           Behind the Theme: Reimagining Governance, Data and the Digital Economy
         </h4>
-        <div className="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed max-w-4xl">
+        <div className="space-y-4 text-sm sm:text-sm text-slate-900 leading-relaxed">
           <p>
             This strategic theme underscores the vital synergy between digital governance reform, secure data frameworks, and robust public infrastructure. It emphasizes the pivotal role of artificial intelligence and frontier technologies in driving Nepal’s socio-economic evolution and fostering a sustainable innovation culture.
           </p>
@@ -134,9 +134,6 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
       <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-8 space-y-4">
-            <span className="px-2.5 py-1 bg-dnc-blue/5 text-dnc-blue text-xs font-bold rounded-md font-mono uppercase tracking-wider">
-              About IFN (Est. 2021)
-            </span>
             <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-dnc-black">
               ICT Foundation Nepal (IFN)
             </h2>
@@ -152,36 +149,34 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
               </p>
             </div>
 
-            <div className="pt-4">
+          </div>
+
+          {/* Parent grid item container */}
+          <div className="md:col-span-4 flex flex-col gap-4">
+            
+            {/* 1. The Image Placeholder Box (Scaled down size) */}
+            <div className="bg-slate border border-slate-100 rounded-2xl p-6 flex flex-col items-center justify-center h-[200px] w-full group overflow-hidden relative">
+              <img 
+                src="/images/IFN-Logo.png" 
+                alt="ICT Foundation Nepal Logo" 
+                className="h-50 w-auto object-contain max-w-full transition-transform duration-300 group-hover:scale-105" 
+              /> 
+            </div>
+
+            {/* 2. The Action Button (Positioned completely outside & below) */}
+            <div className="flex justify-center">
               <a
                 href="https://ictfoundation.org.np"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-dnc-blue hover:bg-dnc-blue-light text-white font-bold text-xs rounded-xl transition duration-200"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-dnc-blue hover:bg-opacity-90 text-white font-sans font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-2xs hover:shadow-xs"
               >
-                <Globe className="w-4 h-4 text-dnc-orange" />
+                <Globe className="w-4 h-4 text-white" />
                 Visit Official IFN Website
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
               </a>
             </div>
-          </div>
 
-          <div className="md:col-span-4 bg-slate-50 border border-slate-100 rounded-2xl p-6">
-            <h4 className="font-display font-bold text-sm text-slate-900 border-b border-slate-200 pb-3 mb-4 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-dnc-blue" />
-              Core Core Values
-            </h4>
-            <ul className="space-y-3.5 text-xs text-slate-600">
-              <li>
-                <strong className="text-dnc-black">Sovereignty:</strong> Empowering self-reliant, ethical data and cloud policies.
-              </li>
-              <li>
-                <strong className="text-dnc-black">Literacy:</strong> Upskilling remote municipal officials to embrace paperless state registers.
-              </li>
-              <li>
-                <strong className="text-dnc-black">Ecosystems:</strong> Connecting venture capitalist routes down into local campus level projects.
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -192,7 +187,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
           <h3 className="font-display font-bold text-xl sm:text-2xl text-slate-900">
             Pioneering National Initiatives
           </h3>
-          <p className="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wide">
+          <p className="text-sm font-semibold text-slate-500 mt-1 uppercase tracking-wide">
             Our ecosystem of tech progress
           </p>
         </div>
@@ -221,83 +216,85 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
   );
 
   const renderTeam = () => (
-    <div id="about-team-view" className="space-y-16 animate-infinite-slide">
+  <div id="about-team-view" className="space-y-16 animate-infinite-slide">
 
-      {/* Board & Specialist */}
-      <div>
-        <div className="text-center mb-10 max-w-lg mx-auto">
-          <span className="px-2 py-1 bg-dnc-orange/5 text-dnc-orange text-xs font-bold rounded font-mono uppercase tracking-widest">
-            The Planners
-          </span>
-          <h3 className="font-display font-bold text-2xl text-slate-900 mt-2">
-            Organizing Committee & Specialists
-          </h3>
-          <p className="text-xs text-slate-500 mt-1 font-sans">
-            Crafting the architecture of multi-layered public deliberations.
-          </p>
-        </div>
+    {/* Team Section */}
+    <div>
+      <div className="text-center mb-10 max-w-lg mx-auto">
+        <span className="px-2 py-1 bg-dnc-blue/5 text-dnc-blue text-2xl font-bold rounded font-sans uppercase tracking-widest">
+          Our Team
+        </span>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {TEAM_MEMBERS.map((member, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-5 border border-slate-100 shadow-xs flex items-center gap-4 hover:shadow-md hover:border-slate-200 transition"
-            >
-              <div className="w-12 h-12 rounded-full bg-slate-100 border border-slate-200 font-display font-bold text-slate-700 flex items-center justify-center shrink-0">
-                {member.avatarText || "IFN"}
-              </div>
-              <div>
-                <h4 className="font-display font-bold text-sm text-slate-900 leading-tight">{member.name}</h4>
-                <p className="text-xs text-dnc-orange leading-tight mt-0.5">{member.role}</p>
-                <span className="inline-block mt-2 px-2 py-0.5 bg-slate-50 text-[10px] uppercase font-mono font-bold tracking-widest text-slate-400">
-                  {member.category}
-                </span>
-              </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {TEAM_MEMBERS.map((member, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl p-6 border border-slate-100 shadow-2xs flex flex-col items-center text-center hover:shadow-md hover:border-slate-200 transition-all duration-300 group"
+          >
+            {/* Circular Photo Placeholder */}
+            <div className="w-36 h-36 rounded-full bg-slate-50 border border-slate-100 font-display font-bold text-slate-400 flex items-center justify-center mb-4 overflow-hidden group-hover:border-dnc-orange/30 transition-colors duration-300 shrink-0">
+              {member.imageUrl ? (
+                <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-xl tracking-wider">{member.avatarText || "IFN"}</span>
+              )}
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Patrons */}
-      <div id="advisory-patrons">
-        <div className="text-center mb-10 max-w-lg mx-auto">
-          <span className="px-2 py-1 bg-dnc-blue/5 text-dnc-blue text-xs font-bold rounded font-mono uppercase tracking-widest">
-            Advisors
-          </span>
-          <h3 className="font-display font-bold text-2xl text-slate-900 mt-2">
-            Esteemed Patrons & Brains
-          </h3>
-          <p className="text-xs text-slate-500 mt-1 font-sans">
-            Guiding Nepal&apos;s frameworks through years of technical, legal, and operational service.
-          </p>
-        </div>
+            {/* Name */}
+            <h4 className="font-display font-bold text-base text-slate-900 leading-tight mb-1">
+              {member.name}
+            </h4>
 
-        <div className="bg-white rounded-3xl border border-slate-100 p-8 shadow-2xs">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {PATRONS.map((patron, index) => (
-              <div
-                key={index}
-                className="p-5 bg-slate-50/50 rounded-2xl border border-slate-50/80 hover:bg-slate-50 transition"
-              >
-                <div className="flex items-start gap-3.5">
-                  <div className="p-2 bg-white rounded-lg shadow-2xs border border-slate-100 text-dnc-blue shrink-0">
-                    <Award className="w-5 h-5 text-dnc-orange" />
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-sm text-slate-900">{patron.name}</h4>
-                    <p className="text-xs text-slate-500 font-medium leading-relaxed mt-1">
-                      {patron.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {/* Designation */}
+            <p className="text-sm font-medium text-dnc-blue leading-snug">
+              {member.role}
+            </p>
+
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Patrons Section */}
+    <div id="advisory-patrons">
+      <div className="text-center mb-10 max-w-lg mx-auto">
+        <span className="px-2 py-1 bg-dnc-blue/5 text-dnc-blue text-2xl font-bold rounded font-sans uppercase tracking-widest">
+          Our Patrons
+        </span>
       </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {PATRONS.map((patron, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl p-6 border border-slate-100 shadow-2xs flex flex-col items-center text-center hover:shadow-md hover:border-slate-200 transition-all duration-300 group"
+          >
+            {/* Circular Photo Placeholder matching Team profile sizes */}
+            <div className="w-36 h-36 rounded-full bg-slate-50 border border-slate-100 font-display font-bold text-slate-400 flex items-center justify-center mb-4 overflow-hidden group-hover:border-dnc-blue/30 transition-colors duration-300 shrink-0">
+              {patron.imageUrl ? (
+                <img src={patron.imageUrl} alt={patron.name} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-xl tracking-wider text-slate-300">Patron</span>
+              )}
+            </div>
+
+            {/* Name */}
+            <h4 className="font-display font-bold text-base text-slate-900 leading-tight mb-1">
+              {patron.name}
+            </h4>
+
+            {/* Designation */}
+            <p className="text-sm font-medium text-dnc-blue leading-snug">
+              {patron.role}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
-  );
+
+  </div>
+);
 
   return (
     <div id="about-group-page" className="bg-white py-12">
@@ -313,24 +310,24 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
           <div className="mt-6 inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200/50">
             <button
               onClick={() => onSubSectionChange("event")}
-              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${currentSubSection === "event" ? "bg-white text-dnc-blue shadow-xs" : "text-slate-600 hover:text-slate-900"
+              className={`px-5 py-2 rounded-xl text-sm sm:text-sm font-semibold transition ${currentSubSection === "event" ? "bg-white text-dnc-blue shadow-xs" : "text-slate-600 hover:text-slate-900"
                 }`}
             >
               About the Event
             </button>
             <button
               onClick={() => onSubSectionChange("organizer")}
-              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${currentSubSection === "organizer" ? "bg-white text-dnc-orange shadow-xs" : "text-slate-600 hover:text-slate-900"
+              className={`px-5 py-2 rounded-xl text-sm sm:text-sm font-semibold transition ${currentSubSection === "organizer" ? "bg-white text-dnc-orange shadow-xs" : "text-slate-600 hover:text-slate-900"
                 }`}
             >
               The Organizer (IFN)
             </button>
             <button
               onClick={() => onSubSectionChange("team")}
-              className={`px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition ${currentSubSection === "team" ? "bg-white text-dnc-black shadow-xs" : "text-slate-600 hover:text-slate-900"
+              className={`px-5 py-2 rounded-xl text-sm sm:text-sm font-semibold transition ${currentSubSection === "team" ? "bg-white text-dnc-black shadow-xs" : "text-slate-600 hover:text-slate-900"
                 }`}
             >
-              Team & Guests
+              Team & Patrons
             </button>
           </div>
         </div>

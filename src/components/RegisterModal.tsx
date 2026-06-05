@@ -63,14 +63,14 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
           /* REGISTRATION FORM VIEW */
           <div className="p-6 sm:p-8 space-y-6">
             <div className="text-center">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-xs font-mono font-bold rounded-full uppercase tracking-wider mb-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-2">
                 <Ticket className="w-3.5 h-3.5 text-dnc-orange animate-spin" />
                 DNC 2026 Digital Pass Portal
               </span>
               <h2 className="font-display font-extrabold text-xl sm:text-2xl text-slate-950 tracking-tight leading-none mt-1">
                 Register Securely Now
               </h2>
-              <p className="text-xs text-slate-500 mt-2 font-sans leading-relaxed">
+              <p className="text-sm text-slate-500 mt-2 font-sans leading-relaxed">
                 Provide credentials below to instant compile your gatepass confirmation. Standard delegates have complete access to B2B pitch suites.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             <form onSubmit={handleRegisterSubmit} className="space-y-4">
               
               <div>
-                <label className="block text-xs font-bold text-slate-650 mb-1">Full Name *</label>
+                <label className="block text-sm font-bold text-slate-650 mb-1">Full Name *</label>
                 <input
                   type="text"
                   placeholder="E.g., Dr. Roshan Pokharel"
@@ -87,12 +87,12 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                     setFormData({ ...formData, fullName: e.target.value });
                     setValidationError("");
                   }}
-                  className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                  className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-65) mb-1">Professional Email *</label>
+                <label className="block text-sm font-bold text-slate-65) mb-1">Professional Email *</label>
                 <input
                   type="email"
                   placeholder="name@organization.com"
@@ -101,40 +101,40 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                     setFormData({ ...formData, email: e.target.value });
                     setValidationError("");
                   }}
-                  className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                  className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Organization</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Organization</label>
                   <input
                     type="text"
                     placeholder="Enter entity"
                     value={formData.org}
                     onChange={(e) => setFormData({ ...formData, org: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Phone Contact</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Phone Contact</label>
                   <input
                     type="text"
                     placeholder="+977-98..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Registration Role</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Registration Role</label>
                   <select
                     value={formData.roleType}
                     onChange={(e) => setFormData({ ...formData, roleType: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   >
                     <option value="Delegate">General Delegate</option>
                     <option value="VIP Invite">VIP Corporate Invitee</option>
@@ -145,11 +145,11 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-600 mb-1">Primary Thematic Track</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-1">Primary Thematic Track</label>
                   <select
                     value={formData.primaryTrack}
                     onChange={(e) => setFormData({ ...formData, primaryTrack: e.target.value })}
-                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-xs sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
+                    className="w-full px-3 py-2 bg-slate-50 border rounded-xl text-sm sm:text-sm text-slate-700 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue"
                   >
                     <option value="Governance & DPI">Governance & DPI Track</option>
                     <option value="Data & AI Sovereignty">Data & AI Track</option>
@@ -159,21 +159,21 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
               </div>
 
               {validationError && (
-                <p className="text-red-550 text-xs font-semibold bg-red-50 p-2.5 rounded-lg border border-red-200">
+                <p className="text-red-550 text-sm font-semibold bg-red-50 p-2.5 rounded-lg border border-red-200">
                   ⚠️ {validationError}
                 </p>
               )}
 
               <button
                 type="submit"
-                className="w-full py-3 bg-dnc-blue hover:bg-dnc-blue-light transition font-bold text-xs uppercase tracking-wider text-white rounded-xl shadow-md cursor-pointer"
+                className="w-full py-3 bg-dnc-blue hover:bg-dnc-blue-light transition font-bold text-sm uppercase tracking-wider text-white rounded-xl shadow-md cursor-pointer"
               >
                 Assemble Free Event Pass →
               </button>
 
             </form>
 
-            <p className="text-[10px] text-slate-400 font-mono text-center">
+            <p className="text-[10px] text-slate-400 font-sans text-center">
               * Verification passes are compiled locally on the sandbox environment instantly.
             </p>
           </div>
@@ -186,7 +186,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
               <h2 className="font-display font-extrabold text-lg text-slate-900 leading-tight">
                 Gate Pass Confirmed & Compiled!
               </h2>
-              <p className="text-xs text-slate-500 font-sans">
+              <p className="text-sm text-slate-500 font-sans">
                 Below is your official compiled pass for Digital Nepal Conclave 2026.
               </p>
             </div>
@@ -198,36 +198,36 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
               <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-dnc-blue via-dnc-orange to-dnc-red"></div>
 
               <div className="flex justify-between items-baseline pt-2">
-                <span className="text-[10px] uppercase tracking-widest text-dnc-orange font-mono font-bold">DIGITAL NEPAL CONCLAVE 2026</span>
-                <span className="text-[9px] font-bold text-slate-400 font-mono">CODE: {ticketId}</span>
+                <span className="text-[10px] uppercase tracking-widest text-dnc-orange font-sans font-bold">DIGITAL NEPAL CONCLAVE 2026</span>
+                <span className="text-[9px] font-bold text-slate-400 font-sans">CODE: {ticketId}</span>
               </div>
 
               <div className="mt-4 space-y-1.5 border-b border-slate-200 pb-4">
-                <p className="text-xs text-slate-400 font-mono uppercase tracking-wider leading-none">VIP GUEST / DELEGATE</p>
+                <p className="text-sm text-slate-400 font-sans uppercase tracking-wider leading-none">VIP GUEST / DELEGATE</p>
                 <h3 className="font-display font-bold text-base sm:text-lg text-slate-900 mb-1">{formData.fullName}</h3>
                 
                 {formData.org && (
-                  <p className="text-xs font-semibold text-slate-600 leading-normal">Representing: {formData.org}</p>
+                  <p className="text-sm font-semibold text-slate-600 leading-normal">Representing: {formData.org}</p>
                 )}
-                <p className="text-xs text-slate-500">Contact Route: {formData.email}</p>
+                <p className="text-sm text-slate-500">Contact Route: {formData.email}</p>
               </div>
 
               <div className="grid grid-cols-2 gap-4 py-3.5">
                 <div>
-                  <p className="text-[9px] text-slate-400 font-mono tracking-widest uppercase">TRACK REGION</p>
-                  <p className="text-xs font-bold text-dnc-blue">{formData.primaryTrack}</p>
+                  <p className="text-[9px] text-slate-400 font-sans tracking-widest uppercase">TRACK REGION</p>
+                  <p className="text-sm font-bold text-dnc-blue">{formData.primaryTrack}</p>
                 </div>
                 <div>
-                  <p className="text-[9px] text-slate-400 font-mono tracking-widest uppercase">VENUE VENUE</p>
-                  <p className="text-xs font-semibold text-slate-800">The Plaza, Pulchowk</p>
+                  <p className="text-[9px] text-slate-400 font-sans tracking-widest uppercase">VENUE VENUE</p>
+                  <p className="text-sm font-semibold text-slate-800">The Plaza, Pulchowk</p>
                 </div>
                 <div>
-                  <p className="text-[9px] text-slate-400 font-mono tracking-widest uppercase">CONFERENCE SECTOR</p>
-                  <p className="text-xs font-semibold text-dnc-orange font-mono uppercase tracking-wide">{formData.roleType}</p>
+                  <p className="text-[9px] text-slate-400 font-sans tracking-widest uppercase">CONFERENCE SECTOR</p>
+                  <p className="text-sm font-semibold text-dnc-orange font-sans uppercase tracking-wide">{formData.roleType}</p>
                 </div>
                 <div>
-                  <p className="text-[9px] text-slate-400 font-mono tracking-widest uppercase">DATE & CONTEXT</p>
-                  <p className="text-xs font-semibold text-slate-800">3rd July 2026, 9:00 AM</p>
+                  <p className="text-[9px] text-slate-400 font-sans tracking-widest uppercase">DATE & CONTEXT</p>
+                  <p className="text-sm font-semibold text-slate-800">3rd July 2026, 9:00 AM</p>
                 </div>
               </div>
 
@@ -245,7 +245,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                     ))}
                   </div>
                 </div>
-                <span className="font-mono text-[9px] text-slate-400 mt-1 block uppercase tracking-widest">
+                <span className="font-sans text-[9px] text-slate-400 mt-1 block uppercase tracking-widest">
                   GATE VERIFIED • {ticketId}
                 </span>
               </div>
@@ -256,7 +256,7 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
             <div className="pt-4 flex gap-3">
               <button
                 onClick={handlePrint}
-                className="w-1/2 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-2xs"
+                className="w-1/2 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm rounded-xl transition flex items-center justify-center gap-1.5 shadow-2xs"
               >
                 <Printer className="w-4 h-4 text-dnc-orange-light" />
                 Print Ticket Pass
@@ -267,14 +267,14 @@ export default function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
                   setRegisterState("form");
                   onClose();
                 }}
-                className="w-1/2 py-2.5 bg-dnc-blue hover:bg-dnc-blue-light text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5"
+                className="w-1/2 py-2.5 bg-dnc-blue hover:bg-dnc-blue-light text-white font-bold text-sm rounded-xl transition flex items-center justify-center gap-1.5"
               >
                 <CheckCircle className="w-4 h-4" />
                 Done & Acknowledge
               </button>
             </div>
 
-            <p className="text-[10px] text-slate-400 font-mono">
+            <p className="text-[10px] text-slate-400 font-sans">
               ★ Security note: Please download or save a snapshot of this compiled ticket. Present the digital scan for verification on July 3rd, 2026.
             </p>
 

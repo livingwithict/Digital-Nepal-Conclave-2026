@@ -41,7 +41,7 @@ export default function PublicationsComponent() {
         
         {/* Header Block */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-xs font-mono font-bold rounded-full uppercase tracking-wider mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
             <BookOpen className="w-4 h-4 text-dnc-orange" />
             IFN Knowledge Catalog
           </span>
@@ -61,7 +61,7 @@ export default function PublicationsComponent() {
               placeholder="Search Reports by keyword or year..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-xs sm:text-sm text-slate-700 placeholder-slate-400 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue focus:bg-white"
+              className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-sm sm:text-sm text-slate-700 placeholder-slate-400 focus:outline-hidden focus:ring-1 focus:ring-dnc-blue focus:bg-white"
             />
             <Search className="absolute right-3.5 top-3.5 w-4.5 h-4.5 text-slate-400" />
           </div>
@@ -93,18 +93,18 @@ export default function PublicationsComponent() {
 
                 <div className="flex flex-col justify-between min-w-0">
                   <div>
-                    <span className="text-[9px] uppercase tracking-wider text-dnc-orange font-mono font-bold">
+                    <span className="text-[12px] uppercase tracking-wider text-dnc-orange font-sans font-bold">
                       {pub.type} • {pub.year}
                     </span>
-                    <h3 className="font-display font-bold text-xs sm:text-sm text-slate-900 leading-snug mt-1 truncate">
+                    <h3 className="font-display font-bold text-sm sm:text-sm text-slate-900 leading-snug mt-1 truncate">
                       {pub.title}
                     </h3>
-                    <p className="text-[11px] text-slate-500 leading-snug font-sans mt-2 line-clamp-2">
+                    {/* <p className="text-[11px] text-slate-500 leading-snug font-sans mt-2 line-clamp-2">
                       {pub.description}
-                    </p>
+                    </p> */}
                   </div>
 
-                  <span className="text-[10px] text-dnc-blue font-bold hover:underline mt-2 inline-block">
+                  <span className="text-[11px] text-dnc-blue font-bold hover:underline mt-2 inline-block">
                     Review Actions →
                   </span>
                 </div>
@@ -126,7 +126,7 @@ export default function PublicationsComponent() {
                     />
                   </div>
                   
-                  <span className="px-2.5 py-0.5 bg-dnc-orange/5 text-dnc-orange border border-dnc-orange/10 text-[9px] font-mono font-bold rounded uppercase">
+                  <span className="px-2.5 py-0.5 bg-dnc-orange/5 text-dnc-orange border border-dnc-orange/10 text-[9px] font-sans font-bold rounded uppercase">
                     {selectedPub.type} • {selectedPub.year}
                   </span>
                   
@@ -136,60 +136,23 @@ export default function PublicationsComponent() {
                 </div>
 
                 <div className="space-y-3.5">
-                  <p className="text-xs text-slate-600 leading-relaxed font-sans text-justify">
+                  <p className="text-sm text-slate-600 leading-relaxed font-sans text-justify">
                     {selectedPub.description}
                   </p>
 
-                  {/* Simulated Core Directives */}
-                  <div className="bg-white border rounded-xl p-4 border-slate-200/50 space-y-2">
-                    <p className="font-bold text-[10px] font-mono text-slate-400 uppercase tracking-widest flex items-center gap-1">
-                      <Award className="w-3.5 h-3.5 text-dnc-blue" />
-                      Key National Policy Directives:
-                    </p>
-                    <ul className="text-[11px] text-slate-600 space-y-1.5 font-sans">
-                      <li className="flex gap-1.5 items-start">
-                        <span className="text-dnc-orange font-bold">•</span>
-                        <span>Multi-layer secure public cloud framework parameters.</span>
-                      </li>
-                      <li className="flex gap-1.5 items-start">
-                        <span className="text-dnc-blue font-bold">•</span>
-                        <span>Securing sovereign retail transactions with interoperable nodes.</span>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
 
-                {/* Virtual Progress Bar Button */}
+                {/* Download link */}
                 <div>
-                  <button
-                    onClick={() => handleDownload(selectedPub.id, selectedPub.title)}
-                    disabled={downloadProgress[selectedPub.id] !== undefined && downloadProgress[selectedPub.id] < 100}
-                    className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition duration-200 ${
-                      downloadProgress[selectedPub.id] === 100
-                        ? "bg-emerald-600 text-white"
-                        : "bg-dnc-blue hover:bg-dnc-blue-light text-white shadow-xs"
-                    }`}
+                  <a
+                    href={selectedPub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-4 bg-dnc-blue hover:bg-opacity-90 text-white rounded-xl font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow transition-all duration-200"
                   >
-                    <Download className="w-4 h-4 text-dnc-orange" />
-                    {downloadProgress[selectedPub.id] === undefined && "Compile & Download PDF"}
-                    {downloadProgress[selectedPub.id] !== undefined && downloadProgress[selectedPub.id] < 100 && (
-                      <span className="flex items-center gap-1">
-                        <Hourglass className="w-3.5 h-3.5 animate-spin" />
-                        Generating {downloadProgress[selectedPub.id]}%
-                      </span>
-                    )}
-                    {downloadProgress[selectedPub.id] === 100 && "Download Complete! Saved"}
-                  </button>
-
-                  {/* Visual simulated progress bar */}
-                  {downloadProgress[selectedPub.id] !== undefined && (
-                    <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden mt-2.5">
-                      <div 
-                        className="bg-dnc-orange h-full transition-all duration-150"
-                        style={{ width: `${downloadProgress[selectedPub.id]}%` }}
-                      ></div>
-                    </div>
-                  )}
+                    See Full Report
+                    {/* <span className="text-dnc-orange text-lg leading-none transform translate-y-[-1px]">↗</span> */}
+                  </a>
                 </div>
 
               </div>

@@ -35,7 +35,7 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
 
   const navItemClass = (pageIds: PageId[]) => {
     const isSelected = pageIds.includes(activePage);
-    return `relative px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 cursor-pointer ${isSelected
+    return `relative px-3 py-2 text-sm font-bold uppercase tracking-wider transition-colors duration-200 cursor-pointer ${isSelected
         ? "text-dnc-blue font-extrabold"
         : "text-slate-600 hover:text-dnc-blue"
       }`;
@@ -228,9 +228,9 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
             <button
               id="desktop-register-button"
               onClick={onRegisterClick}
-              className="bg-dnc-orange hover:bg-dnc-orange-light text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-orange-200/50 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5"
+              className="bg-dnc-orange hover:bg-dnc-orange-light text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-orange-200/50 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5"
             >
-              <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" />
+              {/* <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" /> */}
               Register Now
             </button>
           </div>
@@ -262,7 +262,7 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
 
             {/* About Collapsible Section */}
             <div className="border-t border-slate-50 pt-2">
-              <div className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+              <div className="px-4 py-2 text-sm font-bold uppercase tracking-wider text-slate-400">
                 About Conclave
               </div>
               <button
@@ -301,7 +301,7 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
 
             {/* Past Events Collapsible Section */}
             <div className="border-t border-slate-50 pt-2">
-              <div className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+              <div className="px-4 py-2 text-sm font-bold uppercase tracking-wider text-slate-400">
                 Past Editions
               </div>
               <button
@@ -360,7 +360,7 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
                 }}
                 className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-3 text-sm font-bold uppercase tracking-wider rounded-full text-white bg-dnc-orange hover:bg-dnc-orange-light shadow-md shadow-orange-200/50"
               >
-                <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" />
+                {/* <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" /> */}
                 Register Now
               </button>
             </div>

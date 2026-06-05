@@ -1,9 +1,22 @@
 import React from "react";
-import { Calendar, MapPin, Compass, Lightbulb, Sparkles, Clock, Globe } from "lucide-react";
+import { 
+  Calendar, 
+  MapPin, 
+  Compass, 
+  Lightbulb, 
+  Sparkles, 
+  Clock, 
+  Globe, 
+  Shield, 
+  Database, 
+  TrendingUp, 
+  ArrowRight,
+  ChevronRight,
+  CheckCircle2
+} from "lucide-react";
 
 export default function ThemeDateVenue() {
   const handleAddToCalendar = () => {
-    // Generate standard google calendar event link safely
     const title = encodeURIComponent("Digital Nepal Conclave 2026");
     const dates = "20260703T031500Z/20260703T121500Z"; // UTC bounds
     const details = encodeURIComponent("Reimagining Governance, Data and the Digital Economy.");
@@ -13,163 +26,269 @@ export default function ThemeDateVenue() {
   };
 
   const handleOpenMap = () => {
-    const coords = "27.6756,85.3151"; // Pulchowk Lalitpur coordinates
-    const url = `https://www.google.com/maps/search/?api=1&query=${coords}`;
+    const coords = "27.6756,85.3151"; 
+    const url = `https://maps.app.goo.gl/ivnTe9m2cAai8x3g6`;
     window.open(url, "_blank");
   };
 
   return (
-    <section className="bg-white py-20 relative overflow-hidden">
-      {/* Decorative Top Accent */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+    <div className="w-full">
+      
+      {/* SECTION 1: THE EVENT PLENARY THEME & THREE STRATEGIC PILLARS */}
+      <section className="bg-white py-24 relative overflow-hidden">
+        {/* Soft floating grids */}
+        <div className="absolute top-1/2 -left-32 w-96 h-96 bg-dnc-blue/[0.03] rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 -right-32 w-96 h-96 bg-dnc-orange/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <div className="absolute top-1/2 -left-32 w-96 h-96 bg-dnc-blue/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-dnc-orange/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-
-        {/* Creative Top Headline Grid */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-dnc-orange tracking-widest bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-100 mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-dnc-blue animate-spin" />
-            Conclave Anchors
-          </div>
-          <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
-            The Theme, Schedule & Hub
-          </h2>
-          <p className="mt-4 text-xs font-mono text-slate-500 uppercase tracking-widest">
-            ★ Core Event Architecture for 2026 Deluxe Summit
-          </p>
-        </div>
-
-        {/* The Creative Bento Architecture Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-
-          {/* THE BENCHMARK THEME: 7 Columns */}
-          <div className="lg:col-span-7 bg-slate-50 rounded-3xl border border-slate-100 p-8 sm:p-10 flex flex-col justify-between hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
-            {/* Visual Grid Art */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-dnc-blue/10 to-transparent rounded-full pointer-events-none group-hover:scale-110 transition-transform duration-500" />
-
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-dnc-blue/10 text-dnc-blue rounded-xl text-xs font-bold font-mono tracking-wide uppercase mb-6 border border-dnc-blue/10">
-                <Lightbulb className="w-4 h-4 text-dnc-orange animate-pulse" />
-                Strategic Plenary Theme
-              </div>
-
-              <h3 className="font-display font-black text-2xl sm:text-3.5xl md:text-3xl text-slate-900 leading-tight tracking-tight max-w-xl">
-                Reimagining <span className="text-dnc-blue">Governance</span>, <span className="text-dnc-orange">Data</span> & the <span className="text-dnc-red">Digital Economy</span>
-              </h3>
-
-              <p className="mt-5 text-sm text-slate-600 leading-relaxed font-sans text-justify max-w-2xl">
-                This theme underpins our central effort to accelerate public infrastructure digitization in Nepal. We explore secure cloud architecture, open API access parameters for developer networks, and cross-border digital financial systems to empower localized economic ecosystems.
-              </p>
-            </div>
-
-            {/* Interactive pillar highlights tags */}
-            <div className="mt-8 pt-6 border-t border-slate-200/60 grid grid-cols-3 gap-3.5">
-              <div className="p-3 bg-white border border-slate-100 rounded-2xl text-center shadow-2xs group-hover:border-dnc-blue transition-colors">
-                <p className="text-[10px] uppercase font-bold text-slate-400 font-mono">Pillar 01</p>
-                <p className="text-[12px] font-black text-slate-800 mt-1">Faceless Gov</p>
-              </div>
-              <div className="p-3 bg-white border border-slate-100 rounded-2xl text-center shadow-2xs group-hover:border-dnc-orange transition-colors">
-                <p className="text-[10px] uppercase font-bold text-slate-400 font-mono">Pillar 02</p>
-                <p className="text-[12px] font-black text-slate-800 mt-1">Sovereign Data</p>
-              </div>
-              <div className="p-3 bg-white border border-slate-100 rounded-2xl text-center shadow-2xs group-hover:border-dnc-red transition-colors">
-                <p className="text-[10px] uppercase font-bold text-slate-400 font-mono">Pillar 03</p>
-                <p className="text-[12px] font-black text-slate-800 mt-1">Smart Capital</p>
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          
+          {/* Header detailing Theme intent */}
+          <div className="max-w-3xl mb-16">
+            {/* <div className="inline-flex items-center gap-1.5 text-sm font-sans font-bold uppercase text-dnc-blue tracking-widest bg-blue-50/80 px-3.5 py-1.5 rounded-xl border border-blue-100/50 mb-3.5">
+              <Lightbulb className="w-3.5 h-3.5 text-dnc-orange animate-pulse" />
+              Strategic Blueprint
+            </div> */}
+            
+            <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-none mb-6">
+              Reimagining <span className="text-dnc-blue">Governance</span>, <span className="text-[#eb0000]">Data</span> & the <span className="text-dnc-orange">Digital Economy</span>
+            </h2>
+            
+            <p className="text-slate-650 text-sm sm:text-base leading-relaxed font-sans max-w-4xl text-justify">
+              This global-standard theme underpins our central effort to accelerate structural and digital transformation across Nepal. It aims to bridge public-facing systems with resilient cloud blueprints, establish data sovereign pathways for enterprise networks, and integrate robust cross-border financial architectures that foster inclusive national empowerment.
+            </p>
           </div>
 
-          {/* CHRONO SCHEDULE: 5 Columns */}
-          <div className="lg:col-span-5 grid grid-cols-1 gap-8">
+          {/* Core Strategic Pillars Sub-Grid */}
+          <div className="mt-12">
 
-            {/* THE CREATIVE CALENDAR CARD */}
-            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-              {/* Corner Calendar Leaf graphic */}
-              <div className="w-full sm:w-28 bg-white rounded-2xl border border-slate-150 shadow-sm flex flex-col overflow-hidden shrink-0">
-                <div className="bg-[#eb0000] text-white text-[10px] font-mono font-bold text-center py-1.5 uppercase tracking-wider">
-                  JULY 2026
-                </div>
-                <div className="flex flex-col items-center justify-center py-4 px-2 select-none">
-                  <span className="font-display font-black text-4xl text-slate-900 leading-none">03</span>
-                  <span className="text-[9px] font-mono font-bold text-dnc-blue mt-1 uppercase tracking-widest">FRIDAY</span>
-                </div>
-                <div className="border-t border-dashed border-slate-200 bg-slate-50 py-1 text-center text-[8px] font-mono font-bold text-slate-500">
-                  ASAR 19, 2083
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-between">
+            {/* 3 Pillar Bento Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* PILLAR 1: GOVERNANCE & DPI */}
+              <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:border-dnc-blue/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2.5 h-full bg-dnc-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                
                 <div>
-                  <div className="inline-flex items-center gap-1 text-[10px] font-bold text-[#eb0000] font-mono uppercase tracking-widest mb-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    Chrono Schedule
+                  <div className="w-12 h-12 rounded-2xl bg-dnc-blue/10 flex items-center justify-center text-dnc-blue mb-6 border border-dnc-blue/10 group-hover:scale-105 transition-transform duration-300">
+                    <Shield className="w-6 h-6" />
                   </div>
-                  <h4 className="font-display font-bold text-base text-slate-900 leading-tight">
-                    Dual Chronological Tracking
+                  
+                  <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-dnc-blue transition-colors mb-4">
+                    Governance & Digital Public Infrastructure (DPI)
                   </h4>
-                  <p className="text-xs text-slate-550 mt-1.5 leading-relaxed font-sans">
-                    Friday | Asar 19, 2083 Bikram Sambat. Plenary gates open at 08:30 AM NST with opening addresses starting at 09:30 AM sharp.
-                  </p>
-                </div>
-
-                <div className="mt-4">
-                  <button
-                    onClick={handleAddToCalendar}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-dnc-blue hover:bg-[#eb0000] text-white text-[10px] font-bold font-mono uppercase tracking-wider rounded-xl transition duration-200 shadow-3xs cursor-pointer"
-                  >
-                    <Clock className="w-3.5 h-3.5" />
-                    Sync with Calendar →
-                  </button>
+                  
+                  <ul className="space-y-3">
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
+                      <span>Institutional digital reform and transformative public delivery.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
+                      <span>Citizen-centric smart services and integrated Digital ID frameworks.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
+                      <span>Strategic policymaking through transparent, data-centric governance.</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
 
-            {/* THE CREATIVE VENUE CARD */}
-            <div className="bg-slate-50 rounded-3xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-6 hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-              {/* Miniature Technical Compass Schematic */}
-              <div className="w-full sm:w-28 bg-slate-900 rounded-2xl border border-slate-800 flex flex-col items-center justify-center p-3 text-center shrink-0 shadow-sm relative overflow-hidden">
-                {/* Simulated blueprint circular lines */}
-                <div className="absolute inset-0 border border-white/[0.04] rounded-full scale-[1.5] animate-spin pointer-events-none" style={{ animationDuration: "25s" }} />
-                <MapPin className="w-8 h-8 text-dnc-orange" />
-                <span className="text-[8px] font-mono font-bold text-slate-400 mt-2 uppercase block">Coordinates</span>
-                <span className="text-[9px] font-mono text-dnc-orange-light font-bold mt-0.5 leading-none block">27.6756° N</span>
-                <span className="text-[9px] font-mono text-dnc-orange-light font-bold leading-none block">85.3151° E</span>
-              </div>
-
-              <div className="flex flex-col justify-between">
+              {/* PILLAR 2: DATA, AI & CYBERSECURITY */}
+              <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:border-dnc-orange/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2.5 h-full bg-[#eb0000] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                
                 <div>
-                  <div className="inline-flex items-center gap-1 text-[10px] font-bold text-dnc-orange font-mono uppercase tracking-widest mb-1.5">
-                    <Compass className="w-3.5 h-3.5" />
-                    Corporate Hub
+                  <div className="w-12 h-12 rounded-2xl bg-[#eb0000]/10 flex items-center justify-center text-[#eb0000] mb-6 border border-[#eb0000]/10 group-hover:scale-105 transition-transform duration-300">
+                    <Database className="w-6 h-6" />
                   </div>
-                  <h4 className="font-display font-bold text-base text-slate-900 leading-tight">
-                    The Plaza, Pulchowk
+                  
+                  <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-[#eb0000] transition-colors mb-4">
+                    Data, AI & Robust Cybersecurity
                   </h4>
-                  <p className="text-xs text-slate-555 mt-1.5 leading-relaxed font-sans">
-                    Lalitpur, Nepal. The tech heart of the country, adjacent to core engineering departments, smart ministries and financial headquarters.
-                  </p>
-                </div>
-
-                <div className="mt-4">
-                  <button
-                    onClick={handleOpenMap}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-[10px] font-bold font-mono uppercase tracking-wider rounded-xl transition duration-200 shadow-3xs cursor-pointer"
-                  >
-                    <Globe className="w-3.5 h-3.5 text-dnc-orange" />
-                    Open Google Maps →
-                  </button>
+                  
+                  <ul className="space-y-3">
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
+                      <span>Establishing national data sovereignty guidelines and cloud standards.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
+                      <span>Responsible, ethical AI integration within enterprise operations.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
+                      <span>Building cross-sector database interoperability and digital trust.</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
 
+              {/* PILLAR 3: DIGITAL ECONOMY */}
+              <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:border-dnc-orange/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2.5 h-full bg-dnc-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-dnc-orange/10 flex items-center justify-center text-dnc-orange mb-6 border border-dnc-orange/10 group-hover:scale-105 transition-transform duration-300">
+                    <TrendingUp className="w-6 h-6" />
+                  </div>
+                  
+                  <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-dnc-orange transition-colors mb-4">
+                    Digital Economy & Innovation Ecosystems
+                  </h4>
+                  
+                  <ul className="space-y-3">
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
+                      <span>Advancing instant micro-payments and regional cross-border gateways.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
+                      <span>Scaling local startup accelerators and optimizing digital e-trade corridors.</span>
+                    </li>
+                    <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
+                      <span>Retaining young developers and boosting tech resource export capabilities.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section>
+      {/* SECTION 2: THE NEXT SESSION - COGNITIVE EVENT DATE & VENUE */}
+      <section className="relative bg-gradient-to-b from-[#0d0f2b] to-[#111332] py-24 text-white overflow-hidden border-t border-white/[0.04]">
+        
+        {/* Subtle Mountain Outline Silhouette to capture the high-peak Himalayan vibe */}
+        <div className="absolute inset-x-0 bottom-0 h-44 opacity-25 pointer-events-none select-none z-0">
+          <svg
+            viewBox="0 0 1440 120"
+            className="w-full h-full absolute bottom-0 left-0"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,80 L200,30 L400,90 L600,20 L800,100 L1000,40 L1200,90 L1440,50 L1440,120 L0,120 Z"
+              fill="rgba(46, 49, 146, 0.4)"
+            />
+          </svg>
+        </div>
+
+        {/* Global cyber grid pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(235,0,0,0.06),transparent_60%)] z-0 pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm font-sans font-bold uppercase tracking-widest text-[#eb0000] mb-3">
+              <Calendar className="w-3.5 h-3.5" />
+              Chrono & Location Anchors
+            </div> */}
+            <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
+              Summit Time & Venue
+            </h2>
+            <p className="mt-3 text-sm font-sans text-slate-400 uppercase tracking-widest">
+              Friday | July 3, 2026 | Asar 19, 2083
+            </p>
+          </div>
+
+          {/* High-Contrast Interactive Split Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            
+            {/* CARD 1: DUAL CHRONO EVENT TICKET */}
+            <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#eb0000]/10 to-transparent pointer-events-none" />
+              
+              <div>
+                {/* Ticket Details */}
+                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                  
+                  {/* Calendar Bloc */}
+                  <div className="bg-white rounded-2xl border border-white/20 shadow-xl flex flex-col overflow-hidden shrink-0 w-28 text-slate-900 mx-auto sm:mx-0">
+                    <div className="bg-[#eb0000] text-white text-[10px] font-sans font-bold text-center py-2 uppercase tracking-wider">
+                      JULY 2026
+                    </div>
+                    <div className="flex flex-col items-center justify-center py-4 bg-white select-none">
+                      <span className="font-display font-black text-4xl leading-none tracking-tight">03</span>
+                      <span className="text-[8.5px] font-sans font-bold text-dnc-blue mt-1 uppercase tracking-widest">FRIDAY</span>
+                    </div>
+                    <div className="border-t border-dashed border-slate-200 bg-slate-50 py-1.5 text-center text-[7.5px] font-sans font-bold text-slate-500">
+                      ASAR 19, 2083 BS
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 text-center sm:text-left">
+                    <h3 className="font-display font-black text-xl text-white">Full-Day Strategy Plenaries</h3>
+                    <p className="text-sm text-slate-350 leading-relaxed font-sans">
+                      Doors unlock at <strong className="text-white">08:30 AM NST</strong> for badges, networking corridors and visual startup demos. The inauguration ceremony commences at <strong className="text-white">09:30 AM sharp</strong> in Sagarmatha Plenary Hall.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Action sync */}
+              <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* <span className="text-[10px] font-sans text-slate-400">★ Integrates with Outlook, Apple & Google accounts</span> */}
+                <button
+                  onClick={handleAddToCalendar}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#eb0000] hover:bg-[#c20000] text-white text-[10.5px] font-bold font-sans uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4" />
+                  Sync to Calendar →
+                </button>
+              </div>
+
+            </div>
+
+            {/* CARD 2: PLAZA CORPORATE GEOLOCATION */}
+            <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-dnc-blue/10 to-transparent pointer-events-none" />
+              
+              <div>
+                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                  
+                  {/* Schematic Compass Panel */}
+                  <div className="bg-white rounded-2xl border border-white/10 flex flex-col items-center justify-center p-4 text-center shrink-0 w-28 h-28 mx-auto sm:mx-0 shadow-xl relative overflow-hidden">
+                    <div className="absolute inset-0 border border-white/[0.03] rounded-full scale-[1.3] animate-spin" style={{ animationDuration: "30s" }} />
+                    <MapPin className="w-6 h-6 text-dnc-orange animate-bounce" />
+                    {/* <span className="text-[7px] font-sans uppercase text-slate-500 mt-2 block tracking-wider">GEODETICS</span> */}
+                    <span className="text-[15px] font-sans text-black font-bold leading-none mt-0.5">The Plaza</span>
+                    <span className="text-[12px] font-sans text-black font-bold leading-none mt-0.5">Lalitpur</span>
+                  </div>
+
+                  <div className="space-y-2 text-center sm:text-left">
+                    <h3 className="font-display font-black text-xl text-white">The Plaza Hotel, Pulchowk</h3>
+                    <p className="text-sm text-slate-350 leading-relaxed font-sans">
+                      The premier luxury and diplomatic precinct of Lalitpur. Effortlessly accessible to major embassies, tech development entities and central finance headquarters.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Action sync */}
+              <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* <span className="text-[10px] font-sans text-slate-400">★ Full valet and charging stations available</span> */}
+                <button
+                  onClick={handleOpenMap}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-100 text-slate-800 text-[10.5px] font-bold font-sans uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md cursor-pointer"
+                >
+                  <Globe className="w-4 h-4 text-dnc-orange" />
+                  Open Google Maps
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
   );
 }

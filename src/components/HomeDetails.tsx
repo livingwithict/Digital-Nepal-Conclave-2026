@@ -59,13 +59,13 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                 <p className="font-display font-black text-3xl sm:text-4xl text-dnc-black mb-1">
                   {stat.count}
                 </p>
-                <p className="text-xs font-bold text-dnc-blue font-mono tracking-wide uppercase mb-3">
+                <p className="text-sm font-bold text-dnc-blue font-sans tracking-wide uppercase mb-3">
                   {stat.label}
                 </p>
               </div>
-              <p className="text-[11px] text-slate-500 leading-normal border-t border-slate-50 pt-3">
+              {/* <p className="text-[11px] text-slate-500 leading-normal border-t border-slate-50 pt-3">
                 {stat.desc}
-              </p>
+              </p> */}
             </div>
           ))}
         </div>
@@ -74,17 +74,17 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
         <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs mb-20 overflow-hidden relative">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-dnc-blue font-mono uppercase tracking-widest mb-1">
-                <Users className="w-3.5 h-3.5 text-dnc-orange" />
+              <div className="inline-flex items-center gap-1.5 text-2xl font-bold text-dnc-blue font-sans uppercase tracking-widest mb-1">
+                <Users className="w-5 h-5 text-dnc-orange" />
                 Previous Speakers
               </div>
-              <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
+              {/* <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
                 Eminent Experts & Global Leaders
-              </h3>
+              </h3> */}
             </div>
             <button
               onClick={() => onNavigate("speakers")}
-              className="shrink-0 self-start text-xs font-bold text-dnc-blue hover:text-dnc-orange flex items-center gap-1.5 transition-colors group cursor-pointer"
+              className="shrink-0 self-start text-sm font-bold text-dnc-blue hover:text-dnc-orange flex items-center gap-1.5 transition-colors group cursor-pointer"
             >
               See All Speakers & Full Bios
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -113,17 +113,17 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                       referrerPolicy="no-referrer"
                     />
                     {spk.isKeynote && (
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-dnc-orange text-white text-[7.5px] font-mono font-bold rounded uppercase tracking-wider whitespace-nowrap">
+                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 px-1.5 py-0.5 bg-dnc-orange text-white text-[7.5px] font-sans font-bold rounded uppercase tracking-wider whitespace-nowrap">
                         Keynote
                       </span>
                     )}
                   </div>
 
-                  <span className="font-display font-bold text-xs sm:text-sm text-slate-850 group-hover:text-dnc-blue transition-colors line-clamp-1 block whitespace-normal break-all">
+                  <span className="font-display font-bold text-sm sm:text-sm text-slate-850 group-hover:text-dnc-blue transition-colors line-clamp-1 block whitespace-normal break-all">
                     {spk.name}
                   </span>
 
-                  <span className="text-[10px] text-dnc-orange font-mono font-bold mt-1 line-clamp-1 block whitespace-normal">
+                  <span className="text-[10px] text-dnc-orange font-sans font-bold mt-1 line-clamp-1 block whitespace-normal">
                     {spk.title}
                   </span>
 
@@ -136,113 +136,109 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               ))}
             </div>
           </div>
-
-          <div className="mt-4 text-center">
-            <p className="text-[11px] text-slate-400 font-mono">
-              ★ Hover above to pause, or click any profile card to check detailed listings of elite governmental affairs ministers and global directors.
-            </p>
-          </div>
         </div>
 
-        {/* PAST EVENTS QUICK REDIRECT BOXES */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-stretch">
-
-          <div className="lg:col-span-4 bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-8 flex flex-col justify-between shadow-xl border border-slate-800">
-            <div>
-              <span className="text-[10px] uppercase font-bold text-dnc-orange font-mono tracking-widest block mb-2">Heritage</span>
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight leading-tight mb-4">
-                Our Preceding Milestones
+        <div className="grid grid-cols-1 gap-8 mb-20 items-stretch">
+          <div className="bg-white text-slate-900 rounded-3xl p-8 flex flex-col justify-between shadow-sm border border-slate-100">
+            
+            {/* Header Block */}
+            <div className="max-w-3xl mb-8">
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight leading-tight mb-4">
+                Our Past Conclaves
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <p className="text-slate-500 text-sm leading-relaxed">
                 From the inception of the Digital Nepal framework in 2019, our yearly summits have solidified cross-border payment protocols, digital health structures, and national software exports strategy.
               </p>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <p className="text-xs text-slate-500 font-mono">Explore Specific Editions:</p>
-              <div className="grid grid-cols-2 gap-2">
-                <button
+            {/* Past Conclaves Section */}
+            <div className="flex flex-col gap-4">
+              
+              {/* 4-Column Grid for Conclave Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                {/* DNC 2025 */}
+                <div
                   onClick={() => onNavigate("past-2025")}
-                  className="px-4 py-2 bg-slate-800/80 hover:bg-slate-800 rounded-lg text-xs font-bold text-white text-center border border-slate-700 transition"
+                  className="group cursor-pointer p-5 bg-slate-50/50 hover:bg-white rounded-2xl border border-slate-100 hover:border-dnc-orange/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[140px]"
                 >
-                  DNC 2025
-                </button>
-                <button
+                  <div>
+                    <h4 className="font-display font-bold text-xl text-dnc-blue group-hover:text-dnc-orange transition-colors duration-300">
+                      DNC 2025
+                    </h4>
+                    <p className="text-sm text-slate-400 mt-1">Empowering Digital Nepal Together / Digital Synergy</p>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-xs font-sans text-slate-400">Learn More</span>
+                    <span className="text-dnc-blue group-hover:text-dnc-orange transform group-hover:translate-x-1 transition-all duration-300 text-sm">
+                      →
+                    </span>
+                  </div>
+                </div>
+
+                {/* DNC 2024 */}
+                <div
                   onClick={() => onNavigate("past-2024")}
-                  className="px-4 py-2 bg-slate-800/80 hover:bg-slate-800 rounded-lg text-xs font-bold text-white text-center border border-slate-700 transition"
+                  className="group cursor-pointer p-5 bg-slate-50/50 hover:bg-white rounded-2xl border border-slate-100 hover:border-dnc-orange/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[140px]"
                 >
-                  DNC 2024
-                </button>
-                <button
+                  <div>
+                    <h4 className="font-display font-bold text-xl text-dnc-blue group-hover:text-dnc-orange transition-colors duration-300">
+                      DNC 2024
+                    </h4>
+                    <p className="text-sm text-slate-400 mt-1">Harmonizing Digitalization and Development</p>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-xs font-sans text-slate-400">Learn More</span>
+                    <span className="text-dnc-blue group-hover:text-dnc-orange transform group-hover:translate-x-1 transition-all duration-300 text-sm">
+                      →
+                    </span>
+                  </div>
+                </div>
+
+                {/* DNC 2023 */}
+                <div
                   onClick={() => onNavigate("past-2023")}
-                  className="px-4 py-2 bg-slate-800/80 hover:bg-slate-800 rounded-lg text-xs font-bold text-white text-center border border-slate-700 transition"
+                  className="group cursor-pointer p-5 bg-slate-50/50 hover:bg-white rounded-2xl border border-slate-100 hover:border-dnc-orange/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[140px]"
                 >
-                  DNC 2023
-                </button>
-                <button
+                  <div>
+                    <h4 className="font-display font-bold text-xl text-dnc-blue group-hover:text-dnc-orange transition-colors duration-300">
+                      DNC 2023
+                    </h4>
+                    <p className="text-sm text-slate-400 mt-1">Fostering Digitally Sakshyam Nepal</p>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-xs font-sans text-slate-400">Learn More</span>
+                    <span className="text-dnc-blue group-hover:text-dnc-orange transform group-hover:translate-x-1 transition-all duration-300 text-sm">
+                      →
+                    </span>
+                  </div>
+                </div>
+
+                {/* DNC 2022 */}
+                <div
                   onClick={() => onNavigate("past-2022")}
-                  className="px-4 py-2 bg-slate-800/80 hover:bg-slate-800 rounded-lg text-xs font-bold text-white text-center border border-slate-700 transition"
+                  className="group cursor-pointer p-5 bg-slate-50/50 hover:bg-white rounded-2xl border border-slate-100 hover:border-dnc-orange/30 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[140px]"
                 >
-                  DNC 2022
-                </button>
+                  <div>
+                    <h4 className="font-display font-bold text-xl text-dnc-blue group-hover:text-dnc-orange transition-colors duration-300">
+                      DNC 2022
+                    </h4>
+                    <p className="text-sm text-slate-400 mt-1">Digital Nepal Framework Collaboration</p>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-xs font-sans text-slate-400">Learn More</span>
+                    <span className="text-dnc-blue group-hover:text-dnc-orange transform group-hover:translate-x-1 transition-all duration-300 text-sm">
+                      →
+                    </span>
+                  </div>
+                </div>
+
               </div>
             </div>
+            
           </div>
-
-          <div className="lg:col-span-8 bg-white rounded-3xl p-8 border border-slate-100 shadow-xs flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
-                <h4 className="font-display font-bold text-md text-slate-800 flex items-center gap-2">
-                  <Award className="w-5 h-5 text-dnc-blue" />
-                  Spotlight: Digital Nepal Conclave 2025
-                </h4>
-                <span className="px-2.5 py-1 bg-slate-50 text-slate-500 text-[10px] font-mono font-bold rounded">
-                  Theme: Digital Synergy
-                </span>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Centered around the core prompt of <strong className="text-dnc-blue">"Digital Synergy: Transforming Governance, Economy, and Society,"</strong> our 2025 edition marked important national breakthroughs:
-                </p>
-
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-4">
-                  <li className="flex gap-2 text-xs text-slate-600">
-                    <span className="text-dnc-orange">✔</span>
-                    <strong>Google Street View:</strong> Officially launched in Kathmandu & nationwide.
-                  </li>
-                  <li className="flex gap-2 text-xs text-slate-600">
-                    <span className="text-dnc-blue">✔</span>
-                    <strong>Faceless Public Delivery:</strong> Endorsed on-stage by national policymakers.
-                  </li>
-                  <li className="flex gap-2 text-xs text-slate-600">
-                    <span className="text-dnc-red">✔</span>
-                    <strong>IT contribution to GDP:</strong> Target set at 2% within state fiscal policy.
-                  </li>
-                  <li className="flex gap-2 text-xs text-slate-600">
-                    <span className="text-dnc-black animate-pulse">✔</span>
-                    <strong>Digital Health:</strong> Standardizing remote diagnostics catalog.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4">
-              <span className="text-xs text-slate-400 font-mono">
-                Organized by ICT Foundation Nepal in association with TingTing.
-              </span>
-              <button
-                onClick={() => onNavigate("past-2025")}
-                className="inline-flex items-center gap-1 px-4 py-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-dnc-blue hover:text-white rounded-lg transition-all"
-              >
-                Detailed 2025 Summary
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
         </div>
-
+        
         {/* CONCLAVE INTEL & NEWS */}
         <div className="mb-20">
           <div className="flex items-center gap-2 mb-6">
@@ -250,7 +246,6 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               <Newspaper className="w-5 h-5" />
             </span>
             <div>
-              <span className="text-[10px] uppercase font-bold text-dnc-orange font-mono tracking-widest block">Press & Insights</span>
               <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
                 Latest Conclave News & Media
               </h3>
@@ -259,10 +254,12 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {NEWS_MEDIA_DATA.map((item) => (
-              <div
+              <a
                 key={item.id}
-                onClick={() => setActiveNews(item)}
-                className="bg-white rounded-3xl border border-slate-100 p-5 shadow-2xs hover:shadow-xs transition-all duration-300 cursor-pointer flex flex-col justify-between group"
+                href={item.url}
+                target="_blank"       
+                rel="noopener noreferrer" 
+                className="bg-white rounded-3xl border border-slate-100 p-5 shadow-2xs hover:shadow-xs transition-all duration-300 cursor-pointer flex flex-col justify-between group block"
               >
                 <div>
                   <div className="aspect-video w-full rounded-2xl overflow-hidden bg-slate-100 mb-4 relative shadow-2xs">
@@ -272,12 +269,12 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
-                    <span className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs text-[10px] font-mono font-bold text-slate-700 px-2.5 py-1 rounded-lg border border-slate-200">
+                    <span className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs text-[10px] font-sans font-bold text-slate-700 px-2.5 py-1 rounded-lg border border-slate-200">
                       {item.source}
                     </span>
                   </div>
 
-                  <span className="text-[10px] font-bold text-dnc-orange font-mono uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] font-bold text-dnc-orange font-sans uppercase tracking-wider block mb-1">
                     {item.date}
                   </span>
 
@@ -285,77 +282,82 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                     {item.title}
                   </h4>
 
-                  <p className="text-xs text-slate-500 mt-2 line-clamp-3 leading-relaxed">
+                  <p className="text-sm text-slate-500 mt-2 line-clamp-3 leading-relaxed">
                     {item.summary}
                   </p>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100/80 flex items-center justify-between">
-                  <span className="text-xs text-dnc-blue font-bold group-hover:underline">Read Coverage →</span>
-                  <span className="text-[10px] text-slate-400 font-mono">DNC Exclusive</span>
+                  <span className="text-sm text-dnc-blue font-bold group-hover:underline">Read Coverage →</span>
+                  <span className="text-[10px] text-slate-400 font-sans">DNC Exclusive</span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
 
-        {/* PHOTO GALLERY & MOMENTS */}
         <div className="mb-20">
+          {/* Header Section */}
           <div className="flex items-center gap-2 mb-6">
             <span className="p-2 bg-orange-50 text-dnc-orange rounded-xl border border-orange-100">
               <Image className="w-5 h-5" />
             </span>
             <div>
-              <span className="text-[10px] uppercase font-bold text-dnc-blue font-mono tracking-widest block">Visual Archive</span>
               <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
                 Conclave Moments & Photo Gallery
               </h3>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          {/* Bento Grid Layout - Plain Visual Display with Hover Effect */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] sm:auto-rows-[220px]">
             {[
               {
                 title: "Inaugural Plenary Debate",
-                url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=600&h=400"
+                url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=600",
+                gridClass: "md:col-span-2 md:row-span-2"
               },
               {
                 title: "Startup Pitch Showcase",
-                url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600&h=400"
+                url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600&h=400",
+                gridClass: "md:col-span-1 md:row-span-1"
               },
               {
                 title: "Digital Public Goods Panel",
-                url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600&h=400"
+                url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600&h=400",
+                gridClass: "md:col-span-1 md:row-span-1"
               },
               {
                 title: "Provincial Exhibition Booths",
-                url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600&h=400"
+                url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600&h=400",
+                gridClass: "md:col-span-2 md:row-span-1"
               },
               {
                 title: "B2B Strategic Cooperation Launch",
-                url: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=600&h=400"
+                url: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=600&h=400",
+                gridClass: "md:col-span-1 md:row-span-1"
               },
               {
                 title: "Academic & Research Symposium",
-                url: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=600&h=400"
+                url: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=600&h=400",
+                gridClass: "md:col-span-1 md:row-span-1"
+              },
+              {
+                title: "Valedictory Networking & Reception",
+                url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=600&h=400",
+                gridClass: "md:col-span-2 md:row-span-1"
               }
             ].map((photo, pIdx) => (
               <div
                 key={pIdx}
-                onClick={() => setActivePhoto(photo.url)}
-                className="group relative aspect-square rounded-2xl overflow-hidden border border-slate-100 shadow-2xs cursor-pointer bg-slate-50 animate-fade-in"
+                className={`group relative rounded-2xl overflow-hidden border border-slate-100 shadow-2xs bg-slate-50 animate-fade-in ${photo.gridClass}`}
               >
                 <img
                   src={photo.url}
                   alt={photo.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-2.5">
-                  <p className="text-[10px] font-bold text-white leading-tight font-sans">
-                    {photo.title}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
@@ -368,7 +370,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               <Video className="w-5 h-5" />
             </span>
             <div>
-              <span className="text-[10px] uppercase font-bold text-dnc-blue font-mono tracking-widest block">Video Broadcasts</span>
+              {/* <span className="text-[10px] uppercase font-bold text-dnc-blue font-sans tracking-widest block">Video Broadcasts</span> */}
               <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
                 Strategic Video Dialogues & Highlight Reels
               </h3>
@@ -399,13 +401,13 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               </div>
               <div className="flex flex-col justify-between">
                 <div>
-                  <span className="inline-block px-2 py-0.5 bg-orange-50 text-dnc-orange text-[9px] font-mono font-bold rounded uppercase tracking-wider mb-2">
+                  <span className="inline-block px-2 py-0.5 bg-orange-50 text-dnc-orange text-[9px] font-sans font-bold rounded uppercase tracking-wider mb-2">
                     Prime Minister Plenary
                   </span>
                   <h4 className="font-display font-bold text-slate-800 group-hover:text-dnc-blue transition-colors text-sm sm:text-base leading-snug">
                     Federal Infrastructure & Faceless Governance Keynote
                   </h4>
-                  <p className="text-xs text-slate-500 mt-1 lines-clamp-2">
+                  <p className="text-sm text-slate-500 mt-1 lines-clamp-2">
                     Reviewing the historical convergence advocating interoperable smart policies in front of over 600 delegates.
                   </p>
                 </div>
@@ -438,13 +440,13 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               </div>
               <div className="flex flex-col justify-between">
                 <div>
-                  <span className="inline-block px-2 py-0.5 bg-blue-50 text-dnc-blue text-[9px] font-mono font-bold rounded uppercase tracking-wider mb-2">
+                  <span className="inline-block px-2 py-0.5 bg-blue-50 text-dnc-blue text-[9px] font-sans font-bold rounded uppercase tracking-wider mb-2">
                     Government Affairs
                   </span>
                   <h4 className="font-display font-bold text-slate-800 group-hover:text-dnc-blue transition-colors text-sm sm:text-base leading-snug">
                     Google Maps Street View Launch & Geo-Spatials in Nepal
                   </h4>
-                  <p className="text-xs text-slate-500 mt-1 lines-clamp-2">
+                  <p className="text-sm text-slate-500 mt-1 lines-clamp-2">
                     How decentralized location services support digital navigation, regional tourism, and micro commerce logistics.
                   </p>
                 </div>
@@ -454,28 +456,6 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* PUBLICATIONS TEASER BAR */}
-        <div className="bg-gradient-to-r from-dnc-blue/5 via-dnc-orange/5 to-transparent border border-dnc-blue/10 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="max-w-2xl">
-            <span className="inline-block px-2.5 py-1 bg-dnc-blue text-white text-[10px] font-mono font-bold rounded mb-3 uppercase tracking-wider">
-              Knowledge Repository
-            </span>
-            <h4 className="font-display font-bold text-lg sm:text-xl text-dnc-black mb-1">
-              Read Our Yearly Analytical Publications & Catalogues
-            </h4>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              We compile detailed post-event analytical whitepapers, policy agendas, and standard booklets including **Digital Paridrishya** (Provincial smart-readiness indexes).
-            </p>
-          </div>
-          <button
-            onClick={() => onNavigate("publications")}
-            className="shrink-0 px-6 py-3 bg-white text-dnc-blue hover:bg-dnc-blue hover:text-white font-bold text-xs rounded-xl border border-dnc-blue/20 transition shadow-xs flex items-center gap-2 group"
-          >
-            Access Reports & PDF Books
-            <ExternalLink className="w-3.5 h-3.5 text-dnc-orange group-hover:scale-110 transition-transform" />
-          </button>
         </div>
 
       </div>
@@ -500,7 +480,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               referrerPolicy="no-referrer"
             />
             <div className="p-4 text-center">
-              <p className="text-xs text-slate-500 font-mono font-bold uppercase tracking-wider">
+              <p className="text-sm text-slate-500 font-sans font-bold uppercase tracking-wider">
                 Digital Nepal Conclave Visual Chronicle
               </p>
             </div>
@@ -520,7 +500,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
           >
             <div className="p-6 border-b border-slate-100 flex items-center justify-between">
               <div>
-                <span className="text-[10px] uppercase font-bold text-dnc-orange font-mono tracking-widest block">Broadcast Room</span>
+                <span className="text-[10px] uppercase font-bold text-dnc-orange font-sans tracking-widest block">Broadcast Room</span>
                 <h3 className="font-display font-black text-slate-900 text-base sm:text-lg leading-tight">
                   {activeVideo.title}
                 </h3>
@@ -547,15 +527,15 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                 <div className="text-center p-8">
                   <Play className="w-12 h-12 text-dnc-orange animate-bounce mb-3 mx-auto" />
                   <p className="text-white text-sm font-bold">Simulating Broadcaster System Feed...</p>
-                  <p className="text-xs text-slate-400 mt-1">Directing link to official ICT Foundation Nepal playlist.</p>
+                  <p className="text-sm text-slate-400 mt-1">Directing link to official ICT Foundation Nepal playlist.</p>
                 </div>
               )}
             </div>
 
             <div className="p-6 bg-slate-50 space-y-4">
               <div className="space-y-1.5">
-                <h4 className="text-xs font-bold text-slate-400 font-mono uppercase tracking-wider">Session Keynotes & Panelists</h4>
-                <p className="text-xs text-slate-700 leading-relaxed font-sans text-justify">
+                <h4 className="text-sm font-bold text-slate-400 font-sans uppercase tracking-wider">Session Keynotes & Panelists</h4>
+                <p className="text-sm text-slate-700 leading-relaxed font-sans text-justify">
                   This broadcast represents premium federal and global technical advice delivered to Nepalese authorities. It covers instant electronic clearing systems, provincial resource indicators, and digital logistics protocols.
                 </p>
               </div>
@@ -565,12 +545,12 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                   href={activeVideo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2.5 bg-dnc-blue hover:bg-dnc-orange text-white text-xs font-bold font-mono uppercase tracking-wider rounded-xl transition duration-200 inline-flex items-center gap-1.5 shadow-sm"
+                  className="px-4 py-2.5 bg-dnc-blue hover:bg-dnc-orange text-white text-sm font-bold font-sans uppercase tracking-wider rounded-xl transition duration-200 inline-flex items-center gap-1.5 shadow-sm"
                 >
                   View Complete YouTube Playlist
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-                <span className="text-[10px] text-slate-400 font-mono">DNC Media Group</span>
+                <span className="text-[10px] text-slate-400 font-sans">DNC Media Group</span>
               </div>
             </div>
           </div>
@@ -605,7 +585,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="inline-block px-2.5 py-1 bg-dnc-orange text-[9px] font-mono font-bold rounded-md uppercase tracking-wider mb-2">
+                <span className="inline-block px-2.5 py-1 bg-dnc-orange text-[9px] font-sans font-bold rounded-md uppercase tracking-wider mb-2">
                   {activeNews.source} Press Release
                 </span>
                 <h3 className="font-display font-extrabold text-xl sm:text-2xl text-white leading-tight">
@@ -616,7 +596,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
             {/* News Body Text */}
             <div className="p-6 sm:p-8 space-y-4 font-sans">
-              <div className="flex items-center gap-3 text-xs text-slate-400 font-mono border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-3 text-sm text-slate-400 font-sans border-b border-slate-100 pb-3">
                 <span>By Special Correspondent</span>
                 <span>•</span>
                 <span>{activeNews.date}</span>
@@ -641,7 +621,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                   href={activeNews.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 border border-slate-200 hover:border-dnc-blue text-xs font-bold text-slate-700 rounded-xl transition duration-150 flex items-center gap-1.5"
+                  className="px-4 py-2 border border-slate-200 hover:border-dnc-blue text-sm font-bold text-slate-700 rounded-xl transition duration-150 flex items-center gap-1.5"
                 >
                   Visit Official Media Portal
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -651,7 +631,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                     setActiveNews(null);
                     onNavigate("contact");
                   }}
-                  className="px-4 py-2 bg-dnc-blue hover:bg-dnc-orange text-white text-xs font-bold rounded-xl transition shadow-sm cursor-pointer"
+                  className="px-4 py-2 bg-dnc-blue hover:bg-dnc-orange text-white text-sm font-bold rounded-xl transition shadow-sm cursor-pointer"
                 >
                   Secure Delegate Pass
                 </button>

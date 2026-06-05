@@ -121,7 +121,7 @@ export default function DigitalNepalMap() {
 
         {/* Title Details explaining the cartographic intent */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono font-bold uppercase tracking-widest text-dnc-orange-light mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm font-sans font-bold uppercase tracking-widest text-dnc-orange-light mb-3">
             <Network className="w-3.5 h-3.5 text-dnc-red animate-pulse" />
             Sovereign Connectivity Map
           </div>
@@ -180,7 +180,7 @@ export default function DigitalNepalMap() {
             </div>
 
             {/* Himalayan Mountain Crest Outline on top of map for theme matching */}
-            <div className="absolute top-2 left-6 right-6 opacity-20 pointer-events-none font-mono text-[9px] uppercase tracking-widest text-[#eb0000] flex justify-between border-b border-white/5 pb-1">
+            <div className="absolute top-2 left-6 right-6 opacity-20 pointer-events-none font-sans text-[9px] uppercase tracking-widest text-[#eb0000] flex justify-between border-b border-white/5 pb-1">
               <span>Himalayan Tech-Sovereignty Perimeter</span>
               <span>8,848M Peak Benchmark</span>
             </div>
@@ -216,7 +216,7 @@ export default function DigitalNepalMap() {
                     </div>
 
                     {/* Highly descriptive tooltip badge on layout hover */}
-                    <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-slate-900/95 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-lg text-[10px] font-bold font-mono text-white tracking-wide shadow-xl pointer-events-none transition-all duration-200 whitespace-nowrap z-30 ${isHovered || isSelected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
+                    <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-slate-900/95 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-lg text-[10px] font-bold font-sans text-white tracking-wide shadow-xl pointer-events-none transition-all duration-200 whitespace-nowrap z-30 ${isHovered || isSelected ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-1 scale-95"
                       }`}>
                       <div className="flex items-center gap-1">
                         <MapPin className="w-2.5 h-2.5 text-dnc-orange-light" />
@@ -229,7 +229,7 @@ export default function DigitalNepalMap() {
             </div>
 
             {/* Interactive Grid Coordinates Info Overlay */}
-            <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-[9px] font-mono text-slate-400">
+            <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-[9px] font-sans text-slate-400">
               <span className="flex items-center gap-1">
                 <Network className="w-2.5 h-2.5 text-dnc-orange-light" />
                 <span>Inter-Node QR Remittance Bridge Connected</span>
@@ -251,7 +251,7 @@ export default function DigitalNepalMap() {
                   <Database className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-dnc-orange font-mono tracking-widest block">Active Platform Hub</span>
+                  <span className="text-[10px] uppercase font-bold text-dnc-orange font-sans tracking-widest block">Active Platform Hub</span>
                   <h3 className="font-display font-black text-xl text-white">
                     {activeHub.city}
                   </h3>
@@ -262,16 +262,16 @@ export default function DigitalNepalMap() {
                 {activeHub.title}
               </h4>
 
-              <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-sans text-justify">
+              <p className="mt-3 text-sm sm:text-sm text-slate-300 leading-relaxed font-sans text-justify">
                 {activeHub.description}
               </p>
 
               {/* Specific Subsector Initiatives under execution */}
               <div className="mt-6 pt-5 border-t border-white/5 space-y-3">
-                <span className="text-[10px] uppercase font-bold text-slate-400 font-mono tracking-wider block">Initiatives Deliberated:</span>
+                <span className="text-[10px] uppercase font-bold text-slate-400 font-sans tracking-wider block">Initiatives Deliberated:</span>
                 <div className="space-y-2">
                   {activeHub.initiatives.map((init, index) => (
-                    <div key={index} className="flex gap-2.5 items-start text-xs text-slate-200">
+                    <div key={index} className="flex gap-2.5 items-start text-sm text-slate-200">
                       <span className="w-1.5 h-1.5 bg-[#eb0000] rounded-full mt-1.5 shrink-0" />
                       <span>{init}</span>
                     </div>
@@ -280,7 +280,7 @@ export default function DigitalNepalMap() {
               </div>
 
               {/* Informative Guide Badge */}
-              <div className="mt-6 flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl p-3 text-[10px] text-slate-400 font-mono">
+              <div className="mt-6 flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl p-3 text-[10px] text-slate-400 font-sans">
                 <Info className="w-4 h-4 text-dnc-blue-light" />
                 <span>Interact with map points to switch focus. Keynoters will address regional parameters.</span>
               </div>
@@ -295,7 +295,7 @@ export default function DigitalNepalMap() {
                 </div>
                 <div>
                   <p className="text-[18px] font-black font-display text-white">85.6%</p>
-                  <p className="text-[10px] text-slate-400 font-mono">Broadband Saturation</p>
+                  <p className="text-[10px] text-slate-400 font-sans">Broadband Saturation</p>
                 </div>
               </div>
 
@@ -305,7 +305,7 @@ export default function DigitalNepalMap() {
                 </div>
                 <div>
                   <p className="text-[18px] font-black font-display text-white">6.2M+</p>
-                  <p className="text-[10px] text-slate-400 font-mono">Nagarik Registered</p>
+                  <p className="text-[10px] text-slate-400 font-sans">Nagarik Registered</p>
                 </div>
               </div>
             </div>

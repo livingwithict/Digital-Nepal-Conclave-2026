@@ -31,7 +31,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
         
         {/* Multipage Sidebar / Timeline Selector */}
         <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-xs font-mono font-bold rounded-full uppercase tracking-wider mb-2">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-2">
             <Award className="w-4 h-4 text-dnc-orange" />
             Historic Archives & Milestones
           </span>
@@ -74,7 +74,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
               </div>
 
               <div className="max-w-xl">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-dnc-orange font-mono block mb-1">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-dnc-orange font-sans block mb-1">
                   YEAR {event.year} THEMATIC PLATFORM
                 </span>
                 
@@ -82,7 +82,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                   {event.theme}
                 </h2>
                 
-                <p className="text-xs text-slate-400 font-mono mb-6 uppercase tracking-wider border-b border-slate-200 pb-3 block">
+                <p className="text-sm text-slate-400 font-sans mb-6 uppercase tracking-wider border-b border-slate-200 pb-3 block">
                   Organizer details: {event.organizer}
                 </p>
 
@@ -93,15 +93,15 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                 {/* Specific Edition Highlights */}
                 {event.year === "25" && (
                   <div className="bg-white border text-sm rounded-2xl p-5 border-slate-200/50 mb-6 space-y-2">
-                    <p className="font-bold text-xs font-mono text-slate-400 uppercase tracking-widest">Dignitaries Present:</p>
-                    <p className="text-xs text-slate-600">Prithvi Subba Gurung (Ministry of Communication), Gagan Thapa, Eknarayan Aryal, Dr. Prakash Kumar Shrestha, Radhika Aryal, Keshav Nepal, and Nileshman Pradhan.</p>
+                    <p className="font-bold text-sm font-sans text-slate-400 uppercase tracking-widest">Dignitaries Present:</p>
+                    <p className="text-sm text-slate-600">Prithvi Subba Gurung (Ministry of Communication), Gagan Thapa, Eknarayan Aryal, Dr. Prakash Kumar Shrestha, Radhika Aryal, Keshav Nepal, and Nileshman Pradhan.</p>
                   </div>
                 )}
 
                 {event.year === "24" && (
                   <div className="bg-white border text-sm rounded-2xl p-5 border-slate-200/50 mb-6 space-y-2">
-                    <p className="font-bold text-xs font-mono text-slate-400 uppercase tracking-widest">Major National Declarations:</p>
-                    <ul className="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                    <p className="font-bold text-sm font-sans text-slate-400 uppercase tracking-widest">Major National Declarations:</p>
+                    <ul className="text-sm text-slate-600 space-y-1 list-disc pl-4">
                       <li>Government declared upcoming <strong>Decade on IT Development</strong>.</li>
                       <li>Projections mapping 1.5M jobs and 3 Trillion exports.</li>
                       <li>Highlighting Nagarik App integration and GeoKrishi.</li>
@@ -124,8 +124,8 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                     <ImageIcon className="w-5 h-5" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs font-bold text-slate-900 group-hover:text-dnc-blue transition-colors">Slideshow and Photo Gallery</p>
-                    <p className="text-[10px] text-slate-500 font-mono">Real-world event frames & albums</p>
+                    <p className="text-sm font-bold text-slate-900 group-hover:text-dnc-blue transition-colors">Slideshow and Photo Gallery</p>
+                    <p className="text-[10px] text-slate-500 font-sans">Real-world event frames & albums</p>
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
@@ -140,8 +140,8 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                     <FileText className="w-5 h-5" />
                   </div>
                   <div className="text-left">
-                    <p className="text-xs font-bold text-slate-900 group-hover:text-dnc-blue transition-colors">Download Conclave Reports</p>
-                    <p className="text-[10px] text-slate-500 font-mono">Access original analytics whitepapers</p>
+                    <p className="text-sm font-bold text-slate-900 group-hover:text-dnc-blue transition-colors">Download Conclave Reports</p>
+                    <p className="text-[10px] text-slate-500 font-sans">Access original analytics whitepapers</p>
                   </div>
                 </div>
                 <ExternalLink className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
@@ -153,7 +153,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
           <div className="lg:col-span-4 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 flex flex-col justify-between shadow-xl">
             
             <div className="space-y-6">
-              <span className="text-[10px] uppercase font-bold text-dnc-orange-light font-mono tracking-widest block">
+              <span className="text-[10px] uppercase font-bold text-dnc-orange-light font-sans tracking-widest block">
                 CONCLAVE {event.year} STATS
               </span>
 
@@ -162,7 +162,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                 {event.stats?.map((st, sIdx) => (
                   <div key={sIdx} className="text-center">
                     <p className="font-display font-black text-xl text-white">{st.value}</p>
-                    <p className="text-[9px] uppercase tracking-wider text-slate-400 font-mono mt-0.5">{st.label}</p>
+                    <p className="text-[9px] uppercase tracking-wider text-slate-400 font-sans mt-0.5">{st.label}</p>
                   </div>
                 ))}
               </div>
@@ -188,7 +188,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                         <PlayCircle className="w-5 h-5 shrink-0 text-dnc-orange group-hover:scale-110 transition-transform" />
                         <div className="text-left w-full min-w-0">
                           <p className="text-[11px] font-bold text-slate-100 truncate">{vid.title}</p>
-                          <p className="text-[9px] text-slate-400 font-mono uppercase mt-0.5 flex items-center gap-1">
+                          <p className="text-[9px] text-slate-400 font-sans uppercase mt-0.5 flex items-center gap-1">
                             Click to play inside screen
                           </p>
                         </div>
@@ -201,7 +201,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
 
             {/* Video preview / instructions */}
             <div className="pt-6 border-t border-slate-800">
-              <span className="text-[10px] text-slate-500 font-mono tracking-wide leading-relaxed block">
+              <span className="text-[10px] text-slate-500 font-sans tracking-wide leading-relaxed block">
                 * Video directories stream official full footage on-demand from IFN official channels.
               </span>
             </div>
@@ -213,11 +213,11 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
         {selectedVideo && selectedVideo.url && (
           <div id="video-preview-player" className="mt-8 bg-black rounded-3xl p-4 overflow-hidden border border-slate-200 max-w-4xl mx-auto shadow-2xl relative">
             <div className="flex items-center justify-between pb-3 text-white">
-              <span className="text-xs font-bold font-mono text-dnc-orange-light">NOW STREAMING PLAYLIST</span>
-              <p className="text-xs font-semibold truncate max-w-lg">{selectedVideo.title}</p>
+              <span className="text-sm font-bold font-sans text-dnc-orange-light">NOW STREAMING PLAYLIST</span>
+              <p className="text-sm font-semibold truncate max-w-lg">{selectedVideo.title}</p>
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="text-xs font-mono font-bold text-red-500 hover:underline"
+                className="text-sm font-sans font-bold text-red-500 hover:underline"
               >
                 Hide Screen [X]
               </button>

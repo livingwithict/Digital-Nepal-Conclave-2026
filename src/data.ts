@@ -41,14 +41,16 @@ export interface Publication {
   coverUrl: string;
   pdfUrl?: string;
   description: string;
+  url: string;
 }
 
 export interface TeamMember {
   name: string;
   role: string;
-  category: "Board" | "Specialist" | "Patron";
+  category: "Team" | "Patron";
   description?: string;
   avatarText?: string;
+  imageUrl?: string;
 }
 
 export const STATS_COUNTERS = [
@@ -90,25 +92,25 @@ export const TRANSFORMATIVE_PILLARS = [
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
-  { name: "Mr. Razan Lamsal", role: "Chairperson", category: "Board", avatarText: "RL" },
-  { name: "Mr. Hempal Shrestha", role: "Knowledge Management Specialist", category: "Specialist", avatarText: "HS" },
-  { name: "Mr. Sushil Pokharel", role: "Executive Board Member", category: "Board", avatarText: "SP" },
-  { name: "Er. Nidesh Maskey", role: "Executive Member", category: "Board", avatarText: "NM" },
-  { name: "Mr. Hariram Rimal", role: "Executive Member", category: "Board", avatarText: "HR" },
-  { name: "Ms. Krishpana Poudel", role: "Operations Lead", category: "Specialist", avatarText: "KP" },
-  { name: "Mr. Sujal Bhakta Shrestha", role: "Coordination Executive", category: "Specialist", avatarText: "SS" },
-  { name: "Er. Kabir Rajbanshi", role: "Technical Analyst", category: "Specialist", avatarText: "KR" },
-  { name: "Ms. Rachana Kharel", role: "Communications Lead", category: "Specialist", avatarText: "RK" }
+  { name: "Mr. Razan Lamsal", role: "Chairperson", category: "Team", avatarText: "RL", imageUrl: "/images/team/Razan-Lamsal.jpg", },
+  { name: "Mr. Hempal Shrestha", role: "Knowledge Management Specialist", category: "Team", avatarText: "HS", imageUrl: "/images/team/Hempal Shrestha.jpg", },
+  { name: "Mr. Sushil Pokharel", role: "Executive Board Member", category: "Team", avatarText: "SP", imageUrl: "/images/team/Sushil Pokharel.jpg", },
+  { name: "Er. Nidesh Maskey", role: "Executive Member", category: "Team", avatarText: "NM", imageUrl: "/images/team/Nidesh-maskey.jpg", },
+  { name: "Mr. Hariram Rimal", role: "Executive Member", category: "Team", avatarText: "HR", imageUrl: "/images/team/Hariram Rimal.jpg", },
+  { name: "Ms. Krishpana Poudel", role: "Operations Lead", category: "Team", avatarText: "KP", imageUrl: "/images/team/Krishpana Poudel.jpg", },
+  { name: "Mr. Sujal Bhakta Shrestha", role: "Coordination Executive", category: "Team", avatarText: "SS", imageUrl: "/images/team/Sujal Bhakta Shrestha.jpg", },
+  { name: "Er. Kabir Rajbanshi", role: "Technical Analyst", category: "Team", avatarText: "KR", imageUrl: "/images/team/Kabir Rajbanshi.jpg", },
+  { name: "Ms. Rachana Kharel", role: "Communications Lead", category: "Team", avatarText: "RK", imageUrl: "/images/team/Rachana Kharel.jpg", }
 ];
 
 export const PATRONS: TeamMember[] = [
-  { name: "Er. Ganesh Shah", role: "Ex-Minister, Ministry of Science and Technology, GoN", category: "Patron" },
-  { name: "Mr. Manohar Kr. Bhattarai", role: "Chairperson, Internet Governance Institute (Former Vice-Chairperson, HLCIT)", category: "Patron" },
-  { name: "Prof. Dr. Subarna Shakya", role: "Director, Innovation Center (Tribhuvan University)", category: "Patron" },
-  { name: "Prof. Dr. Manish Pokharel", role: "Dean, School of Engineering (Kathmandu University)", category: "Patron" },
-  { name: "Mr. Birendra Kumar Mishra", role: "Former Joint Secretary, MoCIT, GoN", category: "Patron" },
-  { name: "Mr. Vivek S. Rana", role: "ICT/MIS Consultant, Asian Development Bank (ADB)", category: "Patron" },
-  { name: "Mr. Ananda Raj Khanal", role: "Senior ICT Expert & Consultant", category: "Patron" }
+  { name: "Er. Ganesh Shah", role: "Ex-Minister, Ministry of Science and Technology, GoN", category: "Patron", imageUrl: "/images/team/Ganesh Shah.jpg", },
+  { name: "Mr. Manohar Kr. Bhattarai", role: "Chairperson, Internet Governance Institute (Former Vice-Chairperson, HLCIT)", category: "Patron", imageUrl: "/images/team/Manohar Bhattarai.jpg", },
+  { name: "Prof. Dr. Subarna Shakya", role: "Director, Innovation Center (Tribhuvan University)", category: "Patron", imageUrl: "/images/team/Subarna Shakya.jpg", },
+  { name: "Prof. Dr. Manish Pokharel", role: "Dean, School of Engineering (Kathmandu University)", category: "Patron", imageUrl: "/images/team/Manish Pokharel.jpg", },
+  { name: "Mr. Birendra Kumar Mishra", role: "Former Joint Secretary, MoCIT, GoN", category: "Patron", imageUrl: "/images/team/Birendra Mishra.jpg", },
+  { name: "Mr. Vivek S. Rana", role: "ICT/MIS Consultant, Asian Development Bank (ADB)", category: "Patron", imageUrl: "/images/team/Vivek Rana.jpg", },
+  { name: "Mr. Ananda Raj Khanal", role: "Senior ICT Expert & Consultant", category: "Patron", imageUrl: "/images/team/Ananda Raj Khanal.jpg", }
 ];
 
 export const SPEAKERS_LIST: Speaker[] = [
@@ -410,48 +412,54 @@ export const PUBLICATIONS_DATA: Publication[] = [
     title: "Digital Nepal Conclave Report 2025",
     year: "2025",
     type: "Report",
-    coverUrl: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=400&h=500",
-    description: "Comprehensive summary of the 2025 conclave containing policy directives on systems integration, summary of Google Street View launch, and digital health blueprints."
+    coverUrl: "/images/Publication/placeholder.jpg",
+    description: "Comprehensive summary of the 2025 conclave containing policy directives on systems integration, summary of Google Street View launch, and digital health blueprints.",
+    url: "https://www.ictfoundation.org.np/dnc-2025-report"
   },
   {
     id: "dnc-24",
     title: "Digital Nepal Conclave Report 2024",
     year: "2024",
     type: "Report",
-    coverUrl: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400&h=500",
-    description: "Highlights from Prime Minister Dahal's inaugural program regarding the 'Decade of IT' and plans to generate over 1.5 million regional jobs."
+    coverUrl: "/images/Publication/DNC-24-report.jpg",
+    description: "Highlights from Prime Minister Dahal's inaugural program regarding the 'Decade of IT' and plans to generate over 1.5 million regional jobs.",
+    url: "https://www.ictfoundation.org.np/dnc-2024-report"
   },
   {
     id: "dnc-23",
     title: "Digital Nepal Conclave Report 2023",
     year: "2023",
     type: "Report",
-    coverUrl: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400&h=500",
-    description: "Strategic papers examining 'Digital Capability' (Sakshyam Nepal) as the ultimate prerequisite to sustainable digital economy growth."
+    coverUrl: "/images/Publication/DNC-23-report.jpg",
+    description: "Strategic papers examining 'Digital Capability' (Sakshyam Nepal) as the ultimate prerequisite to sustainable digital economy growth.",
+    url: "https://www.ictfoundation.org.np/dnc-2023-report"
   },
   {
     id: "dnc-22",
     title: "Digital Nepal Conclave Report 2022",
     year: "2022",
     type: "Report",
-    coverUrl: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400&h=500",
-    description: "The foundational report cataloging 17 strategic working papers on expanding fiber backbones, regional server sites, and secure fintech APIs."
+    coverUrl: "/images/Publication/DNC-22-report.jpg",
+    description: "The foundational report cataloging 17 strategic working papers on expanding fiber backbones, regional server sites, and secure fintech APIs.",
+    url: "https://www.ictfoundation.org.np/dnc-2022-report"
   },
   {
     id: "paridrishya-1",
     title: "Digital Paridrishya - Vol 1",
     year: "2024",
     type: "Booklet",
-    coverUrl: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400&h=500",
-    description: "A comprehensive digital catalog tracking smart transformation achievements and provincial readiness scores across all 7 states of Nepal."
+    coverUrl: "/images/Publication/Digital-Paridisya-1.jpg",
+    description: "A comprehensive digital catalog tracking smart transformation achievements and provincial readiness scores across all 7 states of Nepal.",
+    url: "https://www.ictfoundation.org.np/paridrishya-vol1"
   },
   {
     id: "paridrishya-2",
     title: "Digital Paridrishya - Vol 2",
     year: "2025",
     type: "Booklet",
-    coverUrl: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400&h=500",
-    description: "The updated landscape document analyzing structural changes in remote sectors, cybersecurity measures, and local government digital services."
+    coverUrl: "/images/Publication/Digital-Paridisya-2.jpg",
+    description: "The updated landscape document analyzing structural changes in remote sectors, cybersecurity measures, and local government digital services.",
+    url: "https://www.ictfoundation.org.np/paridrishya-vol2"
   }
 ];
 

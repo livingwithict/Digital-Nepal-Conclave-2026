@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Sparkles, Pin } from "lucide-react";
+import { ArrowRight, Sparkles, Pin, Calendar } from "lucide-react";
 import { PageId } from "./Header";
+import { span } from "motion/react-client";
 
 const PARALLAX_IMAGES = [
   "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1600&h=900",
@@ -109,10 +110,18 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
           transform: `translate3d(0, ${contentYTranslate}px, 0)`
         }}
       >
-        {/* Elegant top micro pill */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 backdrop-blur-md text-slate-100 rounded-full text-[10px] sm:text-xs font-mono font-bold uppercase tracking-widest mb-6 border border-white/10 animate-fade-in shadow-lg">
-          <Sparkles className="w-3.5 h-3.5 text-dnc-orange animate-spin" style={{ animationDuration: "3s" }} />
-          Nepal&apos;s Grand Elite ICT Plenary Arena
+        {/* ADDED EVENT INFO BADGES ABOVE TITLE */}
+        {/* OPTIMIZED MID-SIZE EVENT INFO BADGE */}
+        <div className="mb-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-white/[0.05] border border-white/15 backdrop-blur-md px-5 py-2.5 sm:px-6 sm:py-3 rounded-2xl shadow-xl">
+          <div className="flex items-center gap-2 text-white font-sans text-sm sm:text-base font-extrabold tracking-wider">
+            <Calendar className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#eb0000]" />
+            <span>03 JULY 2026</span>
+          </div>
+          <span className="hidden sm:inline text-white/30 text-sm">|</span>
+          <div className="flex items-center gap-2 text-slate-100 font-sans text-sm sm:text-base font-semibold tracking-wide">
+            <Pin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#eb0000]" />
+            <span>THE PLAZA HOTEL, PULCHOWK</span>
+          </div>
         </div>
 
         {/* Highlighted Digital Nepal Conclave Title only */}
@@ -141,7 +150,7 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
 
         {/* Dynamic Countdown Block */}
         <div className="mt-14 w-full max-w-lg bg-white/[0.04] backdrop-blur-md rounded-3xl p-5.5 sm:p-6 border border-white/10 shadow-2xl">
-          <p className="text-center text-[10px] uppercase tracking-widest text-slate-300 font-mono mb-4 font-bold tracking-widest flex items-center justify-center gap-1.5">
+          <p className="text-center text-[10px] uppercase tracking-widest text-slate-300 font-sans mb-4 font-bold tracking-widest flex items-center justify-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-[#eb0000] rounded-full animate-ping" />
             CONCLAVE COUNTDOWN CLOCK
           </p>
@@ -149,22 +158,22 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
           <div className="grid grid-cols-4 gap-3.5 text-center">
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.days).padStart(2, '0')}</p>
-              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Days</p>
+              <p className="text-[9px] text-slate-400 uppercase font-sans mt-1 font-bold">Days</p>
             </div>
 
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.hours).padStart(2, '0')}</p>
-              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Hours</p>
+              <p className="text-[9px] text-slate-400 uppercase font-sans mt-1 font-bold">Hours</p>
             </div>
 
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-white">{String(timeLeft.minutes).padStart(2, '0')}</p>
-              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Mins</p>
+              <p className="text-[9px] text-slate-400 uppercase font-sans mt-1 font-bold">Mins</p>
             </div>
 
             <div className="bg-slate-900/40 p-2.5 rounded-2xl border border-white/5">
               <p className="font-display font-black text-2xl sm:text-3xl text-dnc-orange">{String(timeLeft.seconds).padStart(2, '0')}</p>
-              <p className="text-[9px] text-slate-400 uppercase font-mono mt-1 font-bold">Secs</p>
+              <p className="text-[9px] text-slate-400 uppercase font-sans mt-1 font-bold">Secs</p>
             </div>
           </div>
         </div>

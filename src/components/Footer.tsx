@@ -24,30 +24,26 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           
           {/* Logo & Description Left */}
-          <div className="md:col-span-5 space-y-5">
-            <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate("home")}>
-              <div className="w-9 h-9 rounded-lg bg-white p-1.5 flex items-center justify-center shadow-xs">
-                {/* Logo spectrum indicators */}
-                <div className="grid grid-cols-2 gap-0.5 w-full h-full">
-                  <div className="bg-dnc-blue rounded-xs"></div>
-                  <div className="bg-dnc-orange rounded-xs"></div>
-                  <div className="bg-dnc-red rounded-xs"></div>
-                  <div className="bg-dnc-black rounded-xs"></div>
-                </div>
-              </div>
-              <div>
-                <span className="font-display font-extrabold text-lg text-white block leading-none">Digital Nepal</span>
-                <span className="text-[10px] uppercase font-mono tracking-wider text-dnc-orange-light block mt-0.5">CONCLAVE 2026</span>
-              </div>
+          <div className="md:col-span-5">
+            <div
+              id="header-logo"
+              className="flex items-center gap-3 cursor-pointer"
+            >
+              {/* Added Image Tag */}
+              <img
+                src="/images/DNC-Logo-white.png"
+                alt="Digital Nepal Logo"
+                className="w-32 h-32 object-contain"
+              />
             </div>
+            {/* <p className="text-sm font-sans font-bold text-dnc-orange-light tracking-wide uppercase">
+              Driving Nepal&apos;s Digital Future
+            </p> */}
 
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Organized by <strong>ICT Foundation Nepal (IFN)</strong> - a profit-not-distributing organization dedicated to facilitating high-level policy dialogue and public-private sector partnerships to implement e-society initiatives.
             </p>
 
-            <p className="text-xs font-mono font-bold text-dnc-orange-light tracking-wide uppercase">
-              ★ Driving Nepal&apos;s Digital Future
-            </p>
 
             {/* Social icons */}
             <div className="flex gap-2.5 pt-2">
@@ -92,14 +88,11 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
 
           {/* Quick links middle */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-slate-300 font-mono">
-              Quick Directory
+            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300 font-sans">
+              Quick Links
             </h4>
             
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li>
-                <button onClick={() => onNavigate("home")} className="hover:text-white transition">Homepage</button>
-              </li>
+            <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <button onClick={() => onNavigate("about-event")} className="hover:text-white transition">About the Event</button>
               </li>
@@ -107,51 +100,45 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
                 <button onClick={() => onNavigate("about-organizer")} className="hover:text-white transition">About the Organizer</button>
               </li>
               <li>
-                <button onClick={() => onNavigate("about-team")} className="hover:text-white transition">Our Team & Advisors</button>
-              </li>
-              <li>
                 <button onClick={() => onNavigate("agenda")} className="hover:text-white transition">Conference Agenda</button>
               </li>
               <li>
-                <button onClick={() => onNavigate("speakers")} className="hover:text-white transition">Distinguished Speakers</button>
+                <button onClick={() => onNavigate("speakers")} className="hover:text-white transition">Our Speakers</button>
               </li>
               <li>
-                <button onClick={() => onNavigate("publications")} className="hover:text-white transition">Publications & PDFs</button>
+                <button onClick={() => onNavigate("publications")} className="hover:text-white transition">Our Publications</button>
               </li>
               <li>
-                <button onClick={() => onNavigate("contact")} className="hover:text-white transition">Contact Help Desk</button>
-              </li>
-              <li>
-                <button onClick={onRegisterClick} className="text-dnc-orange-light font-bold hover:underline">Secure Entry Ticket</button>
+                <button onClick={() => onNavigate("contact")} className="hover:text-white transition">Contact Us</button>
               </li>
             </ul>
           </div>
 
           {/* Location & Hotlines Right */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="font-display font-bold text-xs uppercase tracking-widest text-slate-300 font-mono">
-              Sankhamul Office Coordinates
+            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300 font-sans">
+              Office Location & Contact
             </h4>
 
-            <div className="space-y-3.5 text-xs text-slate-400">
+            <div className="space-y-3.5 text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-5.5 h-5.5 text-dnc-orange-light shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
                 <span>Sankhamul, Kathmandu-31, Nepal</span>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-dnc-blue-light shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
-                  <span className="block text-[11px] select-all">admin@ictfoundation.org.np</span>
-                  <span className="block text-[11px] select-all">conclave@ictfoundation.org.np</span>
+                  <span className="block text-sm select-all">admin@ictfoundation.org.np</span>
+                  <span className="block text-sm select-all">conclave@ictfoundation.org.np</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-2.5 border-t border-slate-800 pt-3">
-                <Phone className="w-4 h-4 text-dnc-blue-light shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
-                  <span className="block text-[11px] select-all">+977 9851141348 / +977 9801263604</span>
-                  <span className="block text-[11px] select-all">01-5314322 (Landline)</span>
+                  <span className="block text-sm select-all">+977 9851141348 / +977 9801263604</span>
+                  <span className="block text-sm select-all">01-5314322 (Landline)</span>
                 </div>
               </div>
             </div>
@@ -160,7 +147,7 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
         </div>
 
         {/* Bottom copyright segment */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>© Digital Nepal Conclave 2026. All Rights Reserved. Crafted for Nepal&apos;s leading digital initiative.</p>
           
           <button
