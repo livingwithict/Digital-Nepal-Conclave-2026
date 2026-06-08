@@ -4,10 +4,9 @@ import { PageId } from "./Header";
 import { span } from "motion/react-client";
 
 const PARALLAX_IMAGES = [
-  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=1600&h=900",
-  "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&q=80&w=1600&h=900",
-  "https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1600&h=900",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1600&h=900"
+  "/images/hero/hero1.jpg",
+  "/images/hero/hero2.jpg",
+  "/images/hero/hero3.jpg",
 ];
 
 interface HeroProps {
@@ -132,12 +131,17 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
 
         {/* Primary Call to Action Controls in Centered Layout */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
-          <button
-            onClick={onRegisterClick}
+          <a
+            id="desktop-register-button"
+            href="#" 
+            target="_blank"    
+            rel="noopener noreferrer"      
+            onClick={onRegisterClick}       
             className="w-full sm:w-auto px-8 py-3.5 bg-[#eb0000] hover:bg-[#c20000] text-white font-bold rounded-2xl shadow-lg shadow-red-950/20 uppercase tracking-widest text-[11px] transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
           >
-            Register Delegate Pass
-          </button>
+            {/* <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" /> */}
+            Register Now
+          </a>
 
           <button
             onClick={() => onNavigate("agenda")}

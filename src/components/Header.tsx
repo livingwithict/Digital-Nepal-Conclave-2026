@@ -225,14 +225,17 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
 
           {/* Registration Trigger */}
           <div className="hidden lg:flex items-center">
-            <button
+            <a
               id="desktop-register-button"
-              onClick={onRegisterClick}
-              className="bg-dnc-orange hover:bg-dnc-orange-light text-white px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg shadow-orange-200/50 hover:scale-[1.02] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-1.5"
+              href="#" 
+              target="_blank"                   
+              rel="noopener noreferrer"   
+              onClick={onRegisterClick}       
+              className="w-full sm:w-auto px-8 py-3.5 bg-[#eb0000] hover:bg-[#c20000] text-white font-bold rounded-full shadow-lg shadow-red-950/20 uppercase tracking-widest text-sm transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer text-center block sm:inline-block"
             >
               {/* <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" /> */}
               Register Now
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburguer */}
@@ -352,17 +355,18 @@ export default function Header({ activePage, onPageChange, onRegisterClick }: He
             </button>
 
             {/* Mobile Register Button */}
-            <div className="pt-4 px-4">
-              <button
-                onClick={() => {
-                  onRegisterClick();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-3 text-sm font-bold uppercase tracking-wider rounded-full text-white bg-dnc-orange hover:bg-dnc-orange-light shadow-md shadow-orange-200/50"
+            <div className="hidden lg:flex items-center">
+              <a
+                id="desktop-register-button"
+                href="#" 
+                target="_blank"                
+                rel="noopener noreferrer"         
+                onClick={onRegisterClick}
+                className="w-full sm:w-auto px-8 py-3.5 bg-[#eb0000] hover:bg-[#c20000] text-white font-bold rounded-full shadow-lg shadow-red-950/20 uppercase tracking-widest text-sm transition-all duration-300 transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer text-center block sm:inline-block"
               >
                 {/* <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" /> */}
                 Register Now
-              </button>
+              </a>
             </div>
           </div>
         </div>

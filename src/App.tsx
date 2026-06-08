@@ -11,7 +11,7 @@ import PastEventsComponent from "./components/PastEventsComponent";
 import PublicationsComponent from "./components/PublicationsComponent";
 import MediaComponent from "./components/MediaComponent";
 import ContactComponent from "./components/ContactComponent";
-import RegisterModal from "./components/RegisterModal";
+// import RegisterModal from "./components/RegisterModal";
 import Footer from "./components/Footer";
 import { Sparkles, Calendar, MapPin } from "lucide-react";
 
@@ -118,11 +118,11 @@ export default function App() {
         )}
       </main>
 
-      {/* Registration Badge Portal overlay */}
+      {/* Registration Badge Portal overlay
       <RegisterModal 
         isOpen={isRegisterOpen} 
         onClose={() => setIsRegisterOpen(false)} 
-      />
+      /> */}
 
       {/* Professional Footer */}
       <Footer 

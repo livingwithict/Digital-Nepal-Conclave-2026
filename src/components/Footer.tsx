@@ -36,16 +36,74 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
                 className="w-32 h-32 object-contain"
               />
             </div>
-            {/* <p className="text-sm font-sans font-bold text-dnc-orange-light tracking-wide uppercase">
-              Driving Nepal&apos;s Digital Future
-            </p> */}
+            <p className="text-base font-sans font-bold text-dnc-orange-light tracking-wide uppercase">
+              Digital Nepal Conclave 2026
+            </p>
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Organized by <strong>ICT Foundation Nepal (IFN)</strong> - a profit-not-distributing organization dedicated to facilitating high-level policy dialogue and public-private sector partnerships to implement e-society initiatives.
             </p>
+          </div>
 
+          {/* Quick links middle */}
+          <div className="md:col-span-3 space-y-4">
+            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300 font-sans">
+              Quick Links
+            </h4>
+            
+            <ul className="space-y-2 text-sm text-slate-400">
+              <li>
+                <button onClick={() => onNavigate("about-event")} className="hover:text-white transition">About the Event</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate("about-organizer")} className="hover:text-white transition">About the Organizer</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate("agenda")} className="hover:text-white transition">Conference Agenda</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate("speakers")} className="hover:text-white transition">Our Speakers</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate("publications")} className="hover:text-white transition">Our Publications</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate("media")} className="hover:text-white transition">News & Media</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate("contact")} className="hover:text-white transition">Contact Us</button>
+              </li>
+            </ul>
+          </div>
 
-            {/* Social icons */}
+          {/* Location & Hotlines Right */}
+          <div className="md:col-span-4 space-y-4">
+            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300 font-sans">
+              Office Location & Contact
+            </h4>
+
+            <div className="space-y-3.5 text-sm text-slate-400">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
+                <span>Sankhamul, Kathmandu-31, Nepal</span>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <Mail className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <span className="block text-sm select-all">admin@ictfoundation.org.np</span>
+                  <span className="block text-sm select-all">conclave@ictfoundation.org.np</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
+                <div className="space-y-0.5">
+                  <span className="block text-sm select-all">+977 9851141348 / +977 9801263604</span>
+                  <span className="block text-sm select-all">01-5314322 (Landline)</span>
+                </div>
+              </div>
+              {/* Social icons */}
             <div className="flex gap-2.5 pt-2">
               <a 
                 href="https://www.facebook.com/digitalconclave" 
@@ -84,63 +142,7 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
                 <Youtube className="w-4 h-4" />
               </a>
             </div>
-          </div>
 
-          {/* Quick links middle */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300 font-sans">
-              Quick Links
-            </h4>
-            
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>
-                <button onClick={() => onNavigate("about-event")} className="hover:text-white transition">About the Event</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate("about-organizer")} className="hover:text-white transition">About the Organizer</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate("agenda")} className="hover:text-white transition">Conference Agenda</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate("speakers")} className="hover:text-white transition">Our Speakers</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate("publications")} className="hover:text-white transition">Our Publications</button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate("contact")} className="hover:text-white transition">Contact Us</button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Location & Hotlines Right */}
-          <div className="md:col-span-4 space-y-4">
-            <h4 className="font-display font-bold text-sm uppercase tracking-widest text-slate-300 font-sans">
-              Office Location & Contact
-            </h4>
-
-            <div className="space-y-3.5 text-sm text-slate-400">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
-                <span>Sankhamul, Kathmandu-31, Nepal</span>
-              </div>
-
-              <div className="flex items-start gap-2.5">
-                <Mail className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
-                <div className="space-y-0.5">
-                  <span className="block text-sm select-all">admin@ictfoundation.org.np</span>
-                  <span className="block text-sm select-all">conclave@ictfoundation.org.np</span>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2.5">
-                <Phone className="w-5 h-5 text-dnc-orange-light shrink-0 mt-0.5" />
-                <div className="space-y-0.5">
-                  <span className="block text-sm select-all">+977 9851141348 / +977 9801263604</span>
-                  <span className="block text-sm select-all">01-5314322 (Landline)</span>
-                </div>
-              </div>
             </div>
           </div>
 

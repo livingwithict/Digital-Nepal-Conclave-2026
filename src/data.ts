@@ -120,7 +120,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Tech Entrepreneur & President",
     company: "F1Soft International Pvt. Ltd.",
     bio: "He is a Nepali tech entrepreneur. He serves as the President of F1Soft International Pvt. Ltd, an ecosystem of digital products and services that facilitates Nepali consumers' access to financial services. His journey began in 2004 when he founded F1Soft. He founded eSewa (digital wallet company) in 2009, CashOnAd, Logica Beans, and Shiran Technologies Pvt. Ltd. Dhakal was selected by The US Department of State for the International Visitor Leadership Program (IVLP) and the Global Entrepreneurship Summit 2016 from Nepal.",
-    avatarUrl: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Fintech", "Entrepreneurship", "Digital Assets"],
     isKeynote: true,
     linkedinUrl: "https://linkedin.com/in/biswasdhakal",
@@ -132,7 +132,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Former Vice-Chairperson",
     company: "HLCIT (ICT Expert)",
     bio: "Manohar K. Bhattarai is a prominent ICT expert in Nepal who has served in various highly influential roles including the Vice-Chairperson of High Level Commission for Information Technology (HLCIT). He is an advocate for data-centric governance and framework deployment in emerging economies.",
-    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Policy", "Smart Governance", "ICT Core"],
     linkedinUrl: "https://linkedin.com/in/manohar-bhattarai",
     twitterUrl: "https://twitter.com/manohar_b"
@@ -143,7 +143,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Dean",
     company: "Kathmandu University (Patron, IFN)",
     bio: "Dean at School of Engineering, Kathmandu University. Prof. Dr. Pokharel has significantly contributed to standardizing tech education and cloud-computing infrastructure guidelines in Kathmandu and Nepal's sub-regions.",
-    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Academics", "Cloud Infrastructure", "E-Governance"],
     linkedinUrl: "https://linkedin.com/in/manish-pokharel",
     twitterUrl: "https://twitter.com/manish_p"
@@ -154,7 +154,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Government Affairs & Public Policy Lead",
     company: "Google (South Asia)",
     bio: "Coordinates strategic dialogues representing public sector initiatives, AI integration framework policy parameters, and tech adoption synergy inside Nepal and South Asian emerging digital economies.",
-    avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Global Policies", "Big Tech", "AI Sovereignity"],
     isKeynote: true,
     linkedinUrl: "https://linkedin.com/in/kyle-gardner-google",
@@ -166,7 +166,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Member of Parliament & General Secretary",
     company: "Nepali Congress",
     bio: "A highly progressive national leader advocating for 'faceless' digital governments, automated bureaucratic reform, and transparent public service delivery systems in Nepal.",
-    avatarUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Public Leadership", "Governance", "100-Days Agendas"],
     linkedinUrl: "https://linkedin.com/in/gagan-thapa",
     twitterUrl: "https://twitter.com/gagan-thapa"
@@ -177,7 +177,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Former Chief Secretary",
     company: "Government of Nepal",
     bio: "Pioneered unified systemic integration in civil registers and smart public service channels. Argues that actual digital capability thrives on interoperable backend data exchanges.",
-    avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Public Service", "DPI", "System Integration"],
     linkedinUrl: "https://linkedin.com/in/ek-narayan-aryal",
     twitterUrl: "https://twitter.com/aryaleknarayan"
@@ -188,7 +188,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Head of Street View Outsourced Operations",
     company: "Google Maps",
     bio: "Led the milestone national deployment of Google Street View services in Nepal, supporting modern digital tourism, navigation, and location-based economies.",
-    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Geo-Tech", "Digital Maps", "Spatials"],
     linkedinUrl: "https://linkedin.com/in/nishant-nair-gmaps",
     twitterUrl: "https://twitter.com/nishantnair"
@@ -199,7 +199,7 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "CEO",
     company: "Nepal Clearing House Ltd. (NCHL)",
     bio: "Pioneered core retail transaction integration and digital payments architectures, pushing forward secure instant-payment gateways and international money linkages.",
-    avatarUrl: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=300&h=300",
+    avatarUrl: "/images/speakers/member image.jpg",
     tags: ["Fintech", "National Gateway", "Digital Economy"],
     linkedinUrl: "https://linkedin.com/in/nilesh-pradhan-nchl",
     twitterUrl: "https://twitter.com/nilesh_pradhan"
@@ -213,7 +213,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "Exhibition Zone & Startup Pavilion Open",
     description: "Welcome of participants, national policy creators, and sector champions. Exhibition space and coffee network opens.",
     category: "Break",
-    room: "Grand Foyer & B2B Exhibition Zone"
+    room: ""
   },
   {
     time: "9:30 AM – 10:00 AM",
@@ -221,7 +221,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "Launch Ceremony of Digital Nepal Conclave 2026",
     description: "Traditional lamp lighting, formal addresses from organizers, governmental patrons, and launching of Digital Paridrishya Vol 3.",
     category: "Inaugural",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "10:00 AM – 10:20 AM",
@@ -230,7 +230,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     description: "A deep dive into structural blockages and accomplishments since the first iteration in 2019.",
     speakerNames: ["Mr. Manohar K Bhattarai"],
     category: "Inaugural",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "10:20 AM – 10:45 AM",
@@ -239,7 +239,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     description: "Best practices, AI policies, and digital public goods frameworks suitable for south Asia.",
     speakerNames: ["Mr. Kyle Gardner"],
     category: "Inaugural",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "10:45 AM – 12:00 PM",
@@ -248,7 +248,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     description: "Focusing on inter-departmental collaboration, system interoperability, and structural mandates of Digital Nepal Framework.",
     speakerNames: ["Mr. Ek Narayan Aryal", "Hon. Gagan Thapa", "Prof. Dr. Manish Pokharel"],
     category: "Governance",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "12:00 PM – 12:45 PM",
@@ -256,7 +256,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "“Citizen-Centric Services: 100 Days, 100 Agendas for a Digital Nation”",
     description: "A lightning conversation mapping swift, transparent public-facing service items.",
     category: "Governance",
-    room: "Track Room A (Monal)"
+    room: ""
   },
   {
     time: "12:45 PM – 1:30 PM",
@@ -264,7 +264,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "Exhibition Hall & Startup Demos",
     description: "Visit 20+ specialized stalls showing cutting-edge solutions from GIS mapping to health systems.",
     category: "Break",
-    room: "Exhibition Pavilion & Garden Cafe"
+    room: ""
   },
   {
     time: "1:30 PM – 1:45 PM",
@@ -272,7 +272,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "Innovative Solutions in Governance & Data (Pitches 1-3)",
     description: "Nepalese tech teams present smart city solutions and workflow optimization systems for governance.",
     category: "Economy",
-    room: "Track Room B (Lophophorus)"
+    room: ""
   },
   {
     time: "1:45 PM – 2:00 PM",
@@ -280,7 +280,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "“Ethical AI Integration for Smart Governance: Leveraging Frontier Tech as a Strategic Enabler”",
     description: "Understanding LLMs and custom deep tech boundaries to simplify workflows for state platforms.",
     category: "Data",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "2:00 PM – 3:00 PM",
@@ -288,14 +288,14 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "“Establishing Data Sovereignty, Uniform Standards, and Robust Architectures”",
     description: "Highlighting cloud regulations, local hosting security acts, and user privacy in health and financial ecosystems.",
     category: "Data",
-    room: "Track Room A (Monal)"
+    room: ""
   },
   {
     time: "3:00 PM – 3:30 PM",
     title: "Networking Tea Break",
     subtitle: "B2B Deals & Interaction Sessions",
     category: "Break",
-    room: "Networking Alcove"
+    room: ""
   },
   {
     time: "3:30 PM – 4:00 PM",
@@ -303,7 +303,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "Deep Tech & Financial Innovation (Pitches 4-6)",
     description: "Accelerated presentation of young Nepalese financial ventures before major capital investors.",
     category: "Economy",
-    room: "Track Room B (Lophophorus)"
+    room: ""
   },
   {
     time: "4:00 PM – 4:30 PM",
@@ -311,7 +311,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "“A Framework for Broad-Based Prosperity and Global Alignment”",
     speakerNames: ["Mr. Biswas Dhakal"],
     category: "Economy",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "4:30 PM – 5:30 PM",
@@ -320,7 +320,7 @@ export const AGENDA_DATA: AgendaItem[] = [
     description: "Focus on global IT exports, retaining young engineers, and cross-border payment solutions.",
     speakerNames: ["Mr. Nilesh Man Singh Pradhan"],
     category: "Economy",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "5:30 PM – 6:30 PM",
@@ -328,14 +328,14 @@ export const AGENDA_DATA: AgendaItem[] = [
     subtitle: "“Mobilizing Capital for Digital Transformation”",
     description: "Synthesizing next actionable items. Signing cross-sector agreements.",
     category: "Inaugural",
-    room: "Sagarmatha Plenary Hall"
+    room: ""
   },
   {
     time: "6:30 PM Onwards",
     title: "Closing Note & The Road to DNC 2027",
     subtitle: "Interactive Feedback & Networking Drinks",
     category: "Break",
-    room: "Exhibition Pavilion & Garden Cafe"
+    room: ""
   }
 ];
 
