@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Video, ExternalLink, Globe, Play, Image as ImageIcon, Heart, ArrowUpRight, Award } from "lucide-react";
-import { NEWS_MEDIA_DATA } from "../data";
+import NewsCard from "./NewsCard";
+import {NEWS_ARTICLES } from "../data";
 
 export default function MediaComponent() {
   const [activeMediaTab, setActiveMediaTab] = useState<"news" | "videos">("news");
@@ -54,7 +55,7 @@ export default function MediaComponent() {
                   : "bg-slate-50 text-slate-600 hover:bg-slate-100 border-slate-200"
               }`}
             >
-              Speeches & High-Fidelity Videos
+              Session Videos & Highlights
             </button>
           </div>
         </div>
@@ -62,51 +63,13 @@ export default function MediaComponent() {
         {activeMediaTab === "news" ? (
           /* Press articles section */
           <div className="space-y-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {NEWS_MEDIA_DATA.map((article) => (
-                <div
-                  key={article.id}
-                  className="bg-white rounded-3xl border border-slate-100 shadow-2xs hover:shadow-lg transition-all duration-300 overflow-hidden group flex flex-col justify-between"
-                >
-                  <div>
-                    {/* Cover Photo */}
-                    <div className="h-44 bg-slate-100 relative overflow-hidden shrink-0">
-                      <img
-                        src={article.imageUrl}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        referrerPolicy="no-referrer"
-                      />
-                      <span className="absolute top-3 left-3 px-2 py-0.5 bg-dnc-black text-white text-[9px] font-sans font-bold rounded-md">
-                        {article.source}
-                      </span>
-                    </div>
-
-                    <div className="p-6 space-y-2">
-                      <p className="text-[10px] text-slate-400 font-sans font-bold block">{article.date}</p>
-                      
-                      <h3 className="font-display font-bold text-sm sm:text-base text-slate-905 tracking-tight leading-snug group-hover:text-dnc-blue transition-colors">
-                        {article.title}
-                      </h3>
-                      
-                      <p className="text-sm text-slate-500 leading-relaxed font-sans text-justify pt-1">
-                        {article.summary}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="p-6 pt-0">
-                    <a
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-bold text-dnc-blue hover:text-dnc-orange transition-colors"
-                    >
-                      Read full article
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {NEWS_ARTICLES.map((articleUrl, idx) => (
+                <NewsCard
+                  key={idx}
+                  url={articleUrl}
+                  onError={(error) => console.error(`Article ${idx + 1} error:`, error)}
+                />
               ))}
             </div>
           </div>

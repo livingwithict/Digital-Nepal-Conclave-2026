@@ -97,9 +97,9 @@ export default function AgendaComponent() {
 
               {/* Right Column: Content */}
               <div className="md:w-3/4">
-                <span className={`text-[10px] font-bold font-sans uppercase tracking-widest mb-2 block ${getCategoryColor(item.category)}`}>
+                {/* <span className={`text-[10px] font-bold font-sans uppercase tracking-widest mb-2 block ${getCategoryColor(item.category)}`}>
                   {getCategoryBadgeLabel(item.category)}
-                </span>
+                </span> */}
                 
                 <h3 className="font-display font-bold text-slate-900 text-lg sm:text-xl leading-snug mb-2 group-hover:text-dnc-blue transition-colors">
                   {item.title}
@@ -111,11 +111,11 @@ export default function AgendaComponent() {
                   </p>
                 )}
 
-                {item.description && (
+                {/* {item.description && (
                   <p className="text-sm text-slate-500 leading-relaxed font-sans mb-5 max-w-3xl">
                     {item.description}
                   </p>
-                )}
+                )} */}
 
                 {/* Minimal Speakers List */}
                 {item.speakerNames && item.speakerNames.length > 0 && (

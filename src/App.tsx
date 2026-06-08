@@ -40,14 +40,14 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-dnc-orange selection:text-white">
       
       {/* Dynamic alert bar for actual physical site details */}
-      <div className="bg-slate-100 text-slate-700 border-b border-slate-200 text-center py-2 text-sm font-medium px-4 flex items-center justify-center gap-3">
+      {/* <div className="bg-slate-100 text-slate-700 border-b border-slate-200 text-center py-2 text-sm font-medium px-4 flex items-center justify-center gap-3">
         <span className="w-2 h-2 bg-dnc-blue rounded-full"></span>
         <span className="font-semibold text-slate-800">CONFERENCE 2026 OFFICIAL ANNOUNCEMENT</span>
         <span className="hidden md:inline-block text-slate-300">|</span>
         <span className="hidden md:flex items-center gap-1.5 text-slate-600"><Calendar className="w-3.5 h-3.5 text-slate-400" /> 3rd July (2083 Asar 19)</span>
         <span className="hidden md:inline-block text-slate-300">|</span>
         <span className="hidden md:flex items-center gap-1.5 text-slate-600"><MapPin className="w-3.5 h-3.5 text-slate-400" /> The Plaza, Pulchowk, Lalitpur</span>
-      </div>
+      </div> */}
 
       {/* Navigation Header */}
       <Header 

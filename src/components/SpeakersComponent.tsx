@@ -91,11 +91,11 @@ export default function SpeakersComponent() {
                     className="w-full h-full object-cover grayscale-xs group-hover:grayscale-0 transition-all duration-300"
                     referrerPolicy="no-referrer"
                   />
-                  {spk.isKeynote && (
+                  {/* {spk.isKeynote && (
                     <span className="absolute top-3 left-3 px-2 py-0.5 bg-dnc-orange text-white text-[9px] font-sans font-extrabold rounded-md shadow-sm uppercase tracking-wider">
                       Keynote Speaker
                     </span>
-                  )}
+                  )} */}
 
                   {/* Social media quick overlay container */}
                   <div className="absolute bottom-3 right-3 flex gap-1.5 bg-white/95 backdrop-blur-xs px-2 py-1.5 rounded-xl shadow-xs opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
@@ -195,11 +195,11 @@ export default function SpeakersComponent() {
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  {selectedSpeaker.isKeynote && (
+                  {/* {selectedSpeaker.isKeynote && (
                     <span className="absolute bottom-4 left-4 px-3 py-1 bg-dnc-orange text-white text-[10px] font-sans font-extrabold rounded-md shadow-md uppercase tracking-wider">
                       Keynote Speaker
                     </span>
-                  )}
+                  )} */}
                 </div>
 
                 {/* Right block profile details */}

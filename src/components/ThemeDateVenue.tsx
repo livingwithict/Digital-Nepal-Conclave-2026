@@ -44,11 +44,6 @@ export default function ThemeDateVenue() {
           
           {/* Header detailing Theme intent */}
           <div className="max-w-3xl mb-16">
-            {/* <div className="inline-flex items-center gap-1.5 text-sm font-sans font-bold uppercase text-dnc-blue tracking-widest bg-blue-50/80 px-3.5 py-1.5 rounded-xl border border-blue-100/50 mb-3.5">
-              <Lightbulb className="w-3.5 h-3.5 text-dnc-orange animate-pulse" />
-              Strategic Blueprint
-            </div> */}
-            
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-none mb-6">
               Reimagining <span className="text-dnc-blue">Governance</span>, <span className="text-[#eb0000]">Data</span> & the <span className="text-dnc-orange">Digital Economy</span>
             </h2>
@@ -60,23 +55,19 @@ export default function ThemeDateVenue() {
 
           {/* Core Strategic Pillars Sub-Grid */}
           <div className="mt-12">
-
             {/* 3 Pillar Bento Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               
               {/* PILLAR 1: GOVERNANCE & DPI */}
               <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:border-dnc-blue/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-2.5 h-full bg-dnc-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-dnc-blue/10 flex items-center justify-center text-dnc-blue mb-6 border border-dnc-blue/10 group-hover:scale-105 transition-transform duration-300">
                     <Shield className="w-6 h-6" />
                   </div>
-                  
                   <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-dnc-blue transition-colors mb-4">
                     Governance & Digital Public Infrastructure (DPI)
                   </h4>
-                  
                   <ul className="space-y-3">
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
@@ -97,16 +88,13 @@ export default function ThemeDateVenue() {
               {/* PILLAR 2: DATA, AI & CYBERSECURITY */}
               <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:border-dnc-orange/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-2.5 h-full bg-[#eb0000] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-[#eb0000]/10 flex items-center justify-center text-[#eb0000] mb-6 border border-[#eb0000]/10 group-hover:scale-105 transition-transform duration-300">
                     <Database className="w-6 h-6" />
                   </div>
-                  
                   <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-[#eb0000] transition-colors mb-4">
                     Data, AI & Robust Cybersecurity
                   </h4>
-                  
                   <ul className="space-y-3">
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
@@ -127,16 +115,13 @@ export default function ThemeDateVenue() {
               {/* PILLAR 3: DIGITAL ECONOMY */}
               <div className="bg-slate-50/50 border border-slate-100 rounded-3xl p-8 hover:bg-white hover:border-dnc-orange/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-2.5 h-full bg-dnc-orange transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-dnc-orange/10 flex items-center justify-center text-dnc-orange mb-6 border border-dnc-orange/10 group-hover:scale-105 transition-transform duration-300">
                     <TrendingUp className="w-6 h-6" />
                   </div>
-                  
                   <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-dnc-orange transition-colors mb-4">
                     Digital Economy & Innovation Ecosystems
                   </h4>
-                  
                   <ul className="space-y-3">
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
@@ -163,17 +148,10 @@ export default function ThemeDateVenue() {
       {/* SECTION 2: THE NEXT SESSION - COGNITIVE EVENT DATE & VENUE */}
       <section className="relative bg-gradient-to-b from-[#0d0f2b] to-[#111332] py-24 text-white overflow-hidden border-t border-white/[0.04]">
         
-        {/* Subtle Mountain Outline Silhouette to capture the high-peak Himalayan vibe */}
+        {/* Subtle Mountain Outline Silhouette */}
         <div className="absolute inset-x-0 bottom-0 h-44 opacity-25 pointer-events-none select-none z-0">
-          <svg
-            viewBox="0 0 1440 120"
-            className="w-full h-full absolute bottom-0 left-0"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,80 L200,30 L400,90 L600,20 L800,100 L1000,40 L1200,90 L1440,50 L1440,120 L0,120 Z"
-              fill="rgba(46, 49, 146, 0.4)"
-            />
+          <svg viewBox="0 0 1440 120" className="w-full h-full absolute bottom-0 left-0" preserveAspectRatio="none">
+            <path d="M0,80 L200,30 L400,90 L600,20 L800,100 L1000,40 L1200,90 L1440,50 L1440,120 L0,120 Z" fill="rgba(46, 49, 146, 0.4)" />
           </svg>
         </div>
 
@@ -183,105 +161,71 @@ export default function ThemeDateVenue() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm font-sans font-bold uppercase tracking-widest text-[#eb0000] mb-3">
-              <Calendar className="w-3.5 h-3.5" />
-              Chrono & Location Anchors
-            </div> */}
             <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
-              Summit Time & Venue
+              Event Details
             </h2>
-            <p className="mt-3 text-sm font-sans text-slate-400 uppercase tracking-widest">
+            {/* <p className="mt-3 text-sm font-sans text-slate-400 uppercase tracking-widest">
               Friday | July 3, 2026 | Asar 19, 2083
-            </p>
+            </p> */}
           </div>
 
           {/* High-Contrast Interactive Split Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch min-h-auto">
             
-            {/* CARD 1: DUAL CHRONO EVENT TICKET */}
+            {/* LEFT COLUMN: CONSOLIDATED EVENT DETAILS */}
             <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#eb0000]/10 to-transparent pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#eb0000]/10 via-dnc-blue/5 to-transparent pointer-events-none" />
               
-              <div>
-                {/* Ticket Details */}
-                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-                  
-                  {/* Calendar Bloc */}
-                  <div className="bg-white rounded-2xl border border-white/20 shadow-xl flex flex-col overflow-hidden shrink-0 w-28 text-slate-900 mx-auto sm:mx-0">
-                    <div className="bg-[#eb0000] text-white text-[10px] font-sans font-bold text-center py-2 uppercase tracking-wider">
-                      JULY 2026
-                    </div>
-                    <div className="flex flex-col items-center justify-center py-4 bg-white select-none">
-                      <span className="font-display font-black text-4xl leading-none tracking-tight">03</span>
-                      <span className="text-[8.5px] font-sans font-bold text-dnc-blue mt-1 uppercase tracking-widest">FRIDAY</span>
-                    </div>
-                    <div className="border-t border-dashed border-slate-200 bg-slate-50 py-1.5 text-center text-[7.5px] font-sans font-bold text-slate-500">
-                      ASAR 19, 2083 BS
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 text-center sm:text-left">
-                    <h3 className="font-display font-black text-xl text-white">Full-Day Strategy Plenaries</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-sans">
-                      Doors unlock at <strong className="text-white">08:30 AM NST</strong> for badges, networking corridors and visual startup demos. The inauguration ceremony commences at <strong className="text-white">09:30 AM sharp</strong> in Sagarmatha Plenary Hall.
-                    </p>
-                  </div>
-
+              <div className="space-y-8 relative z-10">
+                <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start text-center sm:text-left">
+                  <Calendar className="w-6 h-6 text-dnc-orange shrink-0" />
+                  <span className="text-2xl font-bold text-white">July 3, 2026 (Friday)</span>
                 </div>
+
+                <hr className="border-white/[0.08]" />
+
+                <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start text-center sm:text-left">
+                  <MapPin className="w-6 h-6 text-dnc-orange shrink-0" />
+                  <span className="text-2xl font-bold text-white">The Plaza, Pulchowk</span>
+                </div>
+
               </div>
 
               {/* Action sync */}
-              <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
-                {/* <span className="text-[10px] font-sans text-slate-400">★ Integrates with Outlook, Apple & Google accounts</span> */}
+              <div className="mt-10 pt-6 border-t border-white/[0.08] relative z-10">
                 <button
                   onClick={handleAddToCalendar}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#eb0000] hover:bg-[#c20000] text-white text-[10.5px] font-bold font-sans uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#eb0000] hover:bg-[#c20000] text-white text-[10.5px] font-bold font-sans uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
-                  Sync to Calendar →
+                  Sync to Calendar
                 </button>
               </div>
 
             </div>
 
-            {/* CARD 2: PLAZA CORPORATE GEOLOCATION */}
-            <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-dnc-blue/10 to-transparent pointer-events-none" />
+            {/* RIGHT COLUMN: VENUE PHOTO & MAP LINK */}
+            <div className="bg-slate-800 rounded-3xl border border-white/10 overflow-hidden relative group shadow-2xl flex flex-col justify-end">
+              <img
+                src="/images/plaza.jpg" 
+                alt="The Plaza Hotel, Pulchowk"
+                className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-1000 ease-in-out"
+              />
               
-              <div>
-                <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-                  
-                  {/* Schematic Compass Panel */}
-                  <div className="bg-white rounded-2xl border border-white/10 flex flex-col items-center justify-center p-4 text-center shrink-0 w-28 h-28 mx-auto sm:mx-0 shadow-xl relative overflow-hidden">
-                    <div className="absolute inset-0 border border-white/[0.03] rounded-full scale-[1.3] animate-spin" style={{ animationDuration: "30s" }} />
-                    <MapPin className="w-6 h-6 text-dnc-orange animate-bounce" />
-                    {/* <span className="text-[7px] font-sans uppercase text-slate-500 mt-2 block tracking-wider">GEODETICS</span> */}
-                    <span className="text-[15px] font-sans text-black font-bold leading-none mt-0.5">The Plaza</span>
-                    <span className="text-[12px] font-sans text-black font-bold leading-none mt-0.5">Lalitpur</span>
-                  </div>
+              {/* Gradient overlays to ensure text/button readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f2b] via-[#0d0f2b]/40 to-transparent opacity-95" />
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-dnc-blue/30 mix-blend-overlay" />
 
-                  <div className="space-y-2 text-center sm:text-left">
-                    <h3 className="font-display font-black text-xl text-white">The Plaza Hotel, Pulchowk</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-sans">
-                      The premier luxury and diplomatic precinct of Lalitpur. Effortlessly accessible to major embassies, tech development entities and central finance headquarters.
-                    </p>
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Action sync */}
-              <div className="mt-10 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
-                {/* <span className="text-[10px] font-sans text-slate-400">★ Full valet and charging stations available</span> */}
+              {/* Map interaction overlay */}
+              <div className="relative z-10 p-8 sm:p-10 flex flex-col items-start w-full">
                 <button
                   onClick={handleOpenMap}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-100 text-slate-800 text-[10.5px] font-bold font-sans uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-slate-100 text-slate-800 text-[10.5px] font-bold font-sans uppercase tracking-wider rounded-xl transition-all duration-300 shadow-xl cursor-pointer"
                 >
                   <Globe className="w-4 h-4 text-dnc-orange" />
                   Open Google Maps
                 </button>
               </div>
-
             </div>
 
           </div>

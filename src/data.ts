@@ -21,18 +21,6 @@ export interface AgendaItem {
   room?: string;
 }
 
-export interface PastEvent {
-  year: string;
-  theme: string;
-  organizer: string;
-  description: string;
-  partners?: string[];
-  stats?: { label: string; value: string }[];
-  highlightVideos: { title: string; url: string; id: string }[];
-  photoDriveLink: string;
-  reportPublicationId?: string;
-}
-
 export interface Publication {
   id: string;
   title: string;
@@ -210,7 +198,7 @@ export const AGENDA_DATA: AgendaItem[] = [
   {
     time: "9:00 AM – 9:30 AM",
     title: "Delegate Registration & Welcome Reception",
-    subtitle: "Exhibition Zone & Startup Pavilion Open",
+    subtitle: "",
     description: "Welcome of participants, national policy creators, and sector champions. Exhibition space and coffee network opens.",
     category: "Break",
     room: ""
@@ -218,7 +206,7 @@ export const AGENDA_DATA: AgendaItem[] = [
   {
     time: "9:30 AM – 10:00 AM",
     title: "Inaugural Session: Lighting the Digital Path",
-    subtitle: "Launch Ceremony of Digital Nepal Conclave 2026",
+    subtitle: "",
     description: "Traditional lamp lighting, formal addresses from organizers, governmental patrons, and launching of Digital Paridrishya Vol 3.",
     category: "Inaugural",
     room: ""
@@ -243,7 +231,7 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   {
     time: "10:45 AM – 12:00 PM",
-    title: "Power Samvad @ DNC: Governance & Digital Public Infrastructure",
+    title: "Power Samvad @ DNC",
     subtitle: "“Nepal’s Digital Transformation Agenda; Reimagining Governance”",
     description: "Focusing on inter-departmental collaboration, system interoperability, and structural mandates of Digital Nepal Framework.",
     speakerNames: ["Mr. Ek Narayan Aryal", "Hon. Gagan Thapa", "Prof. Dr. Manish Pokharel"],
@@ -260,16 +248,16 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   {
     time: "12:45 PM – 1:30 PM",
-    title: "Networking Lunch & Exhibition Hour",
-    subtitle: "Exhibition Hall & Startup Demos",
+    title: "Lunch Time",
+    subtitle: "Break",
     description: "Visit 20+ specialized stalls showing cutting-edge solutions from GIS mapping to health systems.",
     category: "Break",
     room: ""
   },
   {
     time: "1:30 PM – 1:45 PM",
-    title: "Nepal Startup Launchpad",
-    subtitle: "Innovative Solutions in Governance & Data (Pitches 1-3)",
+    title: "Nepal Startup Launchpad - Innovative Solutions in Governance & Data (Pitches 1-3)",
+    subtitle: "",
     description: "Nepalese tech teams present smart city solutions and workflow optimization systems for governance.",
     category: "Economy",
     room: ""
@@ -292,23 +280,23 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   {
     time: "3:00 PM – 3:30 PM",
-    title: "Networking Tea Break",
-    subtitle: "B2B Deals & Interaction Sessions",
+    title: "Tea Break",
+    subtitle: "Break",
     category: "Break",
     room: ""
   },
   {
     time: "3:30 PM – 4:00 PM",
-    title: "Nepal Startup Launchpad (Part II)",
-    subtitle: "Deep Tech & Financial Innovation (Pitches 4-6)",
+    title: "Nepal Startup Launchpad - Innovative Solutions in Digital Economy & Deep Tech Ideas (4-6 Pitches)",
+    subtitle: "",
     description: "Accelerated presentation of young Nepalese financial ventures before major capital investors.",
     category: "Economy",
     room: ""
   },
   {
     time: "4:00 PM – 4:30 PM",
-    title: "Keynote III: Building Nepal’s Digital Economy",
-    subtitle: "“A Framework for Broad-Based Prosperity and Global Alignment”",
+    title: "Keynote III: Building Nepal’s Digital Economy – A Framework for Broad-Based Prosperity",
+    subtitle: "",
     speakerNames: ["Mr. Biswas Dhakal"],
     category: "Economy",
     room: ""
@@ -324,8 +312,8 @@ export const AGENDA_DATA: AgendaItem[] = [
   },
   {
     time: "5:30 PM – 6:30 PM",
-    title: "Closing Power Samvad @ DNC",
-    subtitle: "“Mobilizing Capital for Digital Transformation”",
+    title: "Closing Power Samvad @ DNC: Mobilizing Capital for Digital Transformation",
+    subtitle: "",
     description: "Synthesizing next actionable items. Signing cross-sector agreements.",
     category: "Inaugural",
     room: ""
@@ -333,76 +321,9 @@ export const AGENDA_DATA: AgendaItem[] = [
   {
     time: "6:30 PM Onwards",
     title: "Closing Note & The Road to DNC 2027",
-    subtitle: "Interactive Feedback & Networking Drinks",
+    subtitle: "",
     category: "Break",
     room: ""
-  }
-];
-
-export const PAST_EVENTS_DATA: PastEvent[] = [
-  {
-    year: "2025",
-    theme: "Empowering Digital Nepal Together / Digital Synergy: Transforming Governance, Economy, and Society",
-    organizer: "ICT Foundation Nepal (In Association with TingTing, Powered by Raindrop)",
-    description: "The Digital Nepal Conclave 2025 successfully brought together over 600 senior representatives, policymakers, and international experts to discuss interoperability and system integration. High-level leadership session featured Prime Minister KP Sharma Oli, Finance Minister Bishnu Paudel, and leader Gagan Thapa advocating a 'faceless' electronic governance framework. Google officially launched Google Street View in Nepal during this edition.",
-    stats: [
-      { label: "Attendees", value: "600+" },
-      { label: "Speakers", value: "35+" },
-      { label: "Tracks", value: "8 Sessions" }
-    ],
-    photoDriveLink: "https://drive.google.com/drive/folders/1KcScPsk-RBxhZqKj4OAW0w2Xk90ONZ_C?usp=drive_link",
-    highlightVideos: [
-      { id: "v25_1", title: "Inaugural Plenary: Digital Governance & Leadership", url: "https://www.youtube.com/playlist?list=PL65nmC8zjA6qB5knF0c0N8c3_ZVNRxPfv" },
-      { id: "v25_2", title: "Parallel: Readiness for Digital Foundation", url: "https://www.youtube.com/playlist?list=PL65nmC8zjA6pg4kXbXIU6UDGxKq0uGGAC" }
-    ]
-  },
-  {
-    year: "2024",
-    theme: "Harmonizing Digitalization and Development",
-    organizer: "ICT Foundation Nepal (In Association with Ncell, Powered by The Asia Foundation)",
-    description: "Inaugurated by Prime Minister Pushpa Kamal Dahal. The state declared the decade of IT development, proposing over 1.5 million direct/indirect careers with a trade goal of 3 trillion Rupees export. Featured interactive showcases of over 20 advanced local initiatives like GeoKrishi, Nagarik App, and municipal models.",
-    stats: [
-      { label: "Attendees", value: "600+" },
-      { label: "Showcased Ideas", value: "20+" },
-      { label: "Panels", value: "5 Major Sessions" }
-    ],
-    photoDriveLink: "https://drive.google.com/drive/folders/1KcScPsk-RBxhZqKj4OAW0w2Xk90ONZ_C?usp=drive_link",
-    highlightVideos: [
-      { id: "v24_1", title: "Driving Digitalization and Development", url: "https://www.youtube.com/playlist?list=PL65nmC8zjA6qZZ3QSOs2jQC6F9HRCCnDS" },
-      { id: "v24_2", title: "Digital Governance & Data for Development", url: "https://www.youtube.com/playlist?list=PL65nmC8zjA6o4l9T4iqGYqj4d0_yITTHr" }
-    ]
-  },
-  {
-    year: "2023",
-    theme: "Fostering Digitally Sakshyam Nepal",
-    organizer: "ICT Foundation Nepal (In Association with Huawei, Powered by Yarsa)",
-    description: "Shifted the national dialogue directly from mere raw telecom cabling towards human potential capacity building, education synergy, and regional capability models to sustain software trade growth.",
-    stats: [
-      { label: "Speakers", value: "70+" },
-      { label: "Sessions", value: "15+" },
-      { label: "Days", value: "2 Full Days" }
-    ],
-    photoDriveLink: "https://drive.google.com/drive/folders/1KcScPsk-RBxhZqKj4OAW0w2Xk90ONZ_C?usp=drive_link",
-    highlightVideos: [
-      { id: "v23_1", title: "DNC 2023 Inaugural Plenary Live Stream", url: "https://www.youtube.com/live/dv-CsOcIojQ?si=KFABJLMiK-2b4VDx" },
-      { id: "v23_2", title: "DNC 2023 Day 1 Technical Sessions", url: "https://www.youtube.com/live/jJmOXihX-Jc?si=frMQR2MyupB0Q6F-" }
-    ]
-  },
-  {
-    year: "2022",
-    theme: "Digital Nepal Framework Collaboration",
-    organizer: "ICT Foundation Nepal (In Association with Huawei & InfoDevelopers)",
-    description: "The historical first major physical convergence following the publication of the unified Digital Nepal blueprint. Brought international models to cross-pollinate with central planning policies.",
-    stats: [
-      { label: "Speakers", value: "60+" },
-      { label: "Countries represented", value: "5" },
-      { label: "Working Papers", value: "17 Papers" }
-    ],
-    photoDriveLink: "https://drive.google.com/drive/folders/1KcScPsk-RBxhZqKj4OAW0w2Xk90ONZ_C?usp=drive_link",
-    highlightVideos: [
-      { id: "v22_1", title: "Historical Launch Video - DNC 2022", url: "https://www.youtube.com/live/VrZ_jsP7n3U?si=cnPi1AgKjDWaZxCm" },
-      { id: "v22_2", title: "Strategic Keynotes - Day 2 Session", url: "https://www.youtube.com/live/3s1MwYfOpX8?si=nqoJVJfU16Cv8yhE" }
-    ]
   }
 ];
 
@@ -463,32 +384,29 @@ export const PUBLICATIONS_DATA: Publication[] = [
   }
 ];
 
-export const NEWS_MEDIA_DATA = [
-  {
-    id: "news-1",
-    title: "Digital Nepal Conclave 2026 announced: Theme Reimagining Governance, Data & AI",
-    source: "Living with ICT",
-    date: "May 28, 2026",
-    summary: "ICT Foundation Nepal announces the fifth edition of Digital Nepal Conclave bringing policymakers, global heads, and tech visionaries under one platform on 3rd July 2026.",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=500&h=300",
-    url: "https://livingwithict.com"
-  },
-  {
-    id: "news-2",
-    title: "Prime Minister advocates 'Digital Sovereignity' for upcoming conclave",
-    source: "Hamro Patro",
-    date: "June 02, 2026",
-    summary: "Addressing national coordinators, the state highlights the need to build trustworthy cloud frameworks, robust payment solutions, and ethical AI integration.",
-    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=500&h=300",
-    url: "https://hamropatro.com"
-  },
-  {
-    id: "news-3",
-    title: "How regional conclaves are shaping localized Nepalese developer ecosystems",
-    source: "ICT Gyan",
-    date: "May 15, 2026",
-    summary: "From Karnali to Madhesh, decentralized policy forums lay the groundwork for a unified digital standard presented at the federal summit.",
-    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80&w=500&h=300",
-    url: "https://ictfoundation.org.np"
-  }
+export const NEWS_ARTICLES = [
+  "https://www.nepalpress.com/2025/08/15/628440/",
+  "https://www.nepalbahas.com/story/693941/2025/8/15/science-and-technology/the--digital-nepal-conqualive-2025--for-the/",
+  "https://technologykhabar.com/2025/08/15/211684/",
+  "https://www.capitalnepal.com/detail/65434",
+  "https://ictsamachar.com/news/google-launches-street-view-service-in-nepal/",
+  "https://ictsamachar.com/news/digital-transformation-should-be-in-the-interest-of-citizens-and-society-dr-shrestha/",
+  "https://ictsamachar.com/news/digitalization-cannot-be-achieved-by-typing-on-a-computer-there-must-be-interoperability-between-systems/",
+  "https://ictsamachar.com/news/nepal-can-become-a-digital-work-center-prime-minister-oli/",
+  "https://ictsamachar.com/news/the-fourth-edition-of-digital-nepal-conclave-has-begun/",
+  "https://english.pardafas.com/digital-nepal-conclave-2025-highlights-policy-reform-and-private-sector-engagement/",
+  // "https://www.onlinekhabar.com/2025/08/1743526/transformation-is-not-possible-without-digitalization-chief-secretary-aryal",
+  "https://nepalpress.com/2025/08/15/628440/",
+  "https://www.instagram.com/reel/DNXwPtIxKw_/",
+  "https://www.techpana.com/2025/152488/pm-kp-sharma-oli-chatgpt-and-ai-usage-digital-nepal",
+  // "https://www.nayapatrikadaily.com/news-details/175424/2025-08-15",
+  // "https://www.onlinekhabar.com/2025/08/1742894/i-also-use-ai-chatgpt-will-tell-me-everything-kp-oli",
+  "https://newsofnepal.com/2025/08/15/725445/",
+  "https://businesspati.com/%E0%A4%A1%E0%A4%BF%E0%A4%9C%E0%A4%BF%E0%A4%9F%E0%A4%B2-%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2-%E0%A4%95%E0%A4%A8%E0%A5%8D%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%87%E0%A4%AD-%E0%A5%A8%E0%A5%A6/",
+  // "https://clickmandu.com/2025/08/405396.html",
+  // "https://ictside.com/2025/08/17/digital-nepal-conclave-2025-concludes-leaders-from-gagan-thapa-and-the-communications-and-finance-ministers-to-the-prime-minister-discuss-digital-transformation/",
+  "https://hamrakura.com/news-details/196303/2025-08-17",
+  "https://www.goodnepal.com/detail/92",
+  "https://ictsamachar.com/news/digital-nepal-conclave-2025-concludes/",
 ];
+
