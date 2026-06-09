@@ -32,9 +32,9 @@ export default function MediaComponent() {
           <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
             News & Multimedia Corridor
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Follow articles from major publishing lines, stream high-fidelity speeches, panel recordings, and download official press assets.
-          </p>
+          </p> */}
 
           <div className="mt-8 flex justify-center gap-2">
             <button
@@ -91,14 +91,14 @@ export default function MediaComponent() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-2xs">
+              {/* <div className="bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-2xs">
                 <h4 className="font-display font-bold text-sm text-slate-900 mb-1">
                   Nepal&apos;s Digital Dialogues Catalogued
                 </h4>
                 <p className="text-sm text-slate-500 leading-relaxed font-sans">
                   The videos include historical live streams hosted by ICT Foundation Nepal since the inception of regional conclaves, detailing digital security protocols, cloud sovereignty, global IT outsourcing margins, and financial inclusive structures.
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* List Selection on right */}

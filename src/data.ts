@@ -82,13 +82,12 @@ export const TRANSFORMATIVE_PILLARS = [
 export const TEAM_MEMBERS: TeamMember[] = [
   { name: "Mr. Razan Lamsal", role: "Chairperson", category: "Team", avatarText: "RL", imageUrl: "/images/team/Razan-Lamsal.jpg", },
   { name: "Mr. Hempal Shrestha", role: "Knowledge Management Specialist", category: "Team", avatarText: "HS", imageUrl: "/images/team/Hempal Shrestha.jpg", },
-  { name: "Mr. Sushil Pokharel", role: "Executive Board Member", category: "Team", avatarText: "SP", imageUrl: "/images/team/Sushil Pokharel.jpg", },
-  { name: "Er. Nidesh Maskey", role: "Executive Member", category: "Team", avatarText: "NM", imageUrl: "/images/team/Nidesh-maskey.jpg", },
-  { name: "Mr. Hariram Rimal", role: "Executive Member", category: "Team", avatarText: "HR", imageUrl: "/images/team/Hariram Rimal.jpg", },
-  { name: "Ms. Krishpana Poudel", role: "Operations Lead", category: "Team", avatarText: "KP", imageUrl: "/images/team/Krishpana Poudel.jpg", },
-  { name: "Mr. Sujal Bhakta Shrestha", role: "Coordination Executive", category: "Team", avatarText: "SS", imageUrl: "/images/team/Sujal Bhakta Shrestha.jpg", },
-  { name: "Er. Kabir Rajbanshi", role: "Technical Analyst", category: "Team", avatarText: "KR", imageUrl: "/images/team/Kabir Rajbanshi.jpg", },
-  { name: "Ms. Rachana Kharel", role: "Communications Lead", category: "Team", avatarText: "RK", imageUrl: "/images/team/Rachana Kharel.jpg", }
+  { name: "Mr. Sushil Pokharel", role: "", category: "Team", avatarText: "SP", imageUrl: "/images/team/Sushil Pokharel.jpg", },
+  { name: "Mr. Hariram Rimal", role: "", category: "Team", avatarText: "HR", imageUrl: "/images/team/Hariram Rimal.jpg", },
+  { name: "Ms. Krishpana Poudel", role: "", category: "Team", avatarText: "KP", imageUrl: "/images/team/Krishpana Poudel.jpg", },
+  { name: "Mr. Sujal Bhakta Shrestha", role: "", category: "Team", avatarText: "SS", imageUrl: "/images/team/Sujal Bhakta Shrestha.jpg", },
+  { name: "Er. Kabir Rajbanshi", role: "", category: "Team", avatarText: "KR", imageUrl: "/images/team/Kabir Rajbanshi.jpg", },
+  { name: "Ms. Rachana Kharel", role: "", category: "Team", avatarText: "RK", imageUrl: "/images/team/Rachana Kharel.jpg", }
 ];
 
 export const PATRONS: TeamMember[] = [
@@ -108,11 +107,11 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Tech Entrepreneur & President",
     company: "F1Soft International Pvt. Ltd.",
     bio: "He is a Nepali tech entrepreneur. He serves as the President of F1Soft International Pvt. Ltd, an ecosystem of digital products and services that facilitates Nepali consumers' access to financial services. His journey began in 2004 when he founded F1Soft. He founded eSewa (digital wallet company) in 2009, CashOnAd, Logica Beans, and Shiran Technologies Pvt. Ltd. Dhakal was selected by The US Department of State for the International Visitor Leadership Program (IVLP) and the Global Entrepreneurship Summit 2016 from Nepal.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/biswas-dhakal.jpg",
     tags: ["Fintech", "Entrepreneurship", "Digital Assets"],
     isKeynote: true,
-    linkedinUrl: "https://linkedin.com/in/biswasdhakal",
-    twitterUrl: "https://twitter.com/biswasdhakal"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "manohar-bhattarai",
@@ -120,10 +119,10 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Former Vice-Chairperson",
     company: "HLCIT (ICT Expert)",
     bio: "Manohar K. Bhattarai is a prominent ICT expert in Nepal who has served in various highly influential roles including the Vice-Chairperson of High Level Commission for Information Technology (HLCIT). He is an advocate for data-centric governance and framework deployment in emerging economies.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/manohar-bhattarai.jpg",
     tags: ["Policy", "Smart Governance", "ICT Core"],
-    linkedinUrl: "https://linkedin.com/in/manohar-bhattarai",
-    twitterUrl: "https://twitter.com/manohar_b"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "manish-pokharel",
@@ -131,10 +130,10 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Dean",
     company: "Kathmandu University (Patron, IFN)",
     bio: "Dean at School of Engineering, Kathmandu University. Prof. Dr. Pokharel has significantly contributed to standardizing tech education and cloud-computing infrastructure guidelines in Kathmandu and Nepal's sub-regions.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/manish-pokharel.jpg",
     tags: ["Academics", "Cloud Infrastructure", "E-Governance"],
-    linkedinUrl: "https://linkedin.com/in/manish-pokharel",
-    twitterUrl: "https://twitter.com/manish_p"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "kyle-gardner",
@@ -142,22 +141,22 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Government Affairs & Public Policy Lead",
     company: "Google (South Asia)",
     bio: "Coordinates strategic dialogues representing public sector initiatives, AI integration framework policy parameters, and tech adoption synergy inside Nepal and South Asian emerging digital economies.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/kyle-gardner.jpg",
     tags: ["Global Policies", "Big Tech", "AI Sovereignity"],
     isKeynote: true,
-    linkedinUrl: "https://linkedin.com/in/kyle-gardner-google",
-    twitterUrl: "https://twitter.com/kyleg_policy"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "gagan-thapa",
-    name: "Hon. Gagan Thapa",
+    name: "Mr. Gagan Thapa",
     title: "Member of Parliament & General Secretary",
     company: "Nepali Congress",
     bio: "A highly progressive national leader advocating for 'faceless' digital governments, automated bureaucratic reform, and transparent public service delivery systems in Nepal.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/gagan-thapa.jpg",
     tags: ["Public Leadership", "Governance", "100-Days Agendas"],
-    linkedinUrl: "https://linkedin.com/in/gagan-thapa",
-    twitterUrl: "https://twitter.com/gagan-thapa"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "ek-narayan",
@@ -165,10 +164,10 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Former Chief Secretary",
     company: "Government of Nepal",
     bio: "Pioneered unified systemic integration in civil registers and smart public service channels. Argues that actual digital capability thrives on interoperable backend data exchanges.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/ek-narayan-aryal.jpg",
     tags: ["Public Service", "DPI", "System Integration"],
-    linkedinUrl: "https://linkedin.com/in/ek-narayan-aryal",
-    twitterUrl: "https://twitter.com/aryaleknarayan"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "nishant-nair",
@@ -176,10 +175,10 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "Head of Street View Outsourced Operations",
     company: "Google Maps",
     bio: "Led the milestone national deployment of Google Street View services in Nepal, supporting modern digital tourism, navigation, and location-based economies.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/nishant-nair.jpg",
     tags: ["Geo-Tech", "Digital Maps", "Spatials"],
-    linkedinUrl: "https://linkedin.com/in/nishant-nair-gmaps",
-    twitterUrl: "https://twitter.com/nishantnair"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   },
   {
     id: "nilesh-pradhan",
@@ -187,10 +186,10 @@ export const SPEAKERS_LIST: Speaker[] = [
     title: "CEO",
     company: "Nepal Clearing House Ltd. (NCHL)",
     bio: "Pioneered core retail transaction integration and digital payments architectures, pushing forward secure instant-payment gateways and international money linkages.",
-    avatarUrl: "/images/speakers/member image.jpg",
+    avatarUrl: "/images/speakers/nilesh-pradhan.jpg",
     tags: ["Fintech", "National Gateway", "Digital Economy"],
-    linkedinUrl: "https://linkedin.com/in/nilesh-pradhan-nchl",
-    twitterUrl: "https://twitter.com/nilesh_pradhan"
+    linkedinUrl: "https://linkedin.com/",
+    twitterUrl: "https://twitter.com/"
   }
 ];
 
@@ -385,16 +384,19 @@ export const PUBLICATIONS_DATA: Publication[] = [
 ];
 
 export const NEWS_ARTICLES = [
-  "https://www.nepalpress.com/2025/08/15/628440/",
+  "https://ictsamachar.com/news/digital-nepal-conclave-2025-concludes/",
   "https://www.nepalbahas.com/story/693941/2025/8/15/science-and-technology/the--digital-nepal-conqualive-2025--for-the/",
-  "https://technologykhabar.com/2025/08/15/211684/",
-  "https://www.capitalnepal.com/detail/65434",
-  "https://ictsamachar.com/news/google-launches-street-view-service-in-nepal/",
-  "https://ictsamachar.com/news/digital-transformation-should-be-in-the-interest-of-citizens-and-society-dr-shrestha/",
-  "https://ictsamachar.com/news/digitalization-cannot-be-achieved-by-typing-on-a-computer-there-must-be-interoperability-between-systems/",
-  "https://ictsamachar.com/news/nepal-can-become-a-digital-work-center-prime-minister-oli/",
+  "https://www.goodnepal.com/detail/92",
+  "https://hamrakura.com/news-details/196303/2025-08-17",
   "https://ictsamachar.com/news/the-fourth-edition-of-digital-nepal-conclave-has-begun/",
   "https://english.pardafas.com/digital-nepal-conclave-2025-highlights-policy-reform-and-private-sector-engagement/",
+  "https://ictsamachar.com/news/digital-transformation-should-be-in-the-interest-of-citizens-and-society-dr-shrestha/",
+  "https://ictsamachar.com/news/digitalization-cannot-be-achieved-by-typing-on-a-computer-there-must-be-interoperability-between-systems/",
+  "https://ictsamachar.com/news/google-launches-street-view-service-in-nepal/",
+  "https://www.nepalpress.com/2025/08/15/628440/",
+  "https://technologykhabar.com/2025/08/15/211684/",
+  "https://www.capitalnepal.com/detail/65434",
+  "https://ictsamachar.com/news/nepal-can-become-a-digital-work-center-prime-minister-oli/",
   // "https://www.onlinekhabar.com/2025/08/1743526/transformation-is-not-possible-without-digitalization-chief-secretary-aryal",
   "https://nepalpress.com/2025/08/15/628440/",
   "https://www.instagram.com/reel/DNXwPtIxKw_/",
@@ -405,8 +407,5 @@ export const NEWS_ARTICLES = [
   "https://businesspati.com/%E0%A4%A1%E0%A4%BF%E0%A4%9C%E0%A4%BF%E0%A4%9F%E0%A4%B2-%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2-%E0%A4%95%E0%A4%A8%E0%A5%8D%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%87%E0%A4%AD-%E0%A5%A8%E0%A5%A6/",
   // "https://clickmandu.com/2025/08/405396.html",
   // "https://ictside.com/2025/08/17/digital-nepal-conclave-2025-concludes-leaders-from-gagan-thapa-and-the-communications-and-finance-ministers-to-the-prime-minister-discuss-digital-transformation/",
-  "https://hamrakura.com/news-details/196303/2025-08-17",
-  "https://www.goodnepal.com/detail/92",
-  "https://ictsamachar.com/news/digital-nepal-conclave-2025-concludes/",
 ];
 

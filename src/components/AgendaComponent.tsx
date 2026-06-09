@@ -32,21 +32,21 @@ export default function AgendaComponent() {
   const filters = ["All", "Inaugural", "Governance", "Data", "Economy", "Break"] as const;
 
   return (
-    <section id="agenda-section" className="bg-white py-16 sm:py-24 animate-fade-in">
+    <section id="agenda-section" className="bg-white py-16 sm:py-12 animate-fade-in">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Summary */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-50 text-dnc-orange text-sm font-sans font-bold rounded-lg uppercase tracking-wider mb-4 border border-orange-100 shadow-sm">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-dnc-blue text-sm font-sans font-bold rounded-lg uppercase tracking-wider mb-3 border border-blue-100">
             <Clock className="w-4 h-4 text-dnc-orange" />
             Friday, 3rd July 2026 (2083 Asar 19)
-          </div>
+          </span>
           <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
             Schedule of Tracks & Sessions
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed font-sans">
+          {/* <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed font-sans">
             Navigating Nepal&apos;s digital public infrastructure, AI policies, and emerging financial frameworks. Sessions run concurrently in specialized ballrooms and panels.
-          </p>
+          </p> */}
         </div>
 
         {/* Minimalist Filter Tabs */}

@@ -6,16 +6,19 @@ import VideoCard from "./videocard";
 import NewsCard from "./NewsCard";
 
 interface HomeDetailsProps {
+  setActiveMediaTab: (tab: "news" | "videos") => void;
   onNavigate: (page: PageId) => void;
 }
 
 // Your YouTube video links - just add URLs here
 const YOUTUBE_VIDEOS = [
-  "https://www.youtube.com/watch?v=8PEwm-s5Ze0&list=PL65nmC8zjA6qB5knF0c0N8c3_ZVNRxPfv&index=1&pp=iAQB",
+  "https://www.youtube.com/watch?v=8PEwm-s5Ze0",
   "https://www.youtube.com/watch?v=dJ07TEPiyd4",
+  // "https://www.youtube.com/watch?v=jJmOXihX-Jc",
+  "https://www.youtube.com/watch?v=VrZ_jsP7n3U",
 ];
 
-export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
+export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetailsProps) {
   return (
     <div id="home-details-section" className="bg-slate-50 py-16 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,8 +60,8 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
           </div>
 
           <div className="relative w-full overflow-hidden py-4">
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white via-white/20 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white via-white/20 to-transparent z-10 pointer-events-none"></div>
 
             <div className="flex gap-6 animate-marquee whitespace-nowrap">
               {[...SPEAKERS_LIST, ...SPEAKERS_LIST].map((spk, idx) => (
@@ -67,7 +70,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                   onClick={() => onNavigate("speakers")}
                   className="inline-flex flex-col items-center bg-slate-50/50 hover:bg-slate-50 border border-slate-100 p-5 rounded-3xl w-48 sm:w-52 text-center transition-all duration-300 shadow-2xs hover:shadow-xs cursor-pointer select-none group"
                 >
-                  <div className="w-24 h-24 rounded-full overflow-hidden bg-slate-100 mb-3 relative mx-auto border-2 border-slate-200">
+                  <div className="w-32 h-32 rounded-full overflow-hidden bg-slate-100 mb-3 relative mx-auto border-2 border-slate-200">
                     <img
                       src={spk.avatarUrl}
                       alt={spk.name}
@@ -79,10 +82,10 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
                       </span>
                     )} */}
                   </div>
-                  <span className="font-display font-bold text-sm text-slate-850 group-hover:text-dnc-blue transition-colors line-clamp-1 block whitespace-normal break-all">
+                  <span className="font-display font-bold text-sm text-slate-850 group-hover:text-dnc-blue transition-colors line-clamp-1 block whitespace-normal break-words">
                     {spk.name}
                   </span>
-                  <span className="text-[10px] text-dnc-orange font-sans font-bold mt-1 line-clamp-1 block whitespace-normal">
+                  <span className="text-[10px] text-dnc-blue font-sans font-bold mt-1 line-clamp-1 block whitespace-normal">
                     {spk.title}
                   </span>
                 </div>
@@ -182,7 +185,7 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
         {/* CONCLAVE MOMENTS & PHOTO GALLERY */}
         <div className="mb-20">
           <div className="flex items-center gap-2 mb-6">
-            <span className="p-2 bg-orange-50 text-dnc-orange rounded-xl border border-orange-100">
+            <span className="p-2 bg-red-50 text-dnc-red rounded-xl border border-red-100">
               <Image className="w-5 h-5" />
             </span>
             <div>
@@ -194,13 +197,13 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 auto-rows-[180px] sm:auto-rows-[220px]">
             {[
-              { title: "Inaugural Plenary Debate", url: "/images/gallery/25-1.jpg", gridClass: "md:col-span-2 md:row-span-2" },
-              { title: "Startup Pitch Showcase", url: "/images/gallery/25-2.jpg", gridClass: "md:col-span-1 md:row-span-1" },
-              { title: "Digital Public Goods Panel", url: "/images/gallery/25-3.jpg", gridClass: "md:col-span-1 md:row-span-1" },
-              { title: "Provincial Exhibition Booths", url: "/images/gallery/25-4.jpg", gridClass: "md:col-span-2 md:row-span-1" },
-              { title: "B2B Strategic Cooperation Launch", url: "/images/gallery/25-5.jpg", gridClass: "md:col-span-1 md:row-span-1" },
-              { title: "Valedictory Networking & Reception", url: "/images/gallery/25-7.jpg", gridClass: "md:col-span-2 md:row-span-1" },
-              { title: "Academic & Research Symposium", url: "/images/gallery/25-6.jpg", gridClass: "md:col-span-1 md:row-span-1" },
+              { title: "Inaugural Plenary Debate", url: "/images/gallery/2025/25-1.jpg", gridClass: "md:col-span-2 md:row-span-2" },
+              { title: "Startup Pitch Showcase", url: "/images/gallery/2025/25-2.jpg", gridClass: "md:col-span-1 md:row-span-1" },
+              { title: "Digital Public Goods Panel", url: "/images/gallery/2025/25-3.jpg", gridClass: "md:col-span-1 md:row-span-1" },
+              { title: "Provincial Exhibition Booths", url: "/images/gallery/2025/25-4.jpg", gridClass: "md:col-span-2 md:row-span-1" },
+              { title: "B2B Strategic Cooperation Launch", url: "/images/gallery/2025/25-5.jpg", gridClass: "md:col-span-1 md:row-span-1" },
+              { title: "Valedictory Networking & Reception", url: "/images/gallery/2025/25-7.jpg", gridClass: "md:col-span-2 md:row-span-1" },
+              { title: "Academic & Research Symposium", url: "/images/gallery/2025/25-6.jpg", gridClass: "md:col-span-1 md:row-span-1" },
             ].map((photo, pIdx) => (
               <div key={pIdx} className={`group relative rounded-s overflow-hidden border border-slate-100 shadow-2xs bg-slate-50 ${photo.gridClass}`}>
                 <img
@@ -235,6 +238,18 @@ export default function HomeDetails({ onNavigate }: HomeDetailsProps) {
               />
             ))}
           </div>
+        </div>
+        <div className="flex justify-center">
+          <button
+            onClick={() => {
+              onNavigate("media");
+              setActiveMediaTab("videos");
+            }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-dnc-blue text-white font-bold text-sm sm:text-base rounded-xl hover:bg-dnc-blue/90 transition-all duration-300 shadow-md hover:shadow-lg group"
+          >
+            See More Videos & Highlights
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
 
       </div>

@@ -57,7 +57,7 @@ export default function ContactComponent() {
         
         {/* Header Block */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-orange/5 text-dnc-orange text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
             <MessageSquare className="w-4 h-4 text-dnc-orange animate-pulse" />
             24/7 Conclave Support Desk
           </span>

@@ -43,13 +43,13 @@ export default function ThemeDateVenue() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           
           {/* Header detailing Theme intent */}
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-full mb-16">
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-none mb-6">
               Reimagining <span className="text-dnc-blue">Governance</span>, <span className="text-[#eb0000]">Data</span> & the <span className="text-dnc-orange">Digital Economy</span>
             </h2>
             
-            <p className="text-slate-650 text-sm sm:text-base leading-relaxed font-sans max-w-4xl text-justify">
-              This global-standard theme underpins our central effort to accelerate structural and digital transformation across Nepal. It aims to bridge public-facing systems with resilient cloud blueprints, establish data sovereign pathways for enterprise networks, and integrate robust cross-border financial architectures that foster inclusive national empowerment.
+            <p className="text-slate-650 text-sm sm:text-base leading-relaxed font-sans max-w-full text-justify">
+              Digital Nepal Conclave is an open platform for facilitating the effective dialogue to implement Digital Nepal Framework. It features keynotes from various renowned national and international experts and domain champions. It also highlights the issues of digital capability through various power panel samvad sessions, lightning talks, thematic presentations, feedback, and opinions from the domain champions and the audience.            
             </p>
           </div>
 
@@ -66,12 +66,12 @@ export default function ThemeDateVenue() {
                     <Shield className="w-6 h-6" />
                   </div>
                   <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-dnc-blue transition-colors mb-4">
-                    Governance & Digital Public Infrastructure (DPI)
+                    Governance & Digital Public Infrastructure
                   </h4>
                   <ul className="space-y-3">
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
-                      <span>Institutional digital reform and transformative public delivery.</span>
+                      <span>Institutional digital reform and transformative public service delivery.</span>
                     </li>
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
@@ -79,7 +79,7 @@ export default function ThemeDateVenue() {
                     </li>
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-blue shrink-0 mt-0.5" />
-                      <span>Strategic policymaking through transparent, data-centric governance.</span>
+                      <span>Strategic policy innovation and evidence-based decision making through data-centric governance.</span>
                     </li>
                   </ul>
                 </div>
@@ -93,20 +93,20 @@ export default function ThemeDateVenue() {
                     <Database className="w-6 h-6" />
                   </div>
                   <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-[#eb0000] transition-colors mb-4">
-                    Data, AI & Robust Cybersecurity
+                    Data, AI & Cybersecurity
                   </h4>
                   <ul className="space-y-3">
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
-                      <span>Establishing national data sovereignty guidelines and cloud standards.</span>
+                      <span>Establishing national data sovereignty and robust governance frameworks.</span>
                     </li>
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
-                      <span>Responsible, ethical AI integration within enterprise operations.</span>
+                      <span>Ethical AI integration and responsible technology adoption.</span>
                     </li>
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-[#eb0000] shrink-0 mt-0.5" />
-                      <span>Building cross-sector database interoperability and digital trust.</span>
+                      <span>Building digital trust, cybersecurity resilience, and cross-sectoral data interoperability.</span>
                     </li>
                   </ul>
                 </div>
@@ -120,20 +120,20 @@ export default function ThemeDateVenue() {
                     <TrendingUp className="w-6 h-6" />
                   </div>
                   <h4 className="font-display font-bold text-lg text-slate-900 group-hover:text-dnc-orange transition-colors mb-4">
-                    Digital Economy & Innovation Ecosystems
+                    Digital Economy & Innovation
                   </h4>
                   <ul className="space-y-3">
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
-                      <span>Advancing instant micro-payments and regional cross-border gateways.</span>
+                      <span>Advancing fintech ecosystems and digital payment architecture.</span>
                     </li>
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
-                      <span>Scaling local startup accelerators and optimizing digital e-trade corridors.</span>
+                      <span>Fostering startup acceleration and optimizing digital trade and e-commerce expansion.</span>
                     </li>
                     <li className="flex gap-2.5 items-start text-sm text-slate-600 font-sans leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-dnc-orange shrink-0 mt-0.5" />
-                      <span>Retaining young developers and boosting tech resource export capabilities.</span>
+                      <span>Cultivating a future-ready digital workforce and investment prospects within the innovation economy.</span>
                     </li>
                   </ul>
                 </div>
@@ -170,7 +170,7 @@ export default function ThemeDateVenue() {
           </div>
 
           {/* High-Contrast Interactive Split Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch min-h-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
             
             {/* LEFT COLUMN: CONSOLIDATED EVENT DETAILS */}
             <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl border border-white/10 p-8 sm:p-10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
@@ -179,14 +179,14 @@ export default function ThemeDateVenue() {
               <div className="space-y-8 relative z-10">
                 <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start text-center sm:text-left">
                   <Calendar className="w-6 h-6 text-dnc-orange shrink-0" />
-                  <span className="text-2xl font-bold text-white">July 3, 2026 (Friday)</span>
+                  <span className="text-2xl font-bold text-white">July 3, 2026 | Asar 19, 2083</span>
                 </div>
 
                 <hr className="border-white/[0.08]" />
 
                 <div className="flex flex-col sm:flex-row gap-3 items-center sm:items-start text-center sm:text-left">
                   <MapPin className="w-6 h-6 text-dnc-orange shrink-0" />
-                  <span className="text-2xl font-bold text-white">The Plaza, Pulchowk</span>
+                  <span className="text-2xl font-bold text-white">The Plaza, Pulchowk, Lalitpur</span>
                 </div>
 
               </div>
@@ -205,7 +205,7 @@ export default function ThemeDateVenue() {
             </div>
 
             {/* RIGHT COLUMN: VENUE PHOTO & MAP LINK */}
-            <div className="bg-slate-800 rounded-3xl border border-white/10 overflow-hidden relative group shadow-2xl flex flex-col justify-end">
+            <div className="bg-slate-800 rounded-3xl border border-white/10 overflow-hidden relative group shadow-2xl flex flex-col justify-end min-h-[300px]">
               <img
                 src="/images/plaza.jpg" 
                 alt="The Plaza Hotel, Pulchowk"
@@ -213,8 +213,8 @@ export default function ThemeDateVenue() {
               />
               
               {/* Gradient overlays to ensure text/button readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f2b] via-[#0d0f2b]/40 to-transparent opacity-95" />
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-dnc-blue/30 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f2b] via-[#0d0f2b]/10 to-transparent opacity-25" />
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-dnc-blue/10 mix-blend-overlay" />
 
               {/* Map interaction overlay */}
               <div className="relative z-10 p-8 sm:p-10 flex flex-col items-start w-full">

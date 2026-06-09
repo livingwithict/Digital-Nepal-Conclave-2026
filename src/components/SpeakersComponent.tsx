@@ -31,11 +31,11 @@ export default function SpeakersComponent() {
             Vanguard of Digital Innovation
           </span>
           <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Distinguished Speakers & Leaders
+            Our Previous Speakers
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
             The conclave is graced by regional policy visionaries, Google South Asia directors, fin-tech pioneers, and central planners pushing technical protocols to implement paperless digital ecosystems.
-          </p>
+          </p> */}
         </div>
 
         {/* Search and Filters bar */}
@@ -98,7 +98,7 @@ export default function SpeakersComponent() {
                   )} */}
 
                   {/* Social media quick overlay container */}
-                  <div className="absolute bottom-3 right-3 flex gap-1.5 bg-white/95 backdrop-blur-xs px-2 py-1.5 rounded-xl shadow-xs opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
+                  {/* <div className="absolute bottom-3 right-3 flex gap-1.5 bg-white/95 backdrop-blur-xs px-2 py-1.5 rounded-xl shadow-xs opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
                     {spk.linkedinUrl && (
                       <a
                         href={spk.linkedinUrl}
@@ -123,7 +123,7 @@ export default function SpeakersComponent() {
                         <Twitter className="w-3.5 h-3.5" />
                       </a>
                     )}
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="space-y-1">
@@ -227,7 +227,7 @@ export default function SpeakersComponent() {
                     </div>
 
                     {/* Social links block inside Modal */}
-                    <div className="mb-6 flex flex-wrap gap-2 items-center">
+                    {/* <div className="mb-6 flex flex-wrap gap-2 items-center">
                       <span className="text-[10px] text-slate-400 font-sans uppercase tracking-wider mr-1">Social Links:</span>
                       {selectedSpeaker.linkedinUrl && (
                         <a
@@ -251,24 +251,7 @@ export default function SpeakersComponent() {
                           Twitter / X
                         </a>
                       )}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-3 border-t border-slate-100">
-                    <div className="flex gap-1">
-                      {selectedSpeaker.tags?.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-0.5 bg-slate-150 text-slate-700 text-[10px] font-semibold rounded font-sans uppercase"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <span className="text-[10px] text-slate-400 font-sans">
-                      DNC 2026 Champion
-                    </span>
+                    </div> */}
                   </div>
 
                 </div>

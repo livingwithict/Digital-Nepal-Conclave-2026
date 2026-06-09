@@ -15,7 +15,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
       {/* Introduction Card */}
       <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs">
         <div className="max-w-4xl mx-auto space-y-6">
-          <span className="text-sm font-bold font-sans text-dnc-blue tracking-widest uppercase block mb-2">5th Anniversary Edition</span>
+          <span className="text-sm font-bold font-sans text-dnc-blue tracking-widest uppercase block mb-2">5th Edition</span>
           <h2 className="font-display font-extrabold text-3xl text-dnc-black mb-6 leading-tight">
             The Ultimate Catalyst for Nepal&apos;s High-Level Tech Policy
           </h2>
@@ -30,7 +30,7 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
               Establishing itself as a credible architecture for institutional action, the Conclave has become the fundamental platform for cross-sectoral collaboration and knowledge exchange. It serves to showcase digital excellence and foster strategic partnerships that are instrumental in building a digitally resilient and globally competitive nation.
             </p>
             <p>
-              Advancing the momentum toward a digitally empowered nation, the Digital Nepal Conclave 2026 – 5th Edition will explore the transformative potential of data ecosystems and robust public infrastructure as primary catalysts for socio-economic evolution.
+              Advancing the momentum toward a digitally empowered nation, the <strong>Digital Nepal Conclave 2026 – 5th Edition</strong> will explore the transformative potential of data ecosystems and robust public infrastructure as primary catalysts for socio-economic evolution.
             </p>
           </div>
         </div>
@@ -194,19 +194,29 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { name: "Digital Samvad", desc: "Weekly policy talk-show broadcasts" },
-            { name: "Digital Nepal Conclave", desc: "Flagship central business summit" },
-            { name: "Digital Karnali Conclave", desc: "Decentralized state policy forums" },
-            { name: "Digital Madhesh Conclave", desc: "Regional smart-services seminars" },
-            { name: "ICT Award", desc: "The ultimate accolade for tech champions" },
-            { name: "Startup & Idea Fest", desc: "National ecosystem pitching events" },
-            { name: "ICT Gyan", desc: "Centralized analytical tech encyclopedia" },
-            { name: "Digital Leadership Dialogue", desc: "Corporate-regulator interactions" }
+            { name: "Digital Samvad", desc: "Weekly policy talk-show broadcasts", logo: "/images/logos/digital-samvad.jpg" },
+            { name: "Digital Nepal Conclave", desc: "Flagship central business summit", logo: "/images/logos/dnc-logo.png" },
+            { name: "Digital Karnali Conclave", desc: "Decentralized state policy forums", logo: "/images/logos/dkc-logo.png" },
+            { name: "Digital Madhesh Conclave", desc: "Regional smart-services seminars", logo: "/images/logos/dmc-logo.png" },
+            { name: "ICT Award", desc: "The ultimate accolade for tech champions", logo: "/images/logos/ict-award.png" },
+            { name: "Startup & Idea Fest", desc: "National ecosystem pitching events", logo: "/images/logos/snif.png" },
+            { name: "ICT Gyan", desc: "Centralized analytical tech encyclopedia", logo: "/images/logos/ict-gyan.png" },
+            { name: "Digital Leadership Dialogue", desc: "Corporate-regulator interactions", logo: "/images/logos/dld-logo.png" }
           ].map((item, index) => (
             <div key={index} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-xs hover:border-dnc-blue transition-all duration-200">
-              <span className="w-2.5 h-2.5 rounded-full bg-dnc-orange inline-block mb-3"></span>
-              <h4 className="font-display font-bold text-sm text-slate-900 mb-1 leading-tight">{item.name}</h4>
-              <p className="text-[11px] text-slate-500">{item.desc}</p>
+              {/* Logo Placeholder */}
+              <div className="h-40 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={item.logo} 
+                  alt={`${item.name} logo`}
+                  className="h-full w-full object-contain p-2"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+              <h4 className="font-display font-bold text-base text-slate-900 mb-1 leading-tight">{item.name}</h4>
+              {/* <p className="text-[11px] text-slate-500">{item.desc}</p> */}
             </div>
           ))}
         </div>

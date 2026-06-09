@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Award, Download, Calendar, Play, X } from "lucide-react";
 import { EVENTS_DATA, EventYear } from "../eventData";
 import ReactMarkdown from 'react-markdown';
@@ -34,15 +34,21 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
     setSelectedVideo({ title: vid.title, url: embedUrl });
   };
 
-  return (
+  useEffect(() => {
+    if (event.videoPlaylists.length > 0 && !selectedVideo) {
+      handleVideoSelect(event.videoPlaylists[0]);
+    }
+  }, [event.videoPlaylists, selectedVideo]);
+
+    return (
     <section className="min-h-screen bg-gradient-to-br from-white via-white to-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section - Title and Year Selector */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-dnc-blue/5 border border-dnc-blue/20 rounded-full mb-4">
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-dnc-blue/5 border border-dnc-blue/20 rounded-full mb-4">
             <Award className="w-4 h-4 text-dnc-orange" />
             <span className="text-sm font-semibold text-dnc-blue">Historic Archives & Milestones</span>
-          </div>
+          </div> */}
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-950 mb-3 tracking-tight">
             Our Preceding Editions Overview
@@ -77,7 +83,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
         <div className="space-y-12">
           {/* Event Header Card with Logo and Info */}
           <div className="bg-white rounded-2xl border border-slate-100 p-8 md:p-12 shadow-sm hover:shadow-md transition-shadow duration-300">
-            <div className="grid md:grid-cols-4 gap-8 items-center mb-8 pb-8 border-b border-dnc-blue/10">
+            <div className="grid md:grid-cols-4 gap-8 items-center mb-8 pb-4 border-b border-dnc-blue/10">
               {/* Logo */}
               <div className="flex justify-center md:justify-start">
                 <img
@@ -90,7 +96,7 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
               {/* Title and Tagline */}
               <div className="md:col-span-3">
                 <div className="text-base font-bold text-dnc-orange uppercase tracking-widest mb-2">
-                  Conclave {event.year}
+                  Digital Nepal Conclave {event.year}
                 </div>
                 <h2 className="text-3xl font-bold text-slate-950 mb-2">{event.theme}</h2>
                 <p className="text-lg text-slate-600">{event.tagline}</p>
@@ -138,22 +144,49 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
               <span className="w-1 h-8 bg-dnc-orange rounded-full"></span>
               Photo Gallery
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 auto-rows-[180px] sm:auto-rows-[220px]">
-              {event.galleryImages.map((image) => (
+            
+            {/* Desktop: Bento Grid | Mobile: Simple Grid */}
+            <div className="hidden md:grid grid-cols-4 gap-1 auto-rows-[220px]">
+              {event.galleryImages.map((image, index) => (
                 <div
                   key={image.id}
                   className={`relative rounded-xs overflow-hidden border border-dnc-blue/10 shadow-sm hover:shadow-lg hover:border-dnc-blue/30 transition-all duration-300 group cursor-pointer ${
-                    image.span || ""
+                    // Bento grid pattern: alternate larger items
+                    index === 0 ? "col-span-2 row-span-2" :
+                    index === 3 ? "col-span-2 row-span-2" :
+                    index === 6 ? "col-span-2 row-span-2" :
+                    "col-span-1 row-span-1"
                   }`}
                 >
                   <img
                     src={image.src}
-                    // alt={image.alt}
+                    alt={image.alt || `Gallery image ${index + 1}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-black/0 transition-colors duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                     <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold text-center px-4">
-                      {/* {image.alt} */}
+                      {image.alt}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile: Simple 2-column grid */}
+            <div className="md:hidden grid grid-cols-2 gap-1 auto-rows-[150px] sm:auto-rows-[180px]">
+              {event.galleryImages.map((image, index) => (
+                <div
+                  key={image.id}
+                  className="relative rounded-xs overflow-hidden border border-dnc-blue/10 shadow-sm hover:shadow-lg hover:border-dnc-blue/30 transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt || `Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold text-center px-4">
+                      {image.alt}
                     </span>
                   </div>
                 </div>
@@ -169,8 +202,28 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
             </h3>
 
             <div className="grid md:grid-cols-2 gap-4">
+              {/* Video Player */}
+              <div className={`transition-all duration-300 ${selectedVideo ? "opacity-100" : "opacity-50 pointer-events-none"}`}>
+                {selectedVideo && selectedVideo.url ? (
+                  <div className="rounded-xl overflow-hidden border-1 border-dnc-blue/20 shadow-lg bg-black">
+                    <iframe
+                      title={selectedVideo.title}
+                      src={selectedVideo.url}
+                      className="w-full aspect-video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                ) : (
+                  <div className="rounded-xl border-2 border-dashed border-dnc-blue/20 aspect-video flex flex-col items-center justify-center bg-dnc-blue/5 text-slate-500">
+                    <Play className="w-12 h-12 mb-2 opacity-30" />
+                    <p className="font-semibold">Select a video to watch</p>
+                  </div>
+                )}
+              </div>
+
               {/* Video List */}
-              <div className="space-y-3">
+              <div className="space-y-3 overflow-y-auto max-h-[calc(9/16*100vw)] md:max-h-[350px]">
                 {event.videoPlaylists.map((video, idx) => (
                   <button
                     key={video.id}
@@ -195,67 +248,20 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                         <p className="font-semibold text-slate-950 group-hover:text-dnc-blue transition-colors">
                           {video.title}
                         </p>
-                        {video.description && (
+                        {/* {video.description && (
                           <p className="text-xs text-slate-500 mt-1 line-clamp-2">
                             {video.description}
                           </p>
-                        )}
+                        )} */}
                       </div>
                       <div className="text-xl text-dnc-orange group-hover:scale-110 transition-transform">→</div>
                     </div>
                   </button>
                 ))}
               </div>
-
-              {/* Video Player */}
-              <div className={`transition-all duration-300 ${selectedVideo ? "opacity-100" : "opacity-50 pointer-events-none"}`}>
-                {selectedVideo && selectedVideo.url ? (
-                  <div className="rounded-xl overflow-hidden border-2 border-dnc-blue/20 shadow-lg bg-black">
-                    <iframe
-                      title={selectedVideo.title}
-                      src={selectedVideo.url}
-                      className="w-full aspect-video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                ) : (
-                  <div className="rounded-xl border-2 border-dashed border-dnc-blue/20 aspect-video flex flex-col items-center justify-center bg-dnc-blue/5 text-slate-500">
-                    <Play className="w-12 h-12 mb-2 opacity-30" />
-                    <p className="font-semibold">Select a video to watch</p>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
 
-          {/* Full Screen Video Modal */}
-          {selectedVideo && selectedVideo.url && (
-            <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 md:hidden">
-              <div className="w-full max-w-2xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-dnc-blue/20">
-                <div className="flex items-center justify-between p-4 border-b border-dnc-blue/20">
-                  <p className="text-white font-semibold text-sm truncate">
-                    {selectedVideo.title}
-                  </p>
-                  <button
-                    onClick={() => setSelectedVideo(null)}
-                    className="p-1 hover:bg-dnc-orange/20 rounded-lg transition-colors"
-                  >
-                    <X className="w-5 h-5 text-dnc-orange" />
-                  </button>
-                </div>
-                <div className="aspect-video overflow-hidden">
-                  <iframe
-                    title={selectedVideo.title}
-                    src={selectedVideo.url}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>
