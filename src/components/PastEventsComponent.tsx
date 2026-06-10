@@ -1,19 +1,23 @@
-import React, { useState } from "react";
-import { Calendar, Video, ExternalLink, Image as ImageIcon, FileText, Sparkles, Award, PlayCircle } from "lucide-react";
-import { PAST_EVENTS_DATA, PastEvent } from "../data";
+import React, { useState, useEffect } from "react";
+import { Award, Download, Calendar, Play, X } from "lucide-react";
+import { EVENTS_DATA, EventYear } from "../eventData";
+import ReactMarkdown from 'react-markdown';
 
 interface PastEventsProps {
-  initialYear?: "2025" | "2024" | "2023" | "2022";
+  initialYear?: EventYear;
 }
 
 export default function PastEventsComponent({ initialYear = "2025" }: PastEventsProps) {
-  const [activeYear, setActiveYear] = useState<"2025" | "2024" | "2023" | "2022">(initialYear);
-  const [selectedVideo, setSelectedVideo] = useState<{ title: string; url: string } | null>(null);
+  const [activeYear, setActiveYear] = useState<EventYear>(initialYear);
+  const [selectedVideo, setSelectedVideo] = useState<{
+    title: string;
+    url: string;
+  } | null>(null);
 
-  const event = PAST_EVENTS_DATA.find((e) => e.year === activeYear) || PAST_EVENTS_DATA[0];
+  const event = EVENTS_DATA[activeYear];
 
   // Helper to extract clean ID from links
-  const getSimulatedYoutubeEmbed = (url: string) => {
+  const getEmbedUrl = (url: string) => {
     if (url.includes("playlist?list=")) {
       const listId = url.split("playlist?list=")[1];
       return `https://www.youtube.com/embed/videoseries?list=${listId}`;
@@ -25,25 +29,37 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
     return "";
   };
 
-  return (
-    <section id="past-events-page" className="bg-white py-12">
+  const handleVideoSelect = (vid: { title: string; url: string }) => {
+    const embedUrl = getEmbedUrl(vid.url);
+    setSelectedVideo({ title: vid.title, url: embedUrl });
+  };
+
+  useEffect(() => {
+    if (event.videoPlaylists.length > 0 && !selectedVideo) {
+      handleVideoSelect(event.videoPlaylists[0]);
+    }
+  }, [event.videoPlaylists, selectedVideo]);
+
+    return (
+    <section className="min-h-screen bg-gradient-to-br from-white via-white to-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Multipage Sidebar / Timeline Selector */}
-        <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-2">
+        {/* Header Section - Title and Year Selector */}
+        <div className="text-center mb-12">
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-dnc-blue/5 border border-dnc-blue/20 rounded-full mb-4">
             <Award className="w-4 h-4 text-dnc-orange" />
-            Historic Archives & Milestones
-          </span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+            <span className="text-sm font-semibold text-dnc-blue">Historic Archives & Milestones</span>
+          </div> */}
+
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-950 mb-3 tracking-tight">
             Our Preceding Editions Overview
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            See summaries, expert keynote guidelines, photolinks, and playlists of Nepal&apos;s digital revolution over the years.
+
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+            See summaries, expert keynote guidelines, photolinks, and playlists of Nepal's digital revolution over the years
           </p>
 
-          {/* Timeline Pills */}
-          <div className="mt-8 flex justify-center gap-2">
+          {/* Year Toggle Buttons */}
+          <div className="flex justify-center gap-3 flex-wrap">
             {(["2025", "2024", "2023", "2022"] as const).map((year) => (
               <button
                 key={year}
@@ -51,190 +67,202 @@ export default function PastEventsComponent({ initialYear = "2025" }: PastEvents
                   setActiveYear(year);
                   setSelectedVideo(null);
                 }}
-                className={`px-5 py-2.5 rounded-xl text-sm font-bold border transition ${
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                   activeYear === year
-                    ? "bg-dnc-blue text-white shadow-xs border-dnc-blue"
-                    : "bg-slate-50 text-slate-600 hover:bg-slate-100 border-slate-200"
+                    ? "bg-dnc-blue text-white shadow-lg shadow-dnc-blue/20 scale-105"
+                    : "bg-white text-slate-700 border border-slate-200 hover:border-dnc-blue/30 hover:text-dnc-blue"
                 }`}
               >
-                Conclave {year}
+                {year}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Detailed Archive Grid Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mt-12">
-          
-          {/* Main Left Details Column */}
-          <div className="lg:col-span-8 space-y-8 flex flex-col justify-between">
-            <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-8 text-[120px] font-display font-black text-slate-200/40 pointer-events-none select-none leading-none">
-                {event.year}
+        {/* Main Content Area */}
+        <div className="space-y-12">
+          {/* Event Header Card with Logo and Info */}
+          <div className="bg-white rounded-2xl border border-slate-100 p-8 md:p-12 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="grid md:grid-cols-4 gap-8 items-center mb-8 pb-4 border-b border-dnc-blue/10">
+              {/* Logo */}
+              <div className="flex justify-center md:justify-start">
+                <img
+                  src={event.logo}
+                  alt={`${event.year} Logo`}
+                  className="w-40 h-40 object-contain rounded-lg"
+                />
               </div>
 
-              <div className="max-w-xl">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-dnc-orange font-sans block mb-1">
-                  YEAR {event.year} THEMATIC PLATFORM
-                </span>
-                
-                <h2 className="font-display font-extrabold text-2xl text-slate-950 tracking-tight leading-tight mb-4">
-                  {event.theme}
-                </h2>
-                
-                <p className="text-sm text-slate-400 font-sans mb-6 uppercase tracking-wider border-b border-slate-200 pb-3 block">
-                  Organizer details: {event.organizer}
-                </p>
-
-                <p className="text-slate-700 text-sm leading-relaxed text-justify mb-6">
-                  {event.description}
-                </p>
-
-                {/* Specific Edition Highlights */}
-                {event.year === "25" && (
-                  <div className="bg-white border text-sm rounded-2xl p-5 border-slate-200/50 mb-6 space-y-2">
-                    <p className="font-bold text-sm font-sans text-slate-400 uppercase tracking-widest">Dignitaries Present:</p>
-                    <p className="text-sm text-slate-600">Prithvi Subba Gurung (Ministry of Communication), Gagan Thapa, Eknarayan Aryal, Dr. Prakash Kumar Shrestha, Radhika Aryal, Keshav Nepal, and Nileshman Pradhan.</p>
-                  </div>
-                )}
-
-                {event.year === "24" && (
-                  <div className="bg-white border text-sm rounded-2xl p-5 border-slate-200/50 mb-6 space-y-2">
-                    <p className="font-bold text-sm font-sans text-slate-400 uppercase tracking-widest">Major National Declarations:</p>
-                    <ul className="text-sm text-slate-600 space-y-1 list-disc pl-4">
-                      <li>Government declared upcoming <strong>Decade on IT Development</strong>.</li>
-                      <li>Projections mapping 1.5M jobs and 3 Trillion exports.</li>
-                      <li>Highlighting Nagarik App integration and GeoKrishi.</li>
-                    </ul>
-                  </div>
-                )}
+              {/* Title and Tagline */}
+              <div className="md:col-span-3">
+                <div className="text-base font-bold text-dnc-orange uppercase tracking-widest mb-2">
+                  Digital Nepal Conclave {event.year}
+                </div>
+                <h2 className="text-3xl font-bold text-slate-950 mb-2">{event.theme}</h2>
+                <p className="text-lg text-slate-600">{event.tagline}</p>
               </div>
             </div>
 
-            {/* External Asset links */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-2">
+            {/* Overview Text */}
+            <div className="space-y-4 mb-8">
+              {event.overviewParagraphs.map((paragraph, idx) => (
+                <p key={idx} className="text-slate-700 leading-relaxed text-justify">
+                  <ReactMarkdown>
+                    {paragraph}
+                  </ReactMarkdown>
+                </p>
+              ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={event.photoDriveLink}
+                href={event.agendaDriveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white hover:bg-slate-50 border border-slate-150 rounded-2xl p-6 shadow-2xs hover:shadow-md transition-all duration-300 flex items-center justify-between group"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-dnc-blue text-white font-semibold rounded-xl hover:bg-dnc-blue/90 transition-colors duration-300 shadow-lg shadow-dnc-blue/20"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-dnc-orange/5 rounded-xl text-dnc-orange">
-                    <ImageIcon className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-sm font-bold text-slate-900 group-hover:text-dnc-blue transition-colors">Slideshow and Photo Gallery</p>
-                    <p className="text-[10px] text-slate-500 font-sans">Real-world event frames & albums</p>
-                  </div>
-                </div>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+                <Calendar className="w-5 h-5" />
+                See Agenda
               </a>
 
               <a
-                href="#/publications"
-                className="bg-white hover:bg-slate-50 border border-slate-150 rounded-2xl p-6 shadow-2xs hover:shadow-md transition-all duration-300 flex items-center justify-between group"
+                href={event.reportDriveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-dnc-orange text-white font-semibold rounded-xl hover:bg-dnc-orange/90 transition-colors duration-300 shadow-lg shadow-dnc-orange/20"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-dnc-blue/5 rounded-xl text-dnc-blue">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <div className="text-left">
-                    <p className="text-sm font-bold text-slate-900 group-hover:text-dnc-blue transition-colors">Download Conclave Reports</p>
-                    <p className="text-[10px] text-slate-500 font-sans">Access original analytics whitepapers</p>
-                  </div>
-                </div>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+                <Download className="w-5 h-5" />
+                Download Report
               </a>
             </div>
           </div>
 
-          {/* Right Metrics & Playlists Column */}
-          <div className="lg:col-span-4 bg-slate-900 text-white rounded-3xl p-8 border border-slate-800 flex flex-col justify-between shadow-xl">
+          {/* Photo Gallery - Bento Grid Style */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-slate-950 flex items-center gap-2">
+              <span className="w-1 h-8 bg-dnc-orange rounded-full"></span>
+              Photo Gallery
+            </h3>
             
-            <div className="space-y-6">
-              <span className="text-[10px] uppercase font-bold text-dnc-orange-light font-sans tracking-widest block">
-                CONCLAVE {event.year} STATS
-              </span>
-
-              {/* Specific Stats count */}
-              <div className="grid grid-cols-3 gap-2 border-b border-slate-800 pb-6 mb-4">
-                {event.stats?.map((st, sIdx) => (
-                  <div key={sIdx} className="text-center">
-                    <p className="font-display font-black text-xl text-white">{st.value}</p>
-                    <p className="text-[9px] uppercase tracking-wider text-slate-400 font-sans mt-0.5">{st.label}</p>
+            {/* Desktop: Bento Grid | Mobile: Simple Grid */}
+            <div className="hidden md:grid grid-cols-4 gap-1 auto-rows-[220px]">
+              {event.galleryImages.map((image, index) => (
+                <div
+                  key={image.id}
+                  className={`relative rounded-xs overflow-hidden border border-dnc-blue/10 shadow-sm hover:shadow-lg hover:border-dnc-blue/30 transition-all duration-300 group cursor-pointer ${
+                    // Bento grid pattern: alternate larger items
+                    index === 0 ? "col-span-2 row-span-2" :
+                    index === 3 ? "col-span-2 row-span-2" :
+                    index === 6 ? "col-span-2 row-span-2" :
+                    "col-span-1 row-span-1"
+                  }`}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt || `Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold text-center px-4">
+                      {image.alt}
+                    </span>
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile: Simple 2-column grid */}
+            <div className="md:hidden grid grid-cols-2 gap-1 auto-rows-[150px] sm:auto-rows-[180px]">
+              {event.galleryImages.map((image, index) => (
+                <div
+                  key={image.id}
+                  className="relative rounded-xs overflow-hidden border border-dnc-blue/10 shadow-sm hover:shadow-lg hover:border-dnc-blue/30 transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt || `Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-semibold text-center px-4">
+                      {image.alt}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Video Playlists Section */}
+          <div className="space-y-3">
+            <h3 className="text-2xl font-bold text-slate-950 flex items-center gap-2">
+              <span className="w-1 h-8 bg-dnc-orange rounded-full"></span>
+              Session Videos
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* Video Player */}
+              <div className={`transition-all duration-300 ${selectedVideo ? "opacity-100" : "opacity-50 pointer-events-none"}`}>
+                {selectedVideo && selectedVideo.url ? (
+                  <div className="rounded-xl overflow-hidden border-1 border-dnc-blue/20 shadow-lg bg-black">
+                    <iframe
+                      title={selectedVideo.title}
+                      src={selectedVideo.url}
+                      className="w-full aspect-video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                ) : (
+                  <div className="rounded-xl border-2 border-dashed border-dnc-blue/20 aspect-video flex flex-col items-center justify-center bg-dnc-blue/5 text-slate-500">
+                    <Play className="w-12 h-12 mb-2 opacity-30" />
+                    <p className="font-semibold">Select a video to watch</p>
+                  </div>
+                )}
               </div>
 
-              {/* Playlists Highlight */}
-              <div>
-                <h4 className="font-display font-bold text-sm text-slate-200 mb-3 flex items-center gap-2">
-                  <Video className="w-4 h-4 text-dnc-orange-light" />
-                  Session Video Playlists
-                </h4>
-                
-                <div className="space-y-3">
-                  {event.highlightVideos.map((vid) => {
-                    const embedUrl = getSimulatedYoutubeEmbed(vid.url);
-                    return (
+              {/* Video List */}
+              <div className="space-y-3 overflow-y-auto max-h-[calc(9/16*100vw)] md:max-h-[350px]">
+                {event.videoPlaylists.map((video, idx) => (
+                  <button
+                    key={video.id}
+                    onClick={() => handleVideoSelect(video)}
+                    className={`w-full p-4 rounded-xl border-2 transition-all duration-300 text-left group ${
+                      selectedVideo?.title === video.title
+                        ? "bg-dnc-blue/5 border-dnc-blue shadow-md"
+                        : "bg-white border-slate-200 hover:border-dnc-blue/30"
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
                       <div
-                        key={vid.id}
-                        onClick={() => setSelectedVideo({ title: vid.title, url: embedUrl })}
-                        className={`p-3.5 rounded-xl border border-slate-800 bg-slate-950/70 hover:bg-slate-950 hover:border-dnc-blue-light transition duration-200 cursor-pointer flex gap-3 items-center group ${
-                          selectedVideo?.title === vid.title ? "border-dnc-blue bg-slate-950" : ""
+                        className={`mt-1 p-2 rounded-lg transition-colors duration-300 shrink-0 ${
+                          selectedVideo?.title === video.title
+                            ? "bg-dnc-blue text-white"
+                            : "bg-slate-100 text-slate-600 group-hover:bg-dnc-orange/20 group-hover:text-dnc-orange"
                         }`}
                       >
-                        <PlayCircle className="w-5 h-5 shrink-0 text-dnc-orange group-hover:scale-110 transition-transform" />
-                        <div className="text-left w-full min-w-0">
-                          <p className="text-[11px] font-bold text-slate-100 truncate">{vid.title}</p>
-                          <p className="text-[9px] text-slate-400 font-sans uppercase mt-0.5 flex items-center gap-1">
-                            Click to play inside screen
-                          </p>
-                        </div>
+                        <Play className="w-4 h-4" />
                       </div>
-                    );
-                  })}
-                </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-slate-950 group-hover:text-dnc-blue transition-colors">
+                          {video.title}
+                        </p>
+                        {/* {video.description && (
+                          <p className="text-xs text-slate-500 mt-1 line-clamp-2">
+                            {video.description}
+                          </p>
+                        )} */}
+                      </div>
+                      <div className="text-xl text-dnc-orange group-hover:scale-110 transition-transform">→</div>
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
-
-            {/* Video preview / instructions */}
-            <div className="pt-6 border-t border-slate-800">
-              <span className="text-[10px] text-slate-500 font-sans tracking-wide leading-relaxed block">
-                * Video directories stream official full footage on-demand from IFN official channels.
-              </span>
-            </div>
-
           </div>
+
         </div>
-
-        {/* Embedded Iframe Player Box */}
-        {selectedVideo && selectedVideo.url && (
-          <div id="video-preview-player" className="mt-8 bg-black rounded-3xl p-4 overflow-hidden border border-slate-200 max-w-4xl mx-auto shadow-2xl relative">
-            <div className="flex items-center justify-between pb-3 text-white">
-              <span className="text-sm font-bold font-sans text-dnc-orange-light">NOW STREAMING PLAYLIST</span>
-              <p className="text-sm font-semibold truncate max-w-lg">{selectedVideo.title}</p>
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="text-sm font-sans font-bold text-red-500 hover:underline"
-              >
-                Hide Screen [X]
-              </button>
-            </div>
-            
-            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xs">
-              <iframe
-                title={selectedVideo.title}
-                src={selectedVideo.url}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        )}
-
       </div>
     </section>
   );

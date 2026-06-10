@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export type PageId =
   | "home"

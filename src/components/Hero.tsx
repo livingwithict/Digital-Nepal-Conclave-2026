@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ArrowRight, Sparkles, Pin, Calendar } from "lucide-react";
+import { ArrowRight, Sparkles, Pin, Calendar, MapPin } from "lucide-react";
 import { PageId } from "./Header";
 import { span } from "motion/react-client";
 
@@ -118,8 +118,8 @@ export default function Hero({ onNavigate, onRegisterClick }: HeroProps) {
           </div>
           <span className="hidden sm:inline text-white/30 text-sm">|</span>
           <div className="flex items-center gap-2 text-slate-100 font-sans text-sm sm:text-base font-semibold tracking-wide">
-            <Pin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#eb0000]" />
-            <span>THE PLAZA HOTEL, PULCHOWK</span>
+            <MapPin className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#eb0000]" />
+            <span>THE PLAZA, PULCHOWK</span>
           </div>
         </div>
 

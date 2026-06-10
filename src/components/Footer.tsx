@@ -31,17 +31,16 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
             >
               {/* Added Image Tag */}
               <img
-                src="/images/DNC-Logo-white.png"
+                src="/images/logo-white.png"
                 alt="Digital Nepal Logo"
-                className="w-32 h-32 object-contain"
+                className="h-28 mb-4"
               />
             </div>
-            <p className="text-base font-sans font-bold text-dnc-orange-light tracking-wide uppercase">
+            <p className="text-base font-sans font-bold text-dnc-orange-light tracking-wide uppercase mb-2">
               Digital Nepal Conclave 2026
             </p>
-
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Organized by <strong>ICT Foundation Nepal (IFN)</strong> - a profit-not-distributing organization dedicated to facilitating high-level policy dialogue and public-private sector partnerships to implement e-society initiatives.
+              The <strong>Biggest Digital Conference</strong> in Nepal, organized by <strong>ICT Foundation Nepal (IFN) ICT Foundation Nepal </strong>, a nonprofit, non-distributing organization, which promotes innovation, startups, and ideas guided by the vision to build Digital Nepal promoting new ideas and startups.
             </p>
           </div>
 
@@ -150,7 +149,7 @@ export default function Footer({ onNavigate, onRegisterClick }: FooterProps) {
 
         {/* Bottom copyright segment */}
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© Digital Nepal Conclave 2026. All Rights Reserved. Crafted for Nepal&apos;s leading digital initiative.</p>
+          <p>© Digital Nepal Conclave 2026. All Rights Reserved.</p>
           
           <button
             onClick={scrollToTop}

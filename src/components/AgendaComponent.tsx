@@ -1,6 +1,18 @@
 import React, { useState } from "react";
-import { Clock, Users, MapPin, Filter } from "lucide-react";
-import { AGENDA_DATA, AgendaItem } from "../data";
+import {
+  Clock,
+  Users,
+  MapPin,
+  Zap,
+  Briefcase,
+  Brain,
+  TrendingUp,
+  Coffee,
+  Mic,
+  Star,
+  Lectern
+} from "lucide-react";
+import { AGENDA_DATA, AgendaItem } from "../agendaData";
 
 export default function AgendaComponent() {
   const [activeFilter, setActiveFilter] = useState<"All" | "Inaugural" | "Governance" | "Data" | "Economy" | "Break">("All");
@@ -9,15 +21,62 @@ export default function AgendaComponent() {
     ? AGENDA_DATA
     : AGENDA_DATA.filter(item => item.category === activeFilter);
 
-  // Minimalist text colors based on category
-  const getCategoryColor = (category: string) => {
+  const getCategoryConfig = (category: string) => {
     switch (category) {
-      case "Inaugural": return "text-slate-900";
-      case "Governance": return "text-dnc-blue";
-      case "Data": return "text-dnc-orange";
-      case "Economy": return "text-red-600";
-      case "Break": return "text-slate-400";
-      default: return "text-slate-500";
+      case "Inaugural":
+        return {
+          color: "text-slate-700",
+          bgColor: "bg-gradient-to-br from-slate-100/50 to-slate-50/50",
+          borderColor: "border-slate-200/70",
+          badgeColor: "bg-slate-700 text-white",
+          accentColor: "from-slate-300 to-slate-400",
+          icon: Zap,
+        };
+      case "Governance":
+        return {
+          color: "text-blue-700",
+          bgColor: "bg-gradient-to-br from-blue-50/50 to-blue-25/50",
+          borderColor: "border-blue-200/60",
+          badgeColor: "bg-dnc-blue text-white",
+          accentColor: "from-blue-0 to-dnc-blue",
+          icon: Briefcase,
+        };
+      case "Data":
+        return {
+          color: "text-orange-700",
+          bgColor: "bg-gradient-to-br from-orange-50/50 to-orange-25/50",
+          borderColor: "border-orange-200/60",
+          badgeColor: "bg-dnc-orange text-white",
+          accentColor: "from-orange-0 to-dnc-orange",
+          icon: Brain,
+        };
+      case "Economy":
+        return {
+          color: "text-red-700",
+          bgColor: "bg-gradient-to-br from-red-50/50 to-red-25/50",
+          borderColor: "border-red-200/60",
+          badgeColor: "bg-dnc-red text-white",
+          accentColor: "from-red-0 to-dnc-red",
+          icon: TrendingUp,
+        };
+      case "Break":
+        return {
+          color: "text-green-700",
+          bgColor: "bg-gradient-to-br from-green-50/50 to-green-25/50",
+          borderColor: "border-green-200/60",
+          badgeColor: "bg-green-700 text-white",
+          accentColor: "from-green-0 to-green-700",
+          icon: Coffee,
+        };
+      default:
+        return {
+          color: "text-slate-600",
+          bgColor: "bg-slate-50/50",
+          borderColor: "border-slate-200/60",
+          badgeColor: "bg-slate-700 text-white",
+          accentColor: "from-slate-300 to-slate-400",
+          icon: Clock,
+        };
     }
   };
 
@@ -31,115 +90,160 @@ export default function AgendaComponent() {
 
   const filters = ["All", "Inaugural", "Governance", "Data", "Economy", "Break"] as const;
 
-  return (
-    <section id="agenda-section" className="bg-white py-16 sm:py-24 animate-fade-in">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Header Summary */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-50 text-dnc-orange text-sm font-sans font-bold rounded-lg uppercase tracking-wider mb-4 border border-orange-100 shadow-sm">
-            <Clock className="w-4 h-4 text-dnc-orange" />
-            Friday, 3rd July 2026 (2083 Asar 19)
+  // Helper function to render personnel arrays inline
+  const renderPersonnelGroup = (roleLabel: string, Icon: any, people?: string[]) => {
+    if (!people || people.length === 0) return null;
+    
+    return (
+      <div className="flex flex-wrap items-center gap-2.5">
+        {/* Label acts as the first inline item */}
+        <div className="flex items-center gap-2 mr-1">
+          <div className="p-1.5 bg-slate-100/80 rounded-md">
+            <Icon className="w-3.5 h-3.5 text-slate-600" />
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
+          <span className="text-xs font-sans font-bold text-slate-600 uppercase tracking-widest">
+            {roleLabel}
+          </span>
+        </div>
+        
+        {/* Names flow immediately after on the same line, wrapping if needed */}
+        {people.map((person, idx) => (
+          <div 
+            key={`${roleLabel}-${idx}`} 
+            className="px-3 py-1.5 bg-white/80 backdrop-blur-sm border border-slate-300/60 rounded-lg text-sm font-medium text-slate-800 hover:bg-white hover:border-slate-400 transition-all duration-200 shadow-sm hover:shadow-md"
+          >
+            {person}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  return (
+    <section id="agenda-section" className="bg-gradient-to-b from-white via-slate-50/30 to-white py-20 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Enhanced Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center mb-4 p-3 bg-gradient-to-br from-slate-100/60 to-slate-50/60 rounded-2xl border border-slate-200/70">
+            <Clock className="w-5 h-5 text-slate-600 mr-2" />
+            <span className="text-sm font-sans font-bold text-slate-700 uppercase tracking-wider">
+              Friday, 3rd July 2026 (2083 Asar 19)
+            </span>
+          </div>
+          
+          <h1 className="font-display font-black text-4xl sm:text-5xl text-slate-900 tracking-tight mb-3">
             Schedule of Tracks & Sessions
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed font-sans">
-            Navigating Nepal&apos;s digital public infrastructure, AI policies, and emerging financial frameworks. Sessions run concurrently in specialized ballrooms and panels.
-          </p>
         </div>
 
-        {/* Minimalist Filter Tabs */}
-        <div className="mb-12 border-b border-slate-200">
-          <div className="flex items-center gap-6 overflow-x-auto pb-[-1px] no-scrollbar">
-            <div className="flex items-center gap-2 text-slate-400 shrink-0 mb-3">
-              {/* <Filter className="w-4 h-4" /> */}
-            </div>
-            
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`pb-4 text-sm font-bold tracking-wide whitespace-nowrap transition-all duration-200 border-b-2 ${
-                  activeFilter === filter
-                    ? "border-dnc-blue text-dnc-blue"
-                    : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
-                }`}
-              >
-                {filter === "All" ? `All Programs (${AGENDA_DATA.length})` : getCategoryBadgeLabel(filter)}
-              </button>
-            ))}
+        {/* Enhanced Filter Tabs */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 overflow-x-auto pb-4 no-scrollbar">
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter;
+              const config = filter !== "All" ? getCategoryConfig(filter) : null;
+              
+              return (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`relative px-4 py-2.5 rounded-xl font-sans font-semibold text-sm whitespace-nowrap transition-all duration-300 border ${
+                    isActive
+                      ? filter === "All"
+                        ? "bg-slate-800 to-slate-800 text-white border-slate-800 shadow-lg shadow-slate-400/20 scale-105"
+                        : `${config?.badgeColor} border-transparent shadow-md shadow-slate-300/20`
+                      : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                  }`}
+                >
+                  {filter === "All" ? `All Programs (${AGENDA_DATA.length})` : getCategoryBadgeLabel(filter)}
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Clean Vertical List Layout */}
-        <div className="space-y-0">
-          {filteredAgenda.map((item, index) => (
-            <div
-              key={index}
-              className="group flex flex-col md:flex-row gap-4 md:gap-12 py-8 border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors duration-300 -mx-4 px-4 rounded-2xl"
-            >
-              {/* Left Column: Time & Location */}
-              <div className="md:w-1/4 shrink-0 pt-1">
-                <div className="flex flex-row md:flex-col items-center md:items-start gap-3 md:gap-1">
-                  <span className="font-display text-lg sm:text-xl font-bold text-slate-900">
-                    {item.time}
-                  </span>
-                  
-                  {item.room && (
-                    <span className="flex items-center gap-1.5 text-xs font-sans font-semibold text-slate-500 uppercase tracking-wider">
-                      <MapPin className="w-3.5 h-3.5" />
-                      {item.room}
-                    </span>
-                  )}
-                </div>
-              </div>
+        {/* Enhanced Agenda List */}
+        <div className="space-y-4">
+          {filteredAgenda.map((item, index) => {
+            const config = getCategoryConfig(item.category);
+            const IconComponent = config.icon;
+            
+            // Check if any personnel data exists to render the border/section
+            const hasPersonnel = (item.speakers?.length || 0) > 0 || 
+                                 (item.panelists?.length || 0) > 0 || 
+                                 (item.moderators?.length || 0) > 0 || 
+                                 (item.sessionChairs?.length || 0) > 0;
+            
+            return (
+              <div
+                key={index}
+                className={`group relative overflow-hidden rounded-2xl border-2 ${config.borderColor} ${config.bgColor} transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/40 hover:scale-[1.01]`}
+              >
+                <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${config.accentColor}`}></div>
 
-              {/* Right Column: Content */}
-              <div className="md:w-3/4">
-                <span className={`text-[10px] font-bold font-sans uppercase tracking-widest mb-2 block ${getCategoryColor(item.category)}`}>
-                  {getCategoryBadgeLabel(item.category)}
-                </span>
-                
-                <h3 className="font-display font-bold text-slate-900 text-lg sm:text-xl leading-snug mb-2 group-hover:text-dnc-blue transition-colors">
-                  {item.title}
-                </h3>
-
-                {item.subtitle && (
-                  <p className="text-sm font-sans font-semibold text-slate-700 mb-3">
-                    {item.subtitle}
-                  </p>
-                )}
-
-                {item.description && (
-                  <p className="text-sm text-slate-500 leading-relaxed font-sans mb-5 max-w-3xl">
-                    {item.description}
-                  </p>
-                )}
-
-                {/* Minimal Speakers List */}
-                {item.speakerNames && item.speakerNames.length > 0 && (
-                  <div className="flex items-start gap-2.5 mt-4 pt-4 border-t border-slate-100/80">
-                    <Users className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
-                    <div className="flex flex-wrap gap-x-4 gap-y-1">
-                      {item.speakerNames.map((spk, sIdx) => (
-                        <span
-                          key={sIdx}
-                          className="text-sm font-medium text-slate-700"
-                        >
-                          {spk}
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8 p-6 md:p-8 pl-6 md:pl-8">
+                  {/* Left Column: Time, Location & Category */}
+                  <div className="md:w-1/4 shrink-0">
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2.5 mb-1">
+                        <Clock className="w-5 h-5 text-slate-500" />
+                        <span className="font-display font-black text-2xl text-slate-900">
+                          {item.time}
                         </span>
-                      ))}
+                      </div>
+                    </div>
+
+                    {item.room && (
+                      <div className="mb-5 flex items-start gap-2.5">
+                        <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                        <span className="text-xs font-sans font-semibold text-slate-600 uppercase tracking-wider">
+                          {item.room}
+                        </span>
+                      </div>
+                    )}
+
+                    <div className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg ${config.badgeColor} border border-white/30`}>
+                      <IconComponent className="w-3.5 h-3.5" />
+                      <span className="text-xs font-bold uppercase tracking-widest">
+                        {item.category === "Break" ? "Break" : item.category}
+                      </span>
                     </div>
                   </div>
-                )}
+
+                  {/* Right Column: Title, Description & Speakers */}
+                  <div className="md:w-3/4">
+                    <h3 className={`font-display font-bold text-xl sm:text-2xl leading-snug mb-2 text-slate-900`}>
+                      {item.title}
+                    </h3>
+
+                    {item.subtitle && (
+                      <p className="text-sm sm:text-base font-sans font-semibold text-slate-700 mb-5 leading-relaxed">
+                        {item.subtitle}
+                      </p>
+                    )}
+
+                    {/* Roles Flowing Inline */}
+                    {hasPersonnel && (
+                      <div className="flex flex-col gap-3.5 mt-5 pt-5 border-t border-slate-300/40">
+                        {renderPersonnelGroup("Speaker", Lectern, item.speakers)}
+                        {renderPersonnelGroup("Panelist", Users, item.panelists)}
+                        {renderPersonnelGroup("Moderator", Mic, item.moderators)}
+                        {renderPersonnelGroup("Chair", Star, item.sessionChairs)}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-60"></div>
               </div>
-            </div>
-          ))}
-          
+            );
+          })}
+
           {filteredAgenda.length === 0 && (
-            <div className="py-12 text-center text-slate-500">
-              No sessions found for this track.
+            <div className="py-16 text-center">
+              <Coffee className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+              <p className="text-slate-500 font-sans">No sessions found for this track.</p>
             </div>
           )}
         </div>

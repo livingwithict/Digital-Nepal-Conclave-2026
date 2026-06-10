@@ -41,16 +41,16 @@ export default function PublicationsComponent() {
         
         {/* Header Block */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
+          {/* <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
             <BookOpen className="w-4 h-4 text-dnc-orange" />
             IFN Knowledge Catalog
-          </span>
+          </span> */}
           <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
             Publications, Reports & Indices
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed">
             Gain immediate access to policy summaries, smart provincial readiness frameworks, and federal feedback booklets published during previous conclaves.
-          </p>
+          </p> */}
         </div>
 
         {/* Filter Input */}
@@ -93,7 +93,7 @@ export default function PublicationsComponent() {
 
                 <div className="flex flex-col justify-between min-w-0">
                   <div>
-                    <span className="text-[12px] uppercase tracking-wider text-dnc-orange font-sans font-bold">
+                    <span className="text-[12px] uppercase tracking-wider text-dnc-blue font-sans font-bold">
                       {pub.type} • {pub.year}
                     </span>
                     <h3 className="font-display font-bold text-sm sm:text-sm text-slate-900 leading-snug mt-1 truncate">
@@ -117,7 +117,7 @@ export default function PublicationsComponent() {
             {selectedPub ? (
               <div className="space-y-6">
                 <div className="text-center">
-                  <div className="w-28 h-36 mx-auto bg-white rounded-xl shadow-md border border-slate-200/60 overflow-hidden mb-4">
+                  <div className="w-36 h-50 mx-auto bg-white rounded-sm shadow-md border border-slate-200/60 overflow-hidden mb-4">
                     <img
                       src={selectedPub.coverUrl}
                       alt={selectedPub.title}
@@ -126,7 +126,7 @@ export default function PublicationsComponent() {
                     />
                   </div>
                   
-                  <span className="px-2.5 py-0.5 bg-dnc-orange/5 text-dnc-orange border border-dnc-orange/10 text-[9px] font-sans font-bold rounded uppercase">
+                  <span className="px-2.5 py-0.5 bg-dnc-blue/5 text-dnc-blue border border-dnc-blue/10 text-[9px] font-sans font-bold rounded uppercase">
                     {selectedPub.type} • {selectedPub.year}
                   </span>
                   
