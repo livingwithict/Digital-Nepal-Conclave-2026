@@ -26,10 +26,10 @@ export default function SpeakersComponent() {
 
         {/* Header Block */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-dnc-blue text-sm font-sans font-bold rounded-lg uppercase tracking-wider mb-3 border border-blue-100">
+          {/* <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-dnc-blue text-sm font-sans font-bold rounded-lg uppercase tracking-wider mb-3 border border-blue-100">
             <Award className="w-4 h-4 text-dnc-orange" />
             Vanguard of Digital Innovation
-          </span>
+          </span> */}
           <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
             Our Previous Speakers
           </h1>

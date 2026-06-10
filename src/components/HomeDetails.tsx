@@ -6,7 +6,7 @@ import VideoCard from "./videocard";
 import NewsCard from "./NewsCard";
 
 interface HomeDetailsProps {
-  setActiveMediaTab: (tab: "news" | "videos") => void;
+  setActiveMediaTab?: (tab: string) => void;
   onNavigate: (page: PageId) => void;
 }
 
@@ -18,7 +18,7 @@ const YOUTUBE_VIDEOS = [
   "https://www.youtube.com/watch?v=VrZ_jsP7n3U",
 ];
 
-export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetailsProps) {
+export default function HomeDetails({setActiveMediaTab, onNavigate }: HomeDetailsProps) {
   return (
     <div id="home-details-section" className="bg-slate-50 py-16 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,9 +46,17 @@ export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetai
         {/* PREVIOUS SPEAKERS HORIZONTAL GALLERY */}
         <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs mb-20 overflow-hidden relative">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-            <div className="inline-flex items-center gap-1.5 text-2xl font-bold text-dnc-blue font-sans uppercase tracking-widest mb-1">
-              <Users className="w-5 h-5 text-dnc-orange" />
-              Previous Speakers
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="p-2 bg-blue-50 text-dnc-blue rounded-xl border border-blue-100">
+                  <Users className="w-5 h-5" />
+                </span>
+                <div>
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
+                    Our Previous Speakers
+                  </h3>
+                </div>
+              </div>
             </div>
             <button
               onClick={() => onNavigate("speakers")}
@@ -97,11 +105,11 @@ export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetai
         {/* PAST CONCLAVES */}
         <div className="grid grid-cols-1 gap-8 mb-20 items-stretch">
           <div className="bg-white text-slate-900 rounded-3xl p-8 flex flex-col justify-between shadow-sm border border-slate-100">
-            <div className="max-w-3xl mb-8">
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight leading-tight mb-4">
+            <div className="max-w-full mb-4">
+              <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
                 Our Past Conclaves
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-500 text-base leading-relaxed">
                 From the inception of the Digital Nepal framework in 2019, our yearly summits have solidified cross-border payment protocols, digital health structures, and national software exports strategy.
               </p>
             </div>
@@ -217,7 +225,7 @@ export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetai
         </div>
 
         {/* YOUTUBE VIDEOS SECTION */}
-        <div className="mb-20">
+        <div className="mb-10">
           <div className="flex items-center gap-2 mb-6">
             <span className="p-2 bg-red-50 text-dnc-red rounded-xl border border-red-100">
               <Video className="w-5 h-5" />
@@ -243,7 +251,7 @@ export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetai
           <button
             onClick={() => {
               onNavigate("media");
-              setActiveMediaTab("videos");
+              setActiveMediaTab?.("videos");
             }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-dnc-blue text-white font-bold text-sm sm:text-base rounded-xl hover:bg-dnc-blue/90 transition-all duration-300 shadow-md hover:shadow-lg group"
           >
@@ -252,6 +260,42 @@ export default function HomeDetails({ setActiveMediaTab, onNavigate }: HomeDetai
           </button>
         </div>
 
+        <div className="mt-20">
+          <div className="mb-8">
+            <h3 className="font-display font-black text-xl sm:text-2xl text-slate-800">
+              Our Other Initiatives & Programs
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { name: "Digital Samvad", desc: "Weekly policy talk-show broadcasts", logo: "/images/logos/digital-samvad.jpg" },
+              { name: "Digital Nepal Conclave", desc: "Flagship central business summit", logo: "/images/logos/dnc-logo.png" },
+              { name: "Digital Karnali Conclave", desc: "Decentralized state policy forums", logo: "/images/logos/dkc-logo.png" },
+              { name: "Digital Madhesh Conclave", desc: "Regional smart-services seminars", logo: "/images/logos/dmc-logo.png" },
+              { name: "AI Summit", desc: "The ultimate accolade for tech champions", logo: "/images/logos/naic.png" },
+              { name: "Startup & Idea Fest", desc: "National ecosystem pitching events", logo: "/images/logos/snif.png" },
+              { name: "ICT Gyan", desc: "Centralized analytical tech encyclopedia", logo: "/images/logos/ict-gyan.png" },
+              { name: "Digital Leadership Dialogue", desc: "Corporate-regulator interactions", logo: "/images/logos/dld-logo.png" }
+            ].map((item, index) => (
+              <div key={index} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-xs hover:border-dnc-blue transition-all duration-200">
+                {/* Logo Placeholder */}
+                <div className="h-40 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src={item.logo} 
+                    alt={`${item.name} logo`}
+                    className="h-full w-full object-contain p-2"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
+                {/* <h4 className="font-display font-bold text-base text-slate-900 mb-1 leading-tight">{item.name}</h4> */}
+                {/* <p className="text-[11px] text-slate-500">{item.desc}</p> */}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Marquee Animation Block */}

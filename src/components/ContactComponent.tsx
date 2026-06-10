@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 
 export default function ContactComponent() {
+  // Google Apps Script URL - Replace with your actual deployment URL
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSMVx235ZAH1iIqL5CNU0iwM72PUo9dZjo39sn5DOIZ-6zy768aPkTZbAaDdIZ6Kmk/exec";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,7 +23,7 @@ export default function ContactComponent() {
     setValidationError("");
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Core client-side validations
@@ -36,8 +39,19 @@ export default function ContactComponent() {
 
     setFormState("sending");
 
-    // Simulate sending progress
-    setTimeout(() => {
+    try {
+      // Create URLSearchParams from form data
+      const params = new URLSearchParams(formData as any);
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: params,
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       setFormState("success");
       // Reset form variables
       setFormData({
@@ -48,7 +62,22 @@ export default function ContactComponent() {
         organization: "",
         message: ""
       });
-    }, 1200);
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setFormState("idle");
+        setValidationError("");
+      }, 5000);
+    } catch (error) {
+      console.error("Error:", error);
+      setFormState("error");
+      setValidationError("Error submitting form. Please try again or contact us directly.");
+      
+      // Reset error state after 5 seconds
+      setTimeout(() => {
+        setFormState("idle");
+      }, 5000);
+    }
   };
 
   return (
@@ -57,16 +86,16 @@ export default function ContactComponent() {
         
         {/* Header Block */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
+          {/* <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-dnc-blue/5 text-dnc-blue text-sm font-sans font-bold rounded-full uppercase tracking-wider mb-3">
             <MessageSquare className="w-4 h-4 text-dnc-orange animate-pulse" />
             24/7 Conclave Support Desk
-          </span>
+          </span> */}
           <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
             Connect with Organizers
           </h1>
-          <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed font-sans">
+          {/* <p className="mt-2 text-sm text-slate-500 max-w-2xl mx-auto leading-relaxed font-sans">
             Have questions about strategic sponsorship packets, VIP invitation protocols, municipal registration, or speaker times? We are ready to assist.
-          </p>
+          </p> */}
         </div>
 
         {/* Contact Split layout */}
@@ -250,10 +279,19 @@ export default function ContactComponent() {
                 </div>
               )}
 
+              {formState === "error" && (
+                <div className="p-4 bg-red-50 text-red-800 text-sm font-sans rounded-xl border border-red-200 flex items-center gap-2">
+                  <div>
+                    <p className="font-bold">Error submitting message</p>
+                    <p className="text-[10px] text-red-700 mt-0.5">Please try again or contact us directly using the phone numbers provided.</p>
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={formState === "sending"}
-                className="w-full py-3.5 bg-dnc-blue hover:bg-dnc-blue-light transition text-white font-bold text-sm rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99]"
+                className="w-full py-3.5 bg-dnc-blue hover:bg-dnc-blue-light transition text-white font-bold text-sm rounded-xl flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="w-3.5 h-3.5 text-dnc-orange" />
                 {formState === "sending" ? "Dispatching Message..." : "Send Secure Message"}

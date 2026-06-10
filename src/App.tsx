@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header, { PageId } from "./components/Header";
 import Hero from "./components/Hero";
 import ThemeDateVenue from "./components/ThemeDateVenue";
-import DigitalNepalMap from "./components/DigitalNepalMap";
 import HomeDetails from "./components/HomeDetails";
 import AboutComponents from "./components/AboutComponents";
 import AgendaComponent from "./components/AgendaComponent";
@@ -11,9 +10,9 @@ import PastEventsComponent from "./components/PastEventsComponent";
 import PublicationsComponent from "./components/PublicationsComponent";
 import MediaComponent from "./components/MediaComponent";
 import ContactComponent from "./components/ContactComponent";
-// import RegisterModal from "./components/RegisterModal";
 import Footer from "./components/Footer";
 import { Sparkles, Calendar, MapPin } from "lucide-react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [activePage, setActivePage] = useState<PageId>("home");
@@ -67,7 +66,7 @@ export default function App() {
             <ThemeDateVenue />
             {/* <DigitalNepalMap /> */}
             <HomeDetails 
-              onNavigate={handlePageChange} 
+              onNavigate={handlePageChange}     
             />
           </div>
         )}

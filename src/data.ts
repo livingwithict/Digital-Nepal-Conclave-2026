@@ -11,16 +11,6 @@ export interface Speaker {
   twitterUrl?: string;
 }
 
-export interface AgendaItem {
-  time: string;
-  title: string;
-  subtitle?: string;
-  description?: string;
-  speakerNames?: string[];
-  category: "Inaugural" | "Governance" | "Data" | "Economy" | "Break";
-  room?: string;
-}
-
 export interface Publication {
   id: string;
   title: string;
@@ -97,7 +87,8 @@ export const PATRONS: TeamMember[] = [
   { name: "Prof. Dr. Manish Pokharel", role: "Dean, School of Engineering (Kathmandu University)", category: "Patron", imageUrl: "/images/team/Manish Pokharel.jpg", },
   { name: "Mr. Birendra Kumar Mishra", role: "Former Joint Secretary, MoCIT, GoN", category: "Patron", imageUrl: "/images/team/Birendra Mishra.jpg", },
   { name: "Mr. Vivek S. Rana", role: "ICT/MIS Consultant, Asian Development Bank (ADB)", category: "Patron", imageUrl: "/images/team/Vivek Rana.jpg", },
-  { name: "Mr. Ananda Raj Khanal", role: "Senior ICT Expert & Consultant", category: "Patron", imageUrl: "/images/team/Ananda Raj Khanal.jpg", }
+  { name: "Mr. Ananda Raj Khanal", role: "Senior ICT Expert & Consultant", category: "Patron", imageUrl: "/images/team/Ananda Raj Khanal.jpg", },
+  { name: "Mrs. Guna Keshari Pradhan", role: "", category: "Patron", imageUrl: "/images/team/Guna Keshari.jpg", }
 ];
 
 export const SPEAKERS_LIST: Speaker[] = [
@@ -190,139 +181,6 @@ export const SPEAKERS_LIST: Speaker[] = [
     tags: ["Fintech", "National Gateway", "Digital Economy"],
     linkedinUrl: "https://linkedin.com/",
     twitterUrl: "https://twitter.com/"
-  }
-];
-
-export const AGENDA_DATA: AgendaItem[] = [
-  {
-    time: "9:00 AM – 9:30 AM",
-    title: "Delegate Registration & Welcome Reception",
-    subtitle: "",
-    description: "Welcome of participants, national policy creators, and sector champions. Exhibition space and coffee network opens.",
-    category: "Break",
-    room: ""
-  },
-  {
-    time: "9:30 AM – 10:00 AM",
-    title: "Inaugural Session: Lighting the Digital Path",
-    subtitle: "",
-    description: "Traditional lamp lighting, formal addresses from organizers, governmental patrons, and launching of Digital Paridrishya Vol 3.",
-    category: "Inaugural",
-    room: ""
-  },
-  {
-    time: "10:00 AM – 10:20 AM",
-    title: "Keynote I: National Perspectives",
-    subtitle: "“The Trajectory of Nepal’s Digital Progress: Strategic Essentials”",
-    description: "A deep dive into structural blockages and accomplishments since the first iteration in 2019.",
-    speakerNames: ["Mr. Manohar K Bhattarai"],
-    category: "Inaugural",
-    room: ""
-  },
-  {
-    time: "10:20 AM – 10:45 AM",
-    title: "Keynote II: Global Perspectives",
-    subtitle: "“Transformative Digital Paradigms: Success Drivers for Emerging Economies”",
-    description: "Best practices, AI policies, and digital public goods frameworks suitable for south Asia.",
-    speakerNames: ["Mr. Kyle Gardner"],
-    category: "Inaugural",
-    room: ""
-  },
-  {
-    time: "10:45 AM – 12:00 PM",
-    title: "Power Samvad @ DNC",
-    subtitle: "“Nepal’s Digital Transformation Agenda; Reimagining Governance”",
-    description: "Focusing on inter-departmental collaboration, system interoperability, and structural mandates of Digital Nepal Framework.",
-    speakerNames: ["Mr. Ek Narayan Aryal", "Hon. Gagan Thapa", "Prof. Dr. Manish Pokharel"],
-    category: "Governance",
-    room: ""
-  },
-  {
-    time: "12:00 PM – 12:45 PM",
-    title: "Strategic Panel I: Redefining Digital Governance Architecture",
-    subtitle: "“Citizen-Centric Services: 100 Days, 100 Agendas for a Digital Nation”",
-    description: "A lightning conversation mapping swift, transparent public-facing service items.",
-    category: "Governance",
-    room: ""
-  },
-  {
-    time: "12:45 PM – 1:30 PM",
-    title: "Lunch Time",
-    subtitle: "Break",
-    description: "Visit 20+ specialized stalls showing cutting-edge solutions from GIS mapping to health systems.",
-    category: "Break",
-    room: ""
-  },
-  {
-    time: "1:30 PM – 1:45 PM",
-    title: "Nepal Startup Launchpad - Innovative Solutions in Governance & Data (Pitches 1-3)",
-    subtitle: "",
-    description: "Nepalese tech teams present smart city solutions and workflow optimization systems for governance.",
-    category: "Economy",
-    room: ""
-  },
-  {
-    time: "1:45 PM – 2:00 PM",
-    title: "Lightning Talk: AI & Evolving Technological Frontiers",
-    subtitle: "“Ethical AI Integration for Smart Governance: Leveraging Frontier Tech as a Strategic Enabler”",
-    description: "Understanding LLMs and custom deep tech boundaries to simplify workflows for state platforms.",
-    category: "Data",
-    room: ""
-  },
-  {
-    time: "2:00 PM – 3:00 PM",
-    title: "Strategic Panel II: Paradigms of Data Governance",
-    subtitle: "“Establishing Data Sovereignty, Uniform Standards, and Robust Architectures”",
-    description: "Highlighting cloud regulations, local hosting security acts, and user privacy in health and financial ecosystems.",
-    category: "Data",
-    room: ""
-  },
-  {
-    time: "3:00 PM – 3:30 PM",
-    title: "Tea Break",
-    subtitle: "Break",
-    category: "Break",
-    room: ""
-  },
-  {
-    time: "3:30 PM – 4:00 PM",
-    title: "Nepal Startup Launchpad - Innovative Solutions in Digital Economy & Deep Tech Ideas (4-6 Pitches)",
-    subtitle: "",
-    description: "Accelerated presentation of young Nepalese financial ventures before major capital investors.",
-    category: "Economy",
-    room: ""
-  },
-  {
-    time: "4:00 PM – 4:30 PM",
-    title: "Keynote III: Building Nepal’s Digital Economy – A Framework for Broad-Based Prosperity",
-    subtitle: "",
-    speakerNames: ["Mr. Biswas Dhakal"],
-    category: "Economy",
-    room: ""
-  },
-  {
-    time: "4:30 PM – 5:30 PM",
-    title: "Strategic Panel III: Re-envisioning the Digital Economy",
-    subtitle: "“Expediting Nepal's Digital Economy: Resource Mobilization and Global Strategic Partnerships”",
-    description: "Focus on global IT exports, retaining young engineers, and cross-border payment solutions.",
-    speakerNames: ["Mr. Nilesh Man Singh Pradhan"],
-    category: "Economy",
-    room: ""
-  },
-  {
-    time: "5:30 PM – 6:30 PM",
-    title: "Closing Power Samvad @ DNC: Mobilizing Capital for Digital Transformation",
-    subtitle: "",
-    description: "Synthesizing next actionable items. Signing cross-sector agreements.",
-    category: "Inaugural",
-    room: ""
-  },
-  {
-    time: "6:30 PM Onwards",
-    title: "Closing Note & The Road to DNC 2027",
-    subtitle: "",
-    category: "Break",
-    room: ""
   }
 ];
 

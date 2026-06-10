@@ -14,10 +14,10 @@ export default function AboutComponents({ currentSubSection, onSubSectionChange 
 
       {/* Introduction Card */}
       <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xs">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-auto mx-auto space-y-6 text-justify">
           <span className="text-sm font-bold font-sans text-dnc-blue tracking-widest uppercase block mb-2">5th Edition</span>
           <h2 className="font-display font-extrabold text-3xl text-dnc-black mb-6 leading-tight">
-            The Ultimate Catalyst for Nepal&apos;s High-Level Tech Policy
+            The Biggest Digital Conference in Nepal
           </h2>
           <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
             <p>
